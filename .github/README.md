@@ -5,10 +5,8 @@
 本仓库中的所有应用不会与 `1Panel` 官方应用商店冲突(存在相同应用并不影响后续的安装与升级,择优选择你需要的版本即可)
 ，我们会定期更新应用，如果您有任何问题，请联系我们。
 
-<div style="border: 1px solid #e1e1e1; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); padding: 16px; margin: 16px; background-color: #fff; width: 80%; margin-left: auto; margin-right: auto;">
-  <h2 style="margin: 0 0 8px 0; font-size: 1.5em;">2024年07月17日 公告</h2>
-  <p>正式开始维护，新老用户推荐使用<span style="font-weight: bold; color: #d9534f;">自动化脚本</span>完成软件订阅。</p>
-</div>
+> [!NOTE] 2024年07月17日 公告
+> 正式开始维护，新老用户推荐使用 `自动化脚本` 完成软件订阅。
 
 <div style="border: 1px solid #e1e1e1; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); padding: 16px; margin: 16px; background-color: #fff; width: 80%; margin-left: auto; margin-right: auto;">
   <h2 style="margin: 0 0 8px 0; font-size: 1.5em;">2024年07月16日 公告</h2>
