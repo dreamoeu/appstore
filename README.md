@@ -271,6 +271,7 @@ curl -sSL https://install.lifebus.top/pre_app_uninstall.sh | bash
             display: flex;
             flex-direction: column;
             align-items: center;
+            background-color: #f9f9f9;
         }
         .card {
             border: 1px solid #e1e1e1;
@@ -284,22 +285,32 @@ curl -sSL https://install.lifebus.top/pre_app_uninstall.sh | bash
             text-decoration: none;
             color: #333;
             transition: box-shadow 0.3s ease;
+            background-color: #fff;
         }
         .card:hover {
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-        .card img {
-            width: 40px;
-            height: 40px;
+        .card .icon {
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
+            border: 2px solid #e1e1e1;
+            overflow: hidden;
             margin-right: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+        }
+        .card .icon img {
+            width: 32px;
+            object-fit: contain;
         }
         .card .content {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
             justify-content: center;
-            text-align: center;
         }
         .card .content .title {
             font-weight: bold;
@@ -315,10 +326,62 @@ curl -sSL https://install.lifebus.top/pre_app_uninstall.sh | bash
 <body>
 
 <a class="card" href="mailto:qyg2297248353@gmail.com" target="_blank">
-    <img src="https://via.placeholder.com/40" alt="Profile Picture">
+    <div class="icon">
+      <img src="https://file.lifebus.top/imgs/google_gmail_logo.png" alt="Profile Picture">
+    </div>
     <div class="content">
-        <div class="title">邮箱</div>
+        <div class="title">Gmail 邮箱</div>
         <div class="subtitle">通过邮箱反馈您所遇到的问题</div>
+    </div>
+</a>
+
+<a class="card" href="https://blog.lifebus.top/" target="_blank">
+    <div class="icon">
+      <img src="https://file.lifebus.top/imgs/ms_studio_logo.png" alt="Profile Picture">
+    </div>
+    <div class="content">
+        <div class="title">人生足迹 · 博客</div>
+        <div class="subtitle">技术分享的博客平台</div>
+    </div>
+</a>
+
+<a class="card" href="https://github.com/QYG2297248353" target="_blank">
+    <div class="icon">
+      <img src="https://file.lifebus.top/imgs/github_logo.png" alt="Profile Picture">
+    </div>
+    <div class="content">
+        <div class="title">GitHub</div>
+        <div class="subtitle">全球最大同性交友网站</div>
+    </div>
+</a>
+
+<a class="card" href="https://git.lifebus.top/" target="_blank">
+    <div class="icon">
+      <img src="https://file.lifebus.top/imgs/gitea_logo.png" alt="Profile Picture">
+    </div>
+    <div class="content">
+        <div class="title">Gitea</div>
+        <div class="subtitle">国内镜像发布仓库</div>
+    </div>
+</a>
+
+<a class="card" href="https://www.youtube.com/@cn_ms_studio" target="_blank">
+    <div class="icon">
+      <img src="https://file.lifebus.top/imgs/google_youtube_logo.png" alt="Profile Picture">
+    </div>
+    <div class="content">
+        <div class="title">YouTube</div>
+        <div class="subtitle">Google旗下的视频分享网站</div>
+    </div>
+</a>
+
+<a class="card" href="https://twitter.com/ms2297248353" target="_blank">
+    <div class="icon">
+      <img src="https://file.lifebus.top/imgs/twitter_x_logo.png" alt="Profile Picture">
+    </div>
+    <div class="content">
+        <div class="title">Twitter</div>
+        <div class="subtitle">X. 正在发生的事</div>
     </div>
 </a>
 
