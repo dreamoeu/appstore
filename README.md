@@ -209,74 +209,74 @@ curl -sSL https://install.lifebus.top/pre_app_uninstall.sh | bash
 
 ## 联系我们
 
-<a href="mailto:qyg2297248353@gmail.com" target="_blank" style="display: block; border: 1px solid #e1e1e1; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); padding: 16px; margin: 16px; width: 300px; text-decoration: none; color: #333; background-color: #fff; transition: box-shadow 0.3s ease;">
-    <div style="display: flex; align-items: center;">
-        <div style="width: 50px; height: 50px; border-radius: 50%; border: 2px solid #e1e1e1; overflow: hidden; margin-right: 16px; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">
-            <img src="https://file.lifebus.top/imgs/google_gmail_logo.png" alt="Profile Picture" style="width: 32px; object-fit: contain;">
-        </div>
-        <div>
-            <div style="font-weight: bold;">Gmail 邮箱</div>
-            <div style="color: #555; font-size: 0.9em;">通过邮箱反馈您所遇到的问题</div>
-        </div>
+<a href="mailto:qyg2297248353@gmail.com" target="_blank" style="display: block; width: 300px; margin: 16px auto; padding: 16px; border: 1px solid #e1e1e1; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); background-color: #fff; text-decoration: none; color: #333;">
+  <div style="display: flex; align-items: center;">
+    <div style="width: 50px; height: 50px; border-radius: 50%; border: 2px solid #e1e1e1; overflow: hidden; margin-right: 16px; display: flex; align-items: center; justify-content: center;">
+      <img src="https://file.lifebus.top/imgs/google_gmail_logo.png" alt="Profile Picture" style="width: 32px; object-fit: contain;">
     </div>
+    <div style="flex: 1;">
+      <div style="font-weight: bold;">Gmail 邮箱</div>
+      <div style="color: #555; font-size: 0.9em;">通过邮箱反馈您所遇到的问题</div>
+    </div>
+  </div>
 </a>
 
-<a href="https://blog.lifebus.top/" target="_blank" style="display: block; border: 1px solid #e1e1e1; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); padding: 16px; margin: 16px; width: 300px; text-decoration: none; color: #333; background-color: #fff; transition: box-shadow 0.3s ease;">
-    <div style="display: flex; align-items: center;">
-        <div style="width: 50px; height: 50px; border-radius: 50%; border: 2px solid #e1e1e1; overflow: hidden; margin-right: 16px; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">
-            <img src="https://file.lifebus.top/imgs/ms_studio_logo.png" alt="Profile Picture" style="width: 32px; object-fit: contain;">
-        </div>
-        <div>
-            <div style="font-weight: bold;">人生足迹 · 博客</div>
-            <div style="color: #555; font-size: 0.9em;">技术分享的博客平台</div>
-        </div>
+<a href="https://blog.lifebus.top/" target="_blank" style="display: block; width: 300px; margin: 16px auto; padding: 16px; border: 1px solid #e1e1e1; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); background-color: #fff; text-decoration: none; color: #333;">
+  <div style="display: flex; align-items: center;">
+    <div style="width: 50px; height: 50px; border-radius: 50%; border: 2px solid #e1e1e1; overflow: hidden; margin-right: 16px; display: flex; align-items: center; justify-content: center;">
+      <img src="https://file.lifebus.top/imgs/ms_studio_logo.png" alt="Profile Picture" style="width: 32px; object-fit: contain;">
     </div>
+    <div style="flex: 1;">
+      <div style="font-weight: bold;">人生足迹 · 博客</div>
+      <div style="color: #555; font-size: 0.9em;">技术分享的博客平台</div>
+    </div>
+  </div>
 </a>
 
-<a href="https://github.com/QYG2297248353" target="_blank" style="display: block; border: 1px solid #e1e1e1; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); padding: 16px; margin: 16px; width: 300px; text-decoration: none; color: #333; background-color: #fff; transition: box-shadow 0.3s ease;">
-    <div style="display: flex; align-items: center;">
-        <div style="width: 50px; height: 50px; border-radius: 50%; border: 2px solid #e1e1e1; overflow: hidden; margin-right: 16px; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">
-            <img src="https://file.lifebus.top/imgs/github_logo.png" alt="Profile Picture" style="width: 32px; object-fit: contain;">
-        </div>
-        <div>
-            <div style="font-weight: bold;">GitHub</div>
-            <div style="color: #555; font-size: 0.9em;">全球最大同性交友网站</div>
-        </div>
+<a href="https://github.com/QYG2297248353" target="_blank" style="display: block; width: 300px; margin: 16px auto; padding: 16px; border: 1px solid #e1e1e1; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); background-color: #fff; text-decoration: none; color: #333;">
+  <div style="display: flex; align-items: center;">
+    <div style="width: 50px; height: 50px; border-radius: 50%; border: 2px solid #e1e1e1; overflow: hidden; margin-right: 16px; display: flex; align-items: center; justify-content: center;">
+      <img src="https://file.lifebus.top/imgs/github_logo.png" alt="Profile Picture" style="width: 32px; object-fit: contain;">
     </div>
+    <div style="flex: 1;">
+      <div style="font-weight: bold;">GitHub</div>
+      <div style="color: #555; font-size: 0.9em;">全球最大同性交友网站</div>
+    </div>
+  </div>
 </a>
 
-<a href="https://git.lifebus.top/" target="_blank" style="display: block; border: 1px solid #e1e1e1; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); padding: 16px; margin: 16px; width: 300px; text-decoration: none; color: #333; background-color: #fff; transition: box-shadow 0.3s ease;">
-    <div style="display: flex; align-items: center;">
-        <div style="width: 50px; height: 50px; border-radius: 50%; border: 2px solid #e1e1e1; overflow: hidden; margin-right: 16px; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">
-            <img src="https://file.lifebus.top/imgs/gitea_logo.png" alt="Profile Picture" style="width: 32px; object-fit: contain;">
-        </div>
-        <div>
-            <div style="font-weight: bold;">Gitea</div>
-            <div style="color: #555; font-size: 0.9em;">国内镜像发布仓库</div>
-        </div>
+<a href="https://git.lifebus.top/" target="_blank" style="display: block; width: 300px; margin: 16px auto; padding: 16px; border: 1px solid #e1e1e1; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); background-color: #fff; text-decoration: none; color: #333;">
+  <div style="display: flex; align-items: center;">
+    <div style="width: 50px; height: 50px; border-radius: 50%; border: 2px solid #e1e1e1; overflow: hidden; margin-right: 16px; display: flex; align-items: center; justify-content: center;">
+      <img src="https://file.lifebus.top/imgs/gitea_logo.png" alt="Profile Picture" style="width: 32px; object-fit: contain;">
     </div>
+    <div style="flex: 1;">
+      <div style="font-weight: bold;">Gitea</div>
+      <div style="color: #555; font-size: 0.9em;">国内镜像发布仓库</div>
+    </div>
+  </div>
 </a>
 
-<a href="https://www.youtube.com/@cn_ms_studio" target="_blank" style="display: block; border: 1px solid #e1e1e1; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); padding: 16px; margin: 16px; width: 300px; text-decoration: none; color: #333; background-color: #fff; transition: box-shadow 0.3s ease;">
-    <div style="display: flex; align-items: center;">
-        <div style="width: 50px; height: 50px; border-radius: 50%; border: 2px solid #e1e1e1; overflow: hidden; margin-right: 16px; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">
-            <img src="https://file.lifebus.top/imgs/google_youtube_logo.png" alt="Profile Picture" style="width: 32px; object-fit: contain;">
-        </div>
-        <div>
-            <div style="font-weight: bold;">YouTube</div>
-            <div style="color: #555; font-size: 0.9em;">Google旗下的视频分享网站</div>
-        </div>
+<a href="https://www.youtube.com/@cn_ms_studio" target="_blank" style="display: block; width: 300px; margin: 16px auto; padding: 16px; border: 1px solid #e1e1e1; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); background-color: #fff; text-decoration: none; color: #333;">
+  <div style="display: flex; align-items: center;">
+    <div style="width: 50px; height: 50px; border-radius: 50%; border: 2px solid #e1e1e1; overflow: hidden; margin-right: 16px; display: flex; align-items: center; justify-content: center;">
+      <img src="https://file.lifebus.top/imgs/google_youtube_logo.png" alt="Profile Picture" style="width: 32px; object-fit: contain;">
     </div>
+    <div style="flex: 1;">
+      <div style="font-weight: bold;">YouTube</div>
+      <div style="color: #555; font-size: 0.9em;">Google旗下的视频分享网站</div>
+    </div>
+  </div>
 </a>
 
-<a href="https://twitter.com/ms2297248353" target="_blank" style="display: block; border: 1px solid #e1e1e1; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); padding: 16px; margin: 16px; width: 300px; text-decoration: none; color: #333; background-color: #fff; transition: box-shadow 0.3s ease;">
-    <div style="display: flex; align-items: center;">
-        <div style="width: 50px; height: 50px; border-radius: 50%; border: 2px solid #e1e1e1; overflow: hidden; margin-right: 16px; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">
-            <img src="https://file.lifebus.top/imgs/twitter_x_logo.png" alt="Profile Picture" style="width: 32px; object-fit: contain;">
-        </div>
-        <div>
-            <div style="font-weight: bold;">Twitter</div>
-            <div style="color: #555; font-size: 0.9em;">X. 正在发生的事</div>
-        </div>
+<a href="https://twitter.com/ms2297248353" target="_blank" style="display: block; width: 300px; margin: 16px auto; padding: 16px; border: 1px solid #e1e1e1; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); background-color: #fff; text-decoration: none; color: #333;">
+  <div style="display: flex; align-items: center;">
+    <div style="width: 50px; height: 50px; border-radius: 50%; border: 2px solid #e1e1e1; overflow: hidden; margin-right: 16px; display: flex; align-items: center; justify-content: center;">
+      <img src="https://file.lifebus.top/imgs/twitter_x_logo.png" alt="Profile Picture" style="width: 32px; object-fit: contain;">
     </div>
+    <div style="flex: 1;">
+      <div style="font-weight: bold;">Twitter</div>
+      <div style="color: #555; font-size: 0.9em;">X. 正在发生的事</div>
+    </div>
+  </div>
 </a>
