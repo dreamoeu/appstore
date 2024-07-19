@@ -5,48 +5,48 @@
 本仓库中的所有应用不会与 `1Panel` 官方应用商店冲突(存在相同应用并不影响后续的安装与升级,择优选择你需要的版本即可)
 ，我们会定期更新应用，如果您有任何问题，请联系我们。
 
-<div style="border: 1px solid #e1e1e1; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); padding: 16px; margin: 16px; background-color: #fff; width: 80%;">
-    <h2 style="margin: 0 0 8px 0; font-size: 1.5em;">2024年07月17日 公告</h2>
-    <p>正式开始维护，新老用户推荐使用<span style="font-weight: bold; color: #d9534f;">自动化脚本</span>完成软件订阅。</p>
+<div style="border: 1px solid #e1e1e1; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); padding: 16px; margin: 16px; background-color: #fff; width: 80%; margin-left: auto; margin-right: auto;">
+  <h2 style="margin: 0 0 8px 0; font-size: 1.5em;">2024年07月17日 公告</h2>
+  <p>正式开始维护，新老用户推荐使用<span style="font-weight: bold; color: #d9534f;">自动化脚本</span>完成软件订阅。</p>
 </div>
 
-<div style="border: 1px solid #e1e1e1; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); padding: 16px; margin: 16px; background-color: #fff; width: 80%;">
-    <h2 style="margin: 0 0 8px 0; font-size: 1.5em;">2024年07月16日 公告</h2>
-    <p>为了解决应用安装问题，我们将在近期发布新的应用安装脚本，敬请期待！</p>
-    <p>具体上线应用，可以参考下方应用列表状态标识。</p>
-    <p>通过固定环境变量文件，解决应用安装问题，不再需要手动创建 <span style="font-weight: bold; color: #d9534f;">.env</span> 文件。</p>
-    <p>对于 <span style="font-weight: bold; color: #d9534f;">FIT2CLOUD 飞致云</span> 旗下开源产品 <span style="font-weight: bold; color: #d9534f;">1Panel</span> 经过多次商讨，依旧无法将原有问题解决。迫于无奈，这次我们采用迂回战术，通过固定环境变量文件的方式解决问题。</p>
-    <p>因此提高了维护成本，但相比于用户体验，我们认为这是值得的。简洁的 <span style="font-weight: bold; color: #d9534f;">docker-compose.yml</span> 才是我们的目标。</p>
-    <p>后续接入 <span style="font-weight: bold; color: #d9534f;">Dockge</span> 应用，将会迎来新的安装方式，敬请期待！</p>
-    <p>新老用户均可使用新的安装方式，升级或安装自动化脚本，无需卸载原有安装脚本。</p>
-    <p>由于结构变化，我们建议您，完全卸载应用后重新安装，以免出现问题。</p>
+<div style="border: 1px solid #e1e1e1; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); padding: 16px; margin: 16px; background-color: #fff; width: 80%; margin-left: auto; margin-right: auto;">
+  <h2 style="margin: 0 0 8px 0; font-size: 1.5em;">2024年07月16日 公告</h2>
+  <p>为了解决应用安装问题，我们将在近期发布新的应用安装脚本，敬请期待！</p>
+  <p>具体上线应用，可以参考下方应用列表状态标识。</p>
+  <p>通过固定环境变量文件，解决应用安装问题，不再需要手动创建 <span style="font-weight: bold; color: #d9534f;">.env</span> 文件。</p>
+  <p>对于 <span style="font-weight: bold; color: #d9534f;">FIT2CLOUD 飞致云</span> 旗下开源产品 <span style="font-weight: bold; color: #d9534f;">1Panel</span> 经过多次商讨，依旧无法将原有问题解决。迫于无奈，这次我们采用迂回战术，通过固定环境变量文件的方式解决问题。</p>
+  <p>因此提高了维护成本，但相比于用户体验，我们认为这是值得的。简洁的 <span style="font-weight: bold; color: #d9534f;">docker-compose.yml</span> 才是我们的目标。</p>
+  <p>后续接入 <span style="font-weight: bold; color: #d9534f;">Dockge</span> 应用，将会迎来新的安装方式，敬请期待！</p>
+  <p>新老用户均可使用新的安装方式，升级或安装自动化脚本，无需卸载原有安装脚本。</p>
+  <p>由于结构变化，我们建议您，完全卸载应用后重新安装，以免出现问题。</p>
 </div>
 
-<div style="border: 1px solid #e1e1e1; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); padding: 16px; margin: 16px; background-color: #fff; width: 80%;">
-    <h2 style="margin: 0 0 8px 0; font-size: 1.5em;">2024年06月14日 公告</h2>
-    <p>由于 <span style="font-weight: bold; color: #d9534f;">1Panel</span> 的升级，自版本 <span style="font-weight: bold; color: #d9534f;">v1.10.10-lts</span> 开始，所有应用均已停止更新！</p>
-    <p>经过与 <span style="font-weight: bold; color: #d9534f;">1Panel</span> 官方商议，由于其认为安装或升级应用或面板出现的问题不属于 <span style="font-weight: bold; color: #d9534f;">Bug</span>，对于使用本仓库的用户，我们深感抱歉！</p>
-    <p>截至目前，我们将不再更新任何应用，如果您有任何问题，请放弃使用当前第三方应用。</p>
-    <p>如果您依旧收到应用更新提示，当前唯一解决升级方案为：卸载应用并重新安装。安装时出现的相关问题，请参考常见问题解决。</p>
-    <p>🥰 祝大家周末愉快~~</p>
+<div style="border: 1px solid #e1e1e1; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); padding: 16px; margin: 16px; background-color: #fff; width: 80%; margin-left: auto; margin-right: auto;">
+  <h2 style="margin: 0 0 8px 0; font-size: 1.5em;">2024年06月14日 公告</h2>
+  <p>由于 <span style="font-weight: bold; color: #d9534f;">1Panel</span> 的升级，自版本 <span style="font-weight: bold; color: #d9534f;">v1.10.10-lts</span> 开始，所有应用均已停止更新！</p>
+  <p>经过与 <span style="font-weight: bold; color: #d9534f;">1Panel</span> 官方商议，由于其认为安装或升级应用或面板出现的问题不属于 <span style="font-weight: bold; color: #d9534f;">Bug</span>，对于使用本仓库的用户，我们深感抱歉！</p>
+  <p>截至目前，我们将不再更新任何应用，如果您有任何问题，请放弃使用当前第三方应用。</p>
+  <p>如果您依旧收到应用更新提示，当前唯一解决升级方案为：卸载应用并重新安装。安装时出现的相关问题，请参考常见问题解决。</p>
+  <p>🥰 祝大家周末愉快~~</p>
 </div>
 
-<div style="border: 1px solid #e1e1e1; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); padding: 16px; margin: 16px; background-color: #fff; width: 80%;">
-    <h2 style="margin: 0 0 8px 0; font-size: 1.5em;">2024年06月12日 公告</h2>
-    <p>由于 <span style="font-weight: bold; color: #d9534f;">1Panel</span> 的升级，造成部分应用无法正常使用，我们考虑到用户体验，决定暂时关闭应用商店更新，等待团队商议解决方案。</p>
-    <h3>拟定解决方案</h3>
-    <ul style="padding-left: 20px;">
-        <li style="margin-bottom: 8px;">当您收到提示 <span style="font-weight: bold; color: #d9534f;">/xxx/xxx/.env</span> 文件不存在时，请手动创建该文件，不需要填写任何内容的空文件。</li>
-        <li style="margin-bottom: 8px;">当您升级 <span style="font-weight: bold; color: #d9534f;">1Panel</span> 出现容器不存在时，请查看容器列表是否正常运行，如果没有运行，可卸载应用并重新安装。</li>
-        <li style="margin-bottom: 8px;">当您升级 <span style="font-weight: bold; color: #d9534f;">1Panel</span> 出现应用无法正常使用时，请查看应用是否正常运行，如果没有运行，可卸载应用并重新安装。</li>
-        <li style="margin-bottom: 8px;">关闭期间，您可能会收到部分应用的更新，没有关系，您可以选择性更新，不会影响您的使用。</li>
-        <li style="margin-bottom: 8px;">由于数据均采用持久化方式存储，卸载应用不会删除数据，您可以放心卸载并重新安装。</li>
-    </ul>
+<div style="border: 1px solid #e1e1e1; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); padding: 16px; margin: 16px; background-color: #fff; width: 80%; margin-left: auto; margin-right: auto;">
+  <h2 style="margin: 0 0 8px 0; font-size: 1.5em;">2024年06月12日 公告</h2>
+  <p>由于 <span style="font-weight: bold; color: #d9534f;">1Panel</span> 的升级，造成部分应用无法正常使用，我们考虑到用户体验，决定暂时关闭应用商店更新，等待团队商议解决方案。</p>
+  <h3>拟定解决方案</h3>
+  <ul style="padding-left: 20px;">
+    <li style="margin-bottom: 8px;">当您收到提示 <span style="font-weight: bold; color: #d9534f;">/xxx/xxx/.env</span> 文件不存在时，请手动创建该文件，不需要填写任何内容的空文件。</li>
+    <li style="margin-bottom: 8px;">当您升级 <span style="font-weight: bold; color: #d9534f;">1Panel</span> 出现容器不存在时，请查看容器列表是否正常运行，如果没有运行，可卸载应用并重新安装。</li>
+    <li style="margin-bottom: 8px;">当您升级 <span style="font-weight: bold; color: #d9534f;">1Panel</span> 出现应用无法正常使用时，请查看应用是否正常运行，如果没有运行，可卸载应用并重新安装。</li>
+    <li style="margin-bottom: 8px;">关闭期间，您可能会收到部分应用的更新，没有关系，您可以选择性更新，不会影响您的使用。</li>
+    <li style="margin-bottom: 8px;">由于数据均采用持久化方式存储，卸载应用不会删除数据，您可以放心卸载并重新安装。</li>
+  </ul>
 </div>
 
-<div style="border: 1px solid #e1e1e1; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); padding: 16px; margin: 16px; background-color: #fff; width: 80%;">
-    <h2 style="margin: 0 0 8px 0; font-size: 1.5em;">2024年06月09日 公告</h2>
-    <p><span style="font-weight: bold; color: #d9534f;">警告</span> 请勿升级 <span style="font-weight: bold; color: #d9534f;">1Panel</span> 到 <span style="font-weight: bold; color: #d9534f;">v1.10.10-lts</span> 版本，否则会导致应用商店无法使用！</p>
+<div style="border: 1px solid #e1e1e1; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); padding: 16px; margin: 16px; background-color: #fff; width: 80%; margin-left: auto; margin-right: auto;">
+  <h2 style="margin: 0 0 8px 0; font-size: 1.5em;">2024年06月09日 公告</h2>
+  <p><span style="font-weight: bold; color: #d9534f;">警告</span> 请勿升级 <span style="font-weight: bold; color: #d9534f;">1Panel</span> 到 <span style="font-weight: bold; color: #d9534f;">v1.10.10-lts</span> 版本，否则会导致应用商店无法使用！</p>
 </div>
 
 ## 维护状态
