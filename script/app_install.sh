@@ -35,6 +35,7 @@ repos=(
 )
 
 for repo in "${repos[@]}"; do
+    echo "$(date): Step 1 - Cloning repository: $repo"
     git clone --depth 1 -b released "$repo" "${BASE_DIR:?}/1panel/resource/apps/local/appstore-localApps" && break
 done
 
