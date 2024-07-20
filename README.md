@@ -212,7 +212,7 @@ curl -sSL https://install.lifebus.top/pre_app_uninstall.sh | bash
 <a href="mailto:qyg2297248353@gmail.com" target="_blank" style="display: block; width: 300px; margin: 16px auto; padding: 16px; border: 1px solid #e1e1e1; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); background-color: #fff; text-decoration: none; color: #333;">
   <div style="display: flex; align-items: center;">
     <div style="width: 50px; height: 50px; border-radius: 50%; border: 2px solid #e1e1e1; overflow: hidden; margin-right: 16px; display: flex; align-items: center; justify-content: center;">
-      <img src="https://file.lifebus.top/imgs/google_gmail_logo.png" alt="Profile Picture" style="width: 32px; object-fit: contain;">
+      <img src="https://file.lifebus.top/imgs/google_gmail_logo.png" alt="Gmail 邮箱" width="32px" style="width: 32px; object-fit: contain;">
     </div>
     <div style="flex: 1;">
       <div style="font-weight: bold;">Gmail 邮箱</div>
@@ -224,7 +224,7 @@ curl -sSL https://install.lifebus.top/pre_app_uninstall.sh | bash
 <a href="https://blog.lifebus.top/" target="_blank" style="display: block; width: 300px; margin: 16px auto; padding: 16px; border: 1px solid #e1e1e1; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); background-color: #fff; text-decoration: none; color: #333;">
   <div style="display: flex; align-items: center;">
     <div style="width: 50px; height: 50px; border-radius: 50%; border: 2px solid #e1e1e1; overflow: hidden; margin-right: 16px; display: flex; align-items: center; justify-content: center;">
-      <img src="https://file.lifebus.top/imgs/ms_studio_logo.png" alt="Profile Picture" style="width: 32px; object-fit: contain;">
+      <img src="https://file.lifebus.top/imgs/ms_studio_logo.png" alt="人生足迹 · 博客" width="32px" style="width: 32px; object-fit: contain;">
     </div>
     <div style="flex: 1;">
       <div style="font-weight: bold;">人生足迹 · 博客</div>
@@ -236,7 +236,7 @@ curl -sSL https://install.lifebus.top/pre_app_uninstall.sh | bash
 <a href="https://github.com/QYG2297248353" target="_blank" style="display: block; width: 300px; margin: 16px auto; padding: 16px; border: 1px solid #e1e1e1; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); background-color: #fff; text-decoration: none; color: #333;">
   <div style="display: flex; align-items: center;">
     <div style="width: 50px; height: 50px; border-radius: 50%; border: 2px solid #e1e1e1; overflow: hidden; margin-right: 16px; display: flex; align-items: center; justify-content: center;">
-      <img src="https://file.lifebus.top/imgs/github_logo.png" alt="Profile Picture" style="width: 32px; object-fit: contain;">
+      <img src="https://file.lifebus.top/imgs/github_logo.png" alt="GitHub" width="32px" style="width: 32px; object-fit: contain;">
     </div>
     <div style="flex: 1;">
       <div style="font-weight: bold;">GitHub</div>
@@ -248,7 +248,7 @@ curl -sSL https://install.lifebus.top/pre_app_uninstall.sh | bash
 <a href="https://git.lifebus.top/" target="_blank" style="display: block; width: 300px; margin: 16px auto; padding: 16px; border: 1px solid #e1e1e1; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); background-color: #fff; text-decoration: none; color: #333;">
   <div style="display: flex; align-items: center;">
     <div style="width: 50px; height: 50px; border-radius: 50%; border: 2px solid #e1e1e1; overflow: hidden; margin-right: 16px; display: flex; align-items: center; justify-content: center;">
-      <img src="https://file.lifebus.top/imgs/gitea_logo.png" alt="Profile Picture" style="width: 32px; object-fit: contain;">
+      <img src="https://file.lifebus.top/imgs/gitea_logo.png" alt="Gitea" width="32px" style="width: 32px; object-fit: contain;">
     </div>
     <div style="flex: 1;">
       <div style="font-weight: bold;">Gitea</div>
@@ -260,7 +260,7 @@ curl -sSL https://install.lifebus.top/pre_app_uninstall.sh | bash
 <a href="https://www.youtube.com/@cn_ms_studio" target="_blank" style="display: block; width: 300px; margin: 16px auto; padding: 16px; border: 1px solid #e1e1e1; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); background-color: #fff; text-decoration: none; color: #333;">
   <div style="display: flex; align-items: center;">
     <div style="width: 50px; height: 50px; border-radius: 50%; border: 2px solid #e1e1e1; overflow: hidden; margin-right: 16px; display: flex; align-items: center; justify-content: center;">
-      <img src="https://file.lifebus.top/imgs/google_youtube_logo.png" alt="Profile Picture" style="width: 32px; object-fit: contain;">
+      <img src="https://file.lifebus.top/imgs/google_youtube_logo.png" alt="YouTube" width="32px" style="width: 32px; object-fit: contain;">
     </div>
     <div style="flex: 1;">
       <div style="font-weight: bold;">YouTube</div>
@@ -272,7 +272,7 @@ curl -sSL https://install.lifebus.top/pre_app_uninstall.sh | bash
 <a href="https://twitter.com/ms2297248353" target="_blank" style="display: block; width: 300px; margin: 16px auto; padding: 16px; border: 1px solid #e1e1e1; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); background-color: #fff; text-decoration: none; color: #333;">
   <div style="display: flex; align-items: center;">
     <div style="width: 50px; height: 50px; border-radius: 50%; border: 2px solid #e1e1e1; overflow: hidden; margin-right: 16px; display: flex; align-items: center; justify-content: center;">
-      <img src="https://file.lifebus.top/imgs/twitter_x_logo.png" alt="Profile Picture" style="width: 32px; object-fit: contain;">
+      <img src="https://file.lifebus.top/imgs/twitter_x_logo.png" alt="Twitter" width="32px" style="width: 32px; object-fit: contain;">
     </div>
     <div style="flex: 1;">
       <div style="font-weight: bold;">Twitter</div>
