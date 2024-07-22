@@ -18,6 +18,7 @@ check_command "which"
 check_command "xargs"
 check_command "grep"
 check_command "cut"
+check_command "awk"
 
 BASE_DIR=$(which 1pctl | xargs grep '^BASE_DIR=' | cut -d'=' -f2)
 echo "Step Init - 1panel install directory: $BASE_DIR"
@@ -65,8 +66,12 @@ for app_directory in "${APPS_DIR:?}"/*; do
     fi
 
     sed -i "s/^  key: ${app_name}/  key: ${app_name_pre}/g" "${LOCAL_DIR:?}/$app_name_pre/data.yml"
-    sed -i "/^name: /s/\(name: .*\)/\1 预览版/" "${LOCAL_DIR:?}/$app_name_pre/data.yml"
-    sed -i "/^  name: /s/\(  name: .*\)/\1 预览版/" "${LOCAL_DIR:?}/$app_name_pre/data.yml"
+
+    awk '/^name: / {print $0, "预览版"; next} {print}' "${LOCAL_DIR:?}/$app_name_pre/data.yml" > "${LOCAL_DIR:?}/$app_name_pre/data_tmp.yml"
+    mv "${LOCAL_DIR:?}/$app_name_pre/data_tmp.yml" "${LOCAL_DIR:?}/$app_name_pre/data.yml"
+    awk '/^  name: / {print $0, "预览版"; next} {print}' "${LOCAL_DIR:?}/$app_name_pre/data.yml" > "${LOCAL_DIR:?}/$app_name_pre/data_tmp.yml"
+    mv "${LOCAL_DIR:?}/$app_name_pre/data_tmp.yml" "${LOCAL_DIR:?}/$app_name_pre/data.yml"
+
 done
 
 echo "$(date): Step 3 - Copying envs directory..."
