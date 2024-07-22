@@ -67,9 +67,7 @@ for app_directory in "${APPS_DIR:?}"/*; do
 
     sed -i "s/^  key: ${app_name}/  key: ${app_name_pre}/g" "${LOCAL_DIR:?}/$app_name_pre/data.yml"
 
-    awk '/^name: / {print $0, "预览版"; next} {print}' "${LOCAL_DIR:?}/$app_name_pre/data.yml" > "${LOCAL_DIR:?}/$app_name_pre/data_tmp.yml"
-    mv "${LOCAL_DIR:?}/$app_name_pre/data_tmp.yml" "${LOCAL_DIR:?}/$app_name_pre/data.yml"
-    awk '/^  name: / {print $0, "预览版"; next} {print}' "${LOCAL_DIR:?}/$app_name_pre/data.yml" > "${LOCAL_DIR:?}/$app_name_pre/data_tmp.yml"
+    awk '{if (/^name: /) {sub(/$/, " 预览版"); print} else if (/^  name: /) {sub(/$/, " 预览版"); print} else {print}}' "${LOCAL_DIR:?}/$app_name_pre/data.yml" > "${LOCAL_DIR:?}/$app_name_pre/data_tmp.yml"
     mv "${LOCAL_DIR:?}/$app_name_pre/data_tmp.yml" "${LOCAL_DIR:?}/$app_name_pre/data.yml"
 
 done
