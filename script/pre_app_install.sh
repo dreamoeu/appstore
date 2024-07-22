@@ -63,6 +63,10 @@ for app_directory in "${APPS_DIR:?}"/*; do
         echo "$(date): Step 2 - Installed applications $app_name"
         echo "$(date): Step 2 - Copied directory $app_directory to $LOCAL_DIR/"
     fi
+
+    sed -i "s/^  key: ${app_name}/  key: ${app_name_pre}/g" "${LOCAL_DIR:?}/$app_name_pre/data.yml"
+    sed -i "/^name: /s/name: \(.*\)/name: \1 预览版/" "${LOCAL_DIR:?}/$app_name_pre/data.yml"
+    sed -i "/^  name: /s/  name: \(.*\)/  name: \1 预览版/" "${LOCAL_DIR:?}/$app_name_pre/data.yml"
 done
 
 echo "$(date): Step 3 - Copying envs directory..."
