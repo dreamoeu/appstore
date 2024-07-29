@@ -5,7 +5,7 @@ labels: app
 assignees: qyg2297248353
 body:
   - type: markdown
-    id: environment
+    id: app_version
     attributes:
       value: "## 基本信息"
   - type: input
@@ -22,10 +22,6 @@ body:
     attributes:
       label: "邮箱"
       description: "请提供您的邮箱"
-  - type: markdown
-    id: details
-    attributes:
-      value: "## 需求应用信息"
   - type: dropdown
     id: app_type
     attributes:
