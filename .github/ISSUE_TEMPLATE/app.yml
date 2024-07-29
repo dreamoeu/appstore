@@ -2,7 +2,7 @@ name: 💡 提交应用
 description: 提交您想要添加到 1Panel 的应用
 title: "[应用提交]"
 labels: app
-assignees: qyg2297248353
+assignees: QYG2297248353
 body:
   - type: markdown
     id: base_info
@@ -24,6 +24,8 @@ body:
       description: "请提供您的邮箱"
   - type: dropdown
     id: app_type
+    validations:
+      required: true
     attributes:
       label: "应用类型"
       multiple: true
@@ -40,8 +42,6 @@ body:
       description: "请提供应用的 Docker Hub 或 GitHub 或 官网 链接"
   - type: input
     id: app_name
-    validations:
-      required: true
     attributes:
       label: "应用名称"
       description: "请提供应用的名称"
@@ -59,7 +59,7 @@ body:
   - type: checkboxes
     id: authorization
     attributes:
-      label: 应用授权
+      label: 条款确认
       description: "请确认您已阅读并同意以下条款"
       options:
         - label: "我已确认该应用 允许在 中国大陆 使用"
