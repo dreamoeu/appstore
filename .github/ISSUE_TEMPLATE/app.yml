@@ -30,13 +30,14 @@ body:
       options:
         - 开源
         - 闭源
+      default: 0
   - type: input
     id: app_url
     validations:
       required: true
     attributes:
-      label: "Docker Hub 或 GitHub 链接"
-      description: "请提供应用的 Docker Hub 或 GitHub 链接"
+      label: "应用链接"
+      description: "请提供应用的 Docker Hub 或 GitHub 或 官网 链接"
   - type: input
     id: app_name
     validations:
@@ -46,15 +47,11 @@ body:
       description: "请提供应用的名称"
   - type: input
     id: app_version
-    validations:
-      required: true
     attributes:
       label: "应用版本"
       description: "请提供应用的版本"
   - type: textarea
     id: details
-    validations:
-      required: true
     attributes:
       label: "应用描述"
       description: "请提供应用的描述"
@@ -62,8 +59,10 @@ body:
   - type: checkboxes
     id: authorization
     attributes:
-      label: 上架通知授权
-      description: "是否授权 1Panel 在应用上架时通知您"
+      label: 应用授权
+      description: "请确认您已阅读并同意以下条款"
       options:
-        - label: "是"
+        - label: "我已确认该应用 允许在 中国大陆 使用"
+          required: true
+        - label: "我已确认该应用 符合 中国大陆 相关法律法规"
           required: true
