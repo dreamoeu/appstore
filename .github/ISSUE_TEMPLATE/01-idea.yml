@@ -1,0 +1,72 @@
+name: 提交应用
+description: 提交您想要添加到 1Panel 的应用
+title: "[应用提交]"
+labels: app
+assignees: qyg2297248353
+body:
+  - type: markdown
+    id: environment
+    attributes:
+      value: "## 基本信息"
+  - type: input
+    id: version
+    validations:
+      required: true
+    attributes:
+      label: "1Panel 版本号"
+      description: "请提供您的 1Panel 版本号"
+  - type: input
+    id: email
+    validations:
+      required: true
+    attributes:
+      label: "邮箱"
+      description: "请提供您的邮箱"
+  - type: markdown
+    id: details
+    attributes:
+      value: "## 需求应用信息"
+  - type: dropdown
+    id: app_type
+    attributes:
+      label: "应用类型"
+      multiple: true
+      options:
+        - 开源
+        - 闭源
+  - type: input
+    id: app_url
+    validations:
+      required: true
+    attributes:
+      label: "Docker Hub 或 GitHub 链接"
+      description: "请提供应用的 Docker Hub 或 GitHub 链接"
+  - type: input
+    id: app_name
+    validations:
+      required: true
+    attributes:
+      label: "应用名称"
+      description: "请提供应用的名称"
+  - type: input
+    id: app_version
+    validations:
+      required: true
+    attributes:
+      label: "应用版本"
+      description: "请提供应用的版本"
+  - type: markdown
+    id: details
+    validations:
+      required: true
+    attributes:
+      label: "应用描述"
+      description: "请提供应用的描述"
+  - type: checkboxes
+    id: authorization
+    attributes:
+      label: 上架通知授权
+      description: "是否授权 1Panel 在应用上架时通知您"
+      options:
+        - label: "是"
+          required: true

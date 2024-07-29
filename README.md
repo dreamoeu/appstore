@@ -5,6 +5,16 @@
 本仓库中的所有应用不会与 `1Panel` 官方应用商店冲突(存在相同应用并不影响后续的安装与升级,择优选择你需要的版本即可)
 ，我们会定期更新应用，如果您有任何问题，请联系我们。
 
+---
+
+<div style="border: 1px solid #e1e1e1; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); padding: 16px; margin: 16px; background-color: #fff; width: 80%; margin-left: auto; margin-right: auto;">
+  <h2 style="margin: 0 0 8px 0; font-size: 1.5em;">2024年07月29日 公告</h2>
+  <p>版本 <span style="font-weight: bold; color: #d9534f;">v1.10.13-lts</span> 已经支持 <span style="font-weight: bold; color: #d9534f;">env_file</span> 文件，但是迫于稳定性考虑，我们依旧采用固定环境变量文件的方式解决问题。</p>
+  <p>近期我们上架了很多新应用，如果您有任何问题，请联系我们。</p>
+  <p>欢迎投稿，我们会根据您的需求，上架更多的应用。</p>
+  <p>🥰 <a href="https://blog.lifebus.top/" target="_blank" >新疆萌森软件开发工作室</a> 祝您生活愉快！</p>
+</div>
+
 <div style="border: 1px solid #e1e1e1; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); padding: 16px; margin: 16px; background-color: #fff; width: 80%; margin-left: auto; margin-right: auto;">
   <h2 style="margin: 0 0 8px 0; font-size: 1.5em;">2024年07月17日 公告</h2>
   <p>正式开始维护，新老用户推荐使用<span style="font-weight: bold; color: #d9534f;">自动化脚本</span>完成软件订阅。</p>
@@ -49,6 +59,8 @@
   <p><span style="font-weight: bold; color: #d9534f;">警告</span> 请勿升级 <span style="font-weight: bold; color: #d9534f;">1Panel</span> 到 <span style="font-weight: bold; color: #d9534f;">v1.10.10-lts</span> 版本，否则会导致应用商店无法使用！</p>
 </div>
 
+---
+
 ## 维护状态
 
 | 状态 |                                                图标                                                |          应用名称           |                             应用官网                              | 短的描述                                                                 |    集合     |
@@ -56,8 +68,8 @@
 | 🟢 |         <img height="22" src="https://file.lifebus.top/apps/alist/logo.png" width="22"/>         |          AList          |                     https://alist.nn.ci/                      | 一款支持多重存储的文件列表程序                                                      |           |
 | 🟢 |         <img height="22" src="https://file.lifebus.top/apps/bark/logo.png" width="22"/>          |          Bark           |                     https://bark.day.app/                     | 一款注重隐私、安全可控的自定义通知推送工具                                                |           |
 | 🟢 |        <img height="22" src="https://file.lifebus.top/apps/casdoor/logo.png" width="22"/>        |         Casdoor         |                     https://casdoor.org/                      | 身份和访问管理(IAM)/单点登录(SSO)平台                                             |           |
-| 🔴 |                                                                                                  |      Cookie Cloud       |           https://github.com/easychen/CookieCloud/            | CookieCloud是一个和自架服务器同步浏览器Cookie和LocalStorage的小工具                     |           |
-| 🔴 |                                                                                                  |         DeepLX          |                  https://deeplx.owo.network/                  | DeepL免费API（无需TOKEN）                                                  |           |
+| 🟢 |     <img height="22" src="https://file.lifebus.top/apps/cookie-cloud/logo.png" width="22"/>      |      Cookie Cloud       |           https://github.com/easychen/CookieCloud/            | CookieCloud是一个和自架服务器同步浏览器Cookie和LocalStorage的小工具                     |           |
+| 🟢 |        <img height="22" src="https://file.lifebus.top/apps/deeplx/logo.png" width="22"/>         |         DeepLX          |                  https://deeplx.owo.network/                  | DeepL免费API（无需TOKEN）                                                  |           |
 | 🟢 |        <img height="22" src="https://file.lifebus.top/apps/dockge/logo.png" width="22"/>         |         Dockge          |                   https://dockge.kuma.pet/                    | 面向堆栈的管理器                                                             |           |
 | 🟢 | <img height="22" src="https://file.lifebus.top/apps/elastic-elasticsearch/logo.png" width="22"/> |      Elasticsearch      |             https://www.elastic.co/elasticsearch/             | Elasticsearch 是一个分布式、RESTful 风格的搜索和数据分析引擎                            |  Elastic  |
 | 🟢 |    <img height="22" src="https://file.lifebus.top/apps/elastic-kibana/logo.png" width="22"/>     |         Kibana          |                https://www.elastic.co/kibana/                 | Kibana 针对大规模数据快速运行数据分析                                               |  Elastic  |
@@ -92,6 +104,7 @@
 | 🔴 |                                                                                                  |        SpeedTest        |                  https://www.speedtest.net/                   | 互联网速度测试                                                              | SpeedTest |
 | 🔴 |                                                                                                  |    SpeedTest-Tracker    |              https://docs.speedtest-tracker.dev/              | Speedtest Tracker 是一款自托管互联网性能跟踪应用程序，可针对 Ookla 的 Speedtest 服务运行速度测试检查 |           |
 | 🟢 |      <img height="22" src="https://file.lifebus.top/apps/stream-rec/logo.png" width="22"/>       |       Stream-Rec        |            https://github.com/hua0512/stream-rec/             | Stream-rec是一个用于各种流媒体服务的自动流媒体录制工具                                     |           |
+| 🟢 |   <img height="22" src="https://file.lifebus.top/apps/telegram-bot-api/logo.png" width="22"/>    |    Telegram Bot Api     |                     https://telegram.org/                     | 自建 Telegram Bot API 服务器                                              |           |
 | 🟢 |     <img height="22" src="https://file.lifebus.top/apps/transmission/logo.png" width="22"/>      |      Transmission       |                  https://transmissionbt.com/                  | 快速、简单、免费的 Bittorrent 客户端                                             |           |
 | 🟢 |      <img height="22" src="https://file.lifebus.top/apps/uptime-kuma/logo.png" width="22"/>      |       Uptime Kuma       |                   https://uptime.kuma.pet/                    | 自托管监控工具                                                              |           |
 | 🟢 |         <img height="22" src="https://file.lifebus.top/apps/umami/logo.png" width="22"/>         |          Umami          |                       https://umami.is/                       | 为速度和效率而构建的网站分析                                                       |           |
@@ -104,6 +117,8 @@
 >
 > 维护状态：🟢 维护中 🔴 未维护 🟡 表示不定期维护
 
+---
+
 ## 应用安装
 
 > 温馨提示：
@@ -111,9 +126,11 @@
 >
 > 我们建议您在安装之前备份您的数据，或手动安装。
 
-### 方案一：自动化安装
+### 自动化安装
 
-如果您不想每次都手动执行命令，可以使用一键式安装。我们优先推荐此方式。
+一键式安装，无需手动操作，自动完成 1Panel应用 上架应用商店。
+
+每三小时自动更新一次应用列表。
 
 ```shell
 curl -sSL https://install.lifebus.top/auto_install.sh | bash
@@ -133,22 +150,22 @@ curl -sSL https://install.lifebus.top/auto_uninstall.sh | bash
 
 + 应用数据目录：`${应用持久化目录}`
 
-### 方案二：手动安装
+### 手动安装模式
 
-应用的升级与更新均需要重新执行安装脚本。
-
-#### 手动执行模式
+更新时机由自己把握，手动执行命令。
 
 ```shell
 curl -sSL https://install.lifebus.top/app_install.sh | bash
 ```
 
-### 方案三：计划任务模式
+### 计划任务模式
 
 将内容写入Shell计划任务中，设定定期执行。
 
 ```shell
 #!/bin/bash
+
+# 此处可以定义代理方案
 
 script_url="https://install.lifebus.top/app_install.sh"
 
@@ -156,9 +173,14 @@ echo "Downloading and executing script from $script_url..."
 bash <(curl -sL "$script_url")
 
 echo "Script execution completed."
+
 ```
 
 #### 配置脚本网络代理
+
+如果您的网络环境需要代理，请在脚本执行前配置代理。
+
+可将以下脚本插入到 `计划任务模式` 的脚本中。
 
 ```sh
 proxy_protocols="http"
@@ -167,6 +189,8 @@ proxy_port="server port"
 export http_proxy="$proxy_protocols://$proxy_server:$proxy_port"
 export https_proxy="$proxy_protocols://$proxy_server:$proxy_port"
 ```
+
+---
 
 ## 安装 `Pre 尝鲜版` 应用
 
@@ -186,6 +210,20 @@ curl -sSL https://install.lifebus.top/pre_app_install.sh | bash
 curl -sSL https://install.lifebus.top/pre_app_uninstall.sh | bash
 ```
 
+---
+
+## 卸载所有本地应用
+
+通过此脚本，您可以卸载所有本地应用，但是不会删除数据。
+
+可能您的库中遗留了一些无用的应用，您可以通过此脚本进行清理。该脚本不影响 `自动化脚本` 的应用更新。
+
+```sh
+curl -sSL https://install.lifebus.top/local_app_uninstall.sh | bash
+```
+
+---
+
 ## 常见问题
 
 + 升级失败
@@ -203,11 +241,15 @@ curl -sSL https://install.lifebus.top/pre_app_uninstall.sh | bash
     + 关于 `前置检查` 依旧需要填写 `数据库` 相关连接信息，是因为其提供的能力并不是完全可靠，避免后期出现问题，我们采用持久化的方式存储。
     + 如果您的环境符合要求，但是依旧无法安装，请联系我们。
 
+---
+
 ## 温馨提示
 
 安装应用前请查看应用说明，了解应用的使用方法和注意事项。
 当前第三方库应用均为开源应用，我们不对应用的安全性和稳定性负责。
 如果您在使用过程中遇到问题，请查看应用的官方文档或社区，或者联系我们。
+
+---
 
 ## 联系我们
 
