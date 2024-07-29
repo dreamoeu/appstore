@@ -5,6 +5,8 @@
 本仓库中的所有应用不会与 `1Panel` 官方应用商店冲突(存在相同应用并不影响后续的安装与升级,择优选择你需要的版本即可)
 ，我们会定期更新应用，如果您有任何问题，请联系我们。
 
+---
+
 > [!NOTE]
 > ## 2024年07月29日 公告
 >
@@ -74,58 +76,65 @@
 
 </details>
 
+---
+
 ## 维护状态
 
-| 状态 |                                                图标                                                |          应用名称           |                   应用官网                    | 短的描述                                                                 |    集合     |
-|:--:|:------------------------------------------------------------------------------------------------:|:-----------------------:|:-----------------------------------------:|:---------------------------------------------------------------------|:---------:|
-| 🟢 |         <img height="22" src="https://file.lifebus.top/apps/alist/logo.png" width="22"/>         |          AList          |           https://alist.nn.ci/            | 一款支持多重存储的文件列表程序                                                      |           |
-| 🟢 |         <img height="22" src="https://file.lifebus.top/apps/bark/logo.png" width="22"/>          |          Bark           |           https://bark.day.app/           | 一款注重隐私、安全可控的自定义通知推送工具                                                |           |
-| 🟢 |        <img height="22" src="https://file.lifebus.top/apps/casdoor/logo.png" width="22"/>        |         Casdoor         |           https://casdoor.org/            | 身份和访问管理(IAM)/单点登录(SSO)平台                                             |           |
-| 🔴 |                                                                                                  |      Cookie Cloud       | https://github.com/easychen/CookieCloud/  | CookieCloud是一个和自架服务器同步浏览器Cookie和LocalStorage的小工具                     |           |
-| 🔴 |                                                                                                  |         DeepLX          |        https://deeplx.owo.network/        | DeepL免费API（无需TOKEN）                                                  |           |
-| 🟢 |        <img height="22" src="https://file.lifebus.top/apps/dockge/logo.png" width="22"/>         |         Dockge          |         https://dockge.kuma.pet/          | 面向堆栈的管理器                                                             |           |
-| 🟢 | <img height="22" src="https://file.lifebus.top/apps/elastic-elasticsearch/logo.png" width="22"/> |      Elasticsearch      |   https://www.elastic.co/elasticsearch/   | Elasticsearch 是一个分布式、RESTful 风格的搜索和数据分析引擎                            |  Elastic  |
-| 🟢 |    <img height="22" src="https://file.lifebus.top/apps/elastic-kibana/logo.png" width="22"/>     |         Kibana          |      https://www.elastic.co/kibana/       | Kibana 针对大规模数据快速运行数据分析                                               |  Elastic  |
-| 🟢 |         <img height="22" src="https://file.lifebus.top/apps/emby/logo.png" width="22"/>          |          Emby           |            https://emby.media/            | Emby Server 是一款个人媒体服务器，可在几乎所有设备上运行应用程序                               |           |
-| 🟢 |         <img height="22" src="https://file.lifebus.top/apps/emby/logo.png" width="22"/>          |      Emby-lovechen      |            https://emby.media/            | 【开心版】Emby Server 是一款个人媒体服务器，可在几乎所有设备上运行应用程序                          |           |
-| 🟢 |         <img height="22" src="https://file.lifebus.top/apps/gitea/logo.png" width="22"/>         |          Gitea          |             https://gitea.io/             | 私有、快速、可靠的 DevOps 平台                                                  |   Gitea   |
-| 🟢 |         <img height="22" src="https://file.lifebus.top/apps/gitea/logo.png" width="22"/>         |      Gitea Runner       |             https://gitea.io/             | 【Runner】私有、快速、可靠的 DevOps 平台                                          |   Gitea   |
-| 🟢 |         <img height="22" src="https://file.lifebus.top/apps/halo/logo.png" width="22"/>          |          Halo           |             https://halo.run/             | 强大易用的开源建站工具                                                          |           |
-| 🟢 |        <img height="22" src="https://file.lifebus.top/apps/immich/logo.png" width="22"/>         |         Immich          |            https://immich.app/            | 【完整版本】高性能自托管照片和视频管理解决方案                                              |  Immich   |
-| 🟢 |        <img height="22" src="https://file.lifebus.top/apps/immich/logo.png" width="22"/>         |      Immich-Server      |            https://immich.app/            | 【主服务模块】高性能自托管照片和视频管理解决方案                                             |  Immich   |
-| 🟢 |        <img height="22" src="https://file.lifebus.top/apps/immich/logo.png" width="22"/>         | Immich-Machine-Learning |            https://immich.app/            | 【机器学习模块】高性能自托管照片和视频管理解决方案                                            |  Immich   |
-| 🟢 |       <img height="22" src="https://file.lifebus.top/apps/iyuu-plus/logo.png" width="22"/>       |        IYUU Plus        |           https://doc.iyuu.cn/            | 基于特征码的索引工具                                                           |           |
-| 🟢 |       <img height="22" src="https://file.lifebus.top/apps/jellyfin/logo.png" width="22"/>        |        Jellyfin         |           https://jellyfin.org/           | 自由软件媒体系统                                                             |           |
-| 🔴 |                                                                                                  |        LinkDing         | https://github.com/sissbruecker/linkding/ | 自托管书签管理器                                                             |           |
-| 🔴 |                                                                                                  |          MinIO          |              https://min.io/              | MinIO 是一种高性能、兼容 S3 的对象存储                                             |           |
-| 🟢 |      <img height="22" src="https://file.lifebus.top/apps/movie-pilot/logo.png" width="22"/>      |       MoviePilot        |   https://github.com/jxxghp/MoviePilot/   | NAS媒体库自动化管理工具                                                        |           |
-| 🟢 |         <img height="22" src="https://file.lifebus.top/apps/mysql/logo.png" width="22"/>         |          MySQL          |          https://www.mysql.com/           | 关系数据库管理系统                                                            |   MySQL   |
-| 🟢 |        <img height="22" src="https://file.lifebus.top/apps/mariadb/logo.png" width="22"/>        |         MariaDB         |           https://mariadb.org/            | 【MySQL分支】创新的开源数据库                                                    |   MySQL   |
-| 🟢 |        <img height="22" src="https://file.lifebus.top/apps/percona/logo.png" width="22"/>        |         Percona         |         https://www.percona.com/          | 【MySQL分支】关系数据库管理系统                                                   |   MySQL   |
-| 🟢 |         <img height="22" src="https://file.lifebus.top/apps/nacos/logo.png" width="22"/>         |          Nacos          |             https://nacos.io/             | 动态服务发现、配置管理和服务管理平台                                                   |           |
-| 🟢 |         <img height="22" src="https://file.lifebus.top/apps/nezha/logo.png" width="22"/>         |          NeZha          |            https://nezha.wiki/            | 【哪吒监控】开源、轻量、易用的服务器监控、运维工具                                            |           |
-| 🟢 |        <img height="22" src="https://file.lifebus.top/apps/onedev/logo.png" width="22"/>         |         OneDev          |            https://onedev.io/             | DevOps 平台、带有 CI/CD、看板和软件包的 Git 服务器                                   |           |
-| 🟢 |        <img height="22" src="https://file.lifebus.top/apps/outline/logo.png" width="22"/>        |         OutLine         |        https://www.getoutline.com/        | 快速、协作的团队知识库                                                          |           |
-| 🟢 |      <img height="22" src="https://file.lifebus.top/apps/postgresql/logo.png" width="22"/>       |       PostgreSQL        |        https://www.postgresql.org/        | 世界上最先进的开源关系数据库                                                       |           |
-| 🟢 |      <img height="22" src="https://file.lifebus.top/apps/qbittorrent/logo.png" width="22"/>      |       qBittorrent       |       https://www.qbittorrent.org/        | qBittorrent 比特流客户端                                                   |           |
-| 🟢 |       <img height="22" src="https://file.lifebus.top/apps/qinglong/logo.png" width="22"/>        |        QingLong         |    https://github.com/whyour/qinglong/    | 【青龙】支持 Python3、JavaScript、Shell、Typescript 的定时任务管理平台                 |           |
-| 🟢 |         <img height="22" src="https://file.lifebus.top/apps/redis/logo.png" width="22"/>         |          Redis          |             https://redis.io/             | 从世界上最快的内存数据库创建者那里获取该数据库                                              |           |
-| 🔴 |                                                                                                  |        Sentinel         |         https://sentinelguard.io/         | 面向分布式、多语言异构化服务架构的流量治理组件                                              |           |
-| 🟢 |        <img height="22" src="https://file.lifebus.top/apps/siyuan/logo.png" width="22"/>         |         SiYuan          |         https://b3log.org/siyuan/         | 【思源笔记】一款隐私优先、自托管、完全开源的个人知识管理软件                                       |           |
-| 🔴 |                                                                                                  |        SpeedTest        |        https://www.speedtest.net/         | 互联网速度测试                                                              | SpeedTest |
-| 🔴 |                                                                                                  |    SpeedTest-Tracker    |    https://docs.speedtest-tracker.dev/    | Speedtest Tracker 是一款自托管互联网性能跟踪应用程序，可针对 Ookla 的 Speedtest 服务运行速度测试检查 |           |
-| 🟢 |      <img height="22" src="https://file.lifebus.top/apps/stream-rec/logo.png" width="22"/>       |       Stream-Rec        |  https://github.com/hua0512/stream-rec/   | Stream-rec是一个用于各种流媒体服务的自动流媒体录制工具                                     |           |
-| 🟢 |     <img height="22" src="https://file.lifebus.top/apps/transmission/logo.png" width="22"/>      |      Transmission       |        https://transmissionbt.com/        | 快速、简单、免费的 Bittorrent 客户端                                             |           |
-| 🟢 |      <img height="22" src="https://file.lifebus.top/apps/uptime-kuma/logo.png" width="22"/>      |       Uptime Kuma       |         https://uptime.kuma.pet/          | 自托管监控工具                                                              |           |
-| 🟢 |         <img height="22" src="https://file.lifebus.top/apps/umami/logo.png" width="22"/>         |          Umami          |             https://umami.is/             | 为速度和效率而构建的网站分析                                                       |           |
-| 🔴 |                                                                                                  |          Yarr           |      https://github.com/nkanaev/yarr      | Rss 阅读器                                                              |           |
-| 🔴 |                                                                                                  |         Ztncui          |         https://www.zerotier.com/         | 【自建服务端】ZeroTier 可让您构建几乎任何类型的现代化安全多点虚拟化网络                             | ZeroTier  |
+| 状态 |                                                图标                                                |          应用名称           |                             应用官网                              | 短的描述                                                                 |    集合     |
+|:--:|:------------------------------------------------------------------------------------------------:|:-----------------------:|:-------------------------------------------------------------:|:---------------------------------------------------------------------|:---------:|
+| 🟢 |         <img height="22" src="https://file.lifebus.top/apps/alist/logo.png" width="22"/>         |          AList          |                     https://alist.nn.ci/                      | 一款支持多重存储的文件列表程序                                                      |           |
+| 🟢 |         <img height="22" src="https://file.lifebus.top/apps/bark/logo.png" width="22"/>          |          Bark           |                     https://bark.day.app/                     | 一款注重隐私、安全可控的自定义通知推送工具                                                |           |
+| 🟢 |        <img height="22" src="https://file.lifebus.top/apps/casdoor/logo.png" width="22"/>        |         Casdoor         |                     https://casdoor.org/                      | 身份和访问管理(IAM)/单点登录(SSO)平台                                             |           |
+| 🟢 |     <img height="22" src="https://file.lifebus.top/apps/cookie-cloud/logo.png" width="22"/>      |      Cookie Cloud       |           https://github.com/easychen/CookieCloud/            | CookieCloud是一个和自架服务器同步浏览器Cookie和LocalStorage的小工具                     |           |
+| 🟢 |        <img height="22" src="https://file.lifebus.top/apps/deeplx/logo.png" width="22"/>         |         DeepLX          |                  https://deeplx.owo.network/                  | DeepL免费API（无需TOKEN）                                                  |           |
+| 🟢 |        <img height="22" src="https://file.lifebus.top/apps/dockge/logo.png" width="22"/>         |         Dockge          |                   https://dockge.kuma.pet/                    | 面向堆栈的管理器                                                             |           |
+| 🟢 | <img height="22" src="https://file.lifebus.top/apps/elastic-elasticsearch/logo.png" width="22"/> |      Elasticsearch      |             https://www.elastic.co/elasticsearch/             | Elasticsearch 是一个分布式、RESTful 风格的搜索和数据分析引擎                            |  Elastic  |
+| 🟢 |    <img height="22" src="https://file.lifebus.top/apps/elastic-kibana/logo.png" width="22"/>     |         Kibana          |                https://www.elastic.co/kibana/                 | Kibana 针对大规模数据快速运行数据分析                                               |  Elastic  |
+| 🟢 |         <img height="22" src="https://file.lifebus.top/apps/emby/logo.png" width="22"/>          |          Emby           |                      https://emby.media/                      | Emby Server 是一款个人媒体服务器，可在几乎所有设备上运行应用程序                               |           |
+| 🟢 |         <img height="22" src="https://file.lifebus.top/apps/emby/logo.png" width="22"/>          |      Emby-lovechen      |                      https://emby.media/                      | 【开心版】Emby Server 是一款个人媒体服务器，可在几乎所有设备上运行应用程序                          |           |
+| 🟢 |         <img height="22" src="https://file.lifebus.top/apps/gitea/logo.png" width="22"/>         |          Gitea          |                       https://gitea.io/                       | 私有、快速、可靠的 DevOps 平台                                                  |   Gitea   |
+| 🟢 |         <img height="22" src="https://file.lifebus.top/apps/gitea/logo.png" width="22"/>         |      Gitea Runner       |                       https://gitea.io/                       | 【Runner】私有、快速、可靠的 DevOps 平台                                          |   Gitea   |
+| 🟢 |         <img height="22" src="https://file.lifebus.top/apps/halo/logo.png" width="22"/>          |          Halo           |                       https://halo.run/                       | 强大易用的开源建站工具                                                          |           |
+| 🟢 |        <img height="22" src="https://file.lifebus.top/apps/immich/logo.png" width="22"/>         |         Immich          |                      https://immich.app/                      | 【完整版本】高性能自托管照片和视频管理解决方案                                              |  Immich   |
+| 🟢 |        <img height="22" src="https://file.lifebus.top/apps/immich/logo.png" width="22"/>         |      Immich-Server      |                      https://immich.app/                      | 【主服务模块】高性能自托管照片和视频管理解决方案                                             |  Immich   |
+| 🟢 |        <img height="22" src="https://file.lifebus.top/apps/immich/logo.png" width="22"/>         | Immich-Machine-Learning |                      https://immich.app/                      | 【机器学习模块】高性能自托管照片和视频管理解决方案                                            |  Immich   |
+| 🟢 |       <img height="22" src="https://file.lifebus.top/apps/iyuu-plus/logo.png" width="22"/>       |        IYUU Plus        |                     https://doc.iyuu.cn/                      | 基于特征码的索引工具                                                           |           |
+| 🟢 |       <img height="22" src="https://file.lifebus.top/apps/jellyfin/logo.png" width="22"/>        |        Jellyfin         |                     https://jellyfin.org/                     | 自由软件媒体系统                                                             |           |
+| 🟢 |       <img height="22" src="https://file.lifebus.top/apps/linkding/logo.png" width="22"/>        |        LinkDing         |           https://github.com/sissbruecker/linkding/           | 自托管书签管理器                                                             |           |
+| 🟢 |      <img height="22" src="https://file.lifebus.top/apps/mailserver/logo.png" width="22"/>       |    Docker Mailserver    | https://docker-mailserver.github.io/docker-mailserver/latest/ | 可用于生产的全栈但简单的邮件服务器                                                    |           |
+| 🟢 |         <img height="22" src="https://file.lifebus.top/apps/minio/logo.png" width="22"/>         |          MinIO          |                        https://min.io/                        | MinIO 是一种高性能、兼容 S3 的对象存储                                             |           |
+| 🟢 |      <img height="22" src="https://file.lifebus.top/apps/movie-pilot/logo.png" width="22"/>      |       MoviePilot        |             https://github.com/jxxghp/MoviePilot/             | NAS媒体库自动化管理工具                                                        |           |
+| 🟢 |         <img height="22" src="https://file.lifebus.top/apps/mysql/logo.png" width="22"/>         |          MySQL          |                    https://www.mysql.com/                     | 关系数据库管理系统                                                            |   MySQL   |
+| 🟢 |        <img height="22" src="https://file.lifebus.top/apps/mariadb/logo.png" width="22"/>        |         MariaDB         |                     https://mariadb.org/                      | 【MySQL分支】创新的开源数据库                                                    |   MySQL   |
+| 🟢 |        <img height="22" src="https://file.lifebus.top/apps/percona/logo.png" width="22"/>        |         Percona         |                   https://www.percona.com/                    | 【MySQL分支】关系数据库管理系统                                                   |   MySQL   |
+| 🟢 |         <img height="22" src="https://file.lifebus.top/apps/nacos/logo.png" width="22"/>         |          Nacos          |                       https://nacos.io/                       | 动态服务发现、配置管理和服务管理平台                                                   |           |
+| 🟢 |         <img height="22" src="https://file.lifebus.top/apps/nezha/logo.png" width="22"/>         |          NeZha          |                      https://nezha.wiki/                      | 【哪吒监控】开源、轻量、易用的服务器监控、运维工具                                            |           |
+| 🟢 |        <img height="22" src="https://file.lifebus.top/apps/onedev/logo.png" width="22"/>         |         OneDev          |                      https://onedev.io/                       | DevOps 平台、带有 CI/CD、看板和软件包的 Git 服务器                                   |           |
+| 🟢 |        <img height="22" src="https://file.lifebus.top/apps/outline/logo.png" width="22"/>        |         OutLine         |                  https://www.getoutline.com/                  | 快速、协作的团队知识库                                                          |           |
+| 🟢 |        <img height="22" src="https://file.lifebus.top/apps/pixman/logo.png" width="22"/>         |         Pixman          |                      https://pixman.io/                       | IPTV、M3U8 流媒体代理方案                                                    |           |
+| 🟢 |      <img height="22" src="https://file.lifebus.top/apps/postgresql/logo.png" width="22"/>       |       PostgreSQL        |                  https://www.postgresql.org/                  | 世界上最先进的开源关系数据库                                                       |           |
+| 🟢 |      <img height="22" src="https://file.lifebus.top/apps/qbittorrent/logo.png" width="22"/>      |       qBittorrent       |                 https://www.qbittorrent.org/                  | qBittorrent 比特流客户端                                                   |           |
+| 🟢 |       <img height="22" src="https://file.lifebus.top/apps/qinglong/logo.png" width="22"/>        |        QingLong         |              https://github.com/whyour/qinglong/              | 【青龙】支持 Python3、JavaScript、Shell、Typescript 的定时任务管理平台                 |           |
+| 🟢 |         <img height="22" src="https://file.lifebus.top/apps/redis/logo.png" width="22"/>         |          Redis          |                       https://redis.io/                       | 从世界上最快的内存数据库创建者那里获取该数据库                                              |           |
+| 🔴 |                                                                                                  |        Sentinel         |                   https://sentinelguard.io/                   | 面向分布式、多语言异构化服务架构的流量治理组件                                              |           |
+| 🟢 |        <img height="22" src="https://file.lifebus.top/apps/siyuan/logo.png" width="22"/>         |         SiYuan          |                   https://b3log.org/siyuan/                   | 【思源笔记】一款隐私优先、自托管、完全开源的个人知识管理软件                                       |           |
+| 🔴 |                                                                                                  |        SpeedTest        |                  https://www.speedtest.net/                   | 互联网速度测试                                                              | SpeedTest |
+| 🔴 |                                                                                                  |    SpeedTest-Tracker    |              https://docs.speedtest-tracker.dev/              | Speedtest Tracker 是一款自托管互联网性能跟踪应用程序，可针对 Ookla 的 Speedtest 服务运行速度测试检查 |           |
+| 🟢 |      <img height="22" src="https://file.lifebus.top/apps/stream-rec/logo.png" width="22"/>       |       Stream-Rec        |            https://github.com/hua0512/stream-rec/             | Stream-rec是一个用于各种流媒体服务的自动流媒体录制工具                                     |           |
+| 🟢 |   <img height="22" src="https://file.lifebus.top/apps/telegram-bot-api/logo.png" width="22"/>    |    Telegram Bot Api     |                     https://telegram.org/                     | 自建 Telegram Bot API 服务器                                              |           |
+| 🟢 |     <img height="22" src="https://file.lifebus.top/apps/transmission/logo.png" width="22"/>      |      Transmission       |                  https://transmissionbt.com/                  | 快速、简单、免费的 Bittorrent 客户端                                             |           |
+| 🟢 |      <img height="22" src="https://file.lifebus.top/apps/uptime-kuma/logo.png" width="22"/>      |       Uptime Kuma       |                   https://uptime.kuma.pet/                    | 自托管监控工具                                                              |           |
+| 🟢 |         <img height="22" src="https://file.lifebus.top/apps/umami/logo.png" width="22"/>         |          Umami          |                       https://umami.is/                       | 为速度和效率而构建的网站分析                                                       |           |
+| 🔴 |                                                                                                  |          Yarr           |                https://github.com/nkanaev/yarr                | Rss 阅读器                                                              |           |
+| 🔴 |                                                                                                  |         Ztncui          |                   https://www.zerotier.com/                   | 【自建服务端】ZeroTier 可让您构建几乎任何类型的现代化安全多点虚拟化网络                             | ZeroTier  |
 
 > 说明：
 >
 > 以上排序不分先后，按照字母顺序排列。
 >
 > 维护状态：🟢 维护中 🔴 未维护 🟡 表示不定期维护
+
+---
 
 ## 应用安装
 
@@ -134,9 +143,11 @@
 >
 > 我们建议您在安装之前备份您的数据，或手动安装。
 
-### 一键式自动化安装 <sup>`推荐`</sup>
+### 自动化安装
 
-如果您不想每次都手动执行命令，可以使用一键式安装。我们优先推荐此方式。
+一键式安装，无需手动操作，自动完成 1Panel应用 上架应用商店。
+
+每三小时自动更新一次应用列表。
 
 ```shell
 curl -sSL https://install.lifebus.top/auto_install.sh | bash
@@ -156,24 +167,22 @@ curl -sSL https://install.lifebus.top/auto_uninstall.sh | bash
 
 + 应用数据目录：`${应用持久化目录}`
 
-<details>
+### 手动安装模式
 
-<summary>其他安装方式</summary>
-
-## 手动更新安装
-
-应用的升级与更新均需要重新执行安装脚本。
+更新时机由自己把握，手动执行命令。
 
 ```shell
 curl -sSL https://install.lifebus.top/app_install.sh | bash
 ```
 
-## 计划任务模式
+### 计划任务模式
 
 将内容写入Shell计划任务中，设定定期执行。
 
 ```shell
 #!/bin/bash
+
+# 此处可以定义代理方案
 
 script_url="https://install.lifebus.top/app_install.sh"
 
@@ -181,9 +190,14 @@ echo "Downloading and executing script from $script_url..."
 bash <(curl -sL "$script_url")
 
 echo "Script execution completed."
+
 ```
 
-### 配置脚本网络代理
+#### 配置脚本网络代理
+
+如果您的网络环境需要代理，请在脚本执行前配置代理。
+
+可将以下脚本插入到 `计划任务模式` 的脚本中。
 
 ```sh
 proxy_protocols="http"
@@ -193,7 +207,7 @@ export http_proxy="$proxy_protocols://$proxy_server:$proxy_port"
 export https_proxy="$proxy_protocols://$proxy_server:$proxy_port"
 ```
 
-</details>
+---
 
 ## 安装 `Pre 尝鲜版` 应用
 
@@ -213,6 +227,20 @@ curl -sSL https://install.lifebus.top/pre_app_install.sh | bash
 curl -sSL https://install.lifebus.top/pre_app_uninstall.sh | bash
 ```
 
+---
+
+## 卸载所有本地应用
+
+通过此脚本，您可以卸载所有本地应用，但是不会删除数据。
+
+可能您的库中遗留了一些无用的应用，您可以通过此脚本进行清理。该脚本不影响 `自动化脚本` 的应用更新。
+
+```sh
+curl -sSL https://install.lifebus.top/local_app_uninstall.sh | bash
+```
+
+---
+
 ## 常见问题
 
 + 升级失败
@@ -230,13 +258,17 @@ curl -sSL https://install.lifebus.top/pre_app_uninstall.sh | bash
     + 关于 `前置检查` 依旧需要填写 `数据库` 相关连接信息，是因为其提供的能力并不是完全可靠，避免后期出现问题，我们采用持久化的方式存储。
     + 如果您的环境符合要求，但是依旧无法安装，请联系我们。
 
+---
+
 ## 温馨提示
 
 安装应用前请查看应用说明，了解应用的使用方法和注意事项。
 当前第三方库应用均为开源应用，我们不对应用的安全性和稳定性负责。
 如果您在使用过程中遇到问题，请查看应用的官方文档或社区，或者联系我们。
 
-## 联系方式
+---
+
+## 联系我们
 
 > [!TIP]
 > <img src="https://file.lifebus.top/imgs/google_gmail_logo.png" alt="Gmail" width="30"/>
