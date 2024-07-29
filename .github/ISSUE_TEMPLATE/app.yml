@@ -28,10 +28,11 @@ body:
       required: true
     attributes:
       label: "应用类型"
-      multiple: true
+      multiple: false
       options:
         - 开源
         - 闭源
+        - 半开源
       default: 0
   - type: input
     id: app_url
