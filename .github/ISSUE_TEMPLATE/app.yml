@@ -5,8 +5,9 @@ labels: app
 assignees: qyg2297248353
 body:
   - type: markdown
+    id: base_info
     attributes:
-      value: 
+      value: "## 基本信息"
   - type: input
     id: version
     validations:
