@@ -51,13 +51,14 @@ body:
     attributes:
       label: "应用版本"
       description: "请提供应用的版本"
-  - type: markdown
+  - type: textarea
     id: details
     validations:
       required: true
     attributes:
       label: "应用描述"
       description: "请提供应用的描述"
+      placeholder: "简单描述需要上架的理由"
   - type: checkboxes
     id: authorization
     attributes:
