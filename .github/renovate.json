@@ -13,10 +13,9 @@
   "rebaseWhen": "never",
   "packageRules": [
     {
-      "packageNames": [
-        "docker-compose",
-        "checkout",
-        "github-action"
+      "matchPackageNames": [
+        "actions/checkout",
+        "renovatebot/github-action"
       ],
       "automerge": true
     },
