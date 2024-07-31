@@ -9,6 +9,23 @@
   "rebaseWhen": "never",
   "packageRules": [
     {
+      "packagePatterns": [
+        "^actions/checkout",
+        "renovatebot/github-action"
+      ],
+      "managers": [
+        "github-actions"
+      ],
+      "updateTypes": [
+        "minor",
+        "patch"
+      ],
+      "fileMatch": [
+        "^\\.github/workflows/renovate-app-version\\.yml$",
+        "^\\.github/workflows/renovate\\.yml$"
+      ]
+    },
+    {
       "packageNames": [
         "docker-compose"
       ],
@@ -97,5 +114,8 @@
       "versioning": "semver"
     }
   ],
+  "github-actions": {
+    "enabled": true
+  },
   "prCreation": "immediate"
 }
