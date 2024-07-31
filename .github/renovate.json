@@ -78,13 +78,6 @@
         "emby/embyserver"
       ],
       "allowedVersions": "/^4\\.8\\.\\d+\\.\\d+$/"
-    },
-    {
-      "matchPackageNames": [
-        "ghcr.io/umami-software/umami"
-      ],
-      "versionCompatibility": "^(?<compatibility>.*)-(?<version>.*)$",
-      "versioning": "semver"
     }
   ],
   "prCreation": "immediate"
