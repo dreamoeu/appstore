@@ -7,36 +7,16 @@
     "docker-compose",
     "github-actions"
   ],
-  "docker-compose": {
-    "fileMatch": [
-      "^.*\\.(yaml|yml)$"
-    ]
-  },
   "gitIgnoredAuthors": [
     "githubaction@githubaction.com"
   ],
   "rebaseWhen": "never",
   "packageRules": [
     {
-      "packagePatterns": [
-        "^actions/checkout",
-        "renovatebot/github-action"
-      ],
-      "managers": [
-        "github-actions"
-      ],
-      "updateTypes": [
-        "minor",
-        "patch"
-      ],
-      "fileMatch": [
-        "^\\.github/workflows/renovate-app-version\\.yml$",
-        "^\\.github/workflows/renovate\\.yml$"
-      ]
-    },
-    {
       "packageNames": [
-        "docker-compose"
+        "docker-compose",
+        "checkout",
+        "github-action"
       ],
       "automerge": true
     },
@@ -108,14 +88,11 @@
         "docker"
       ],
       "matchPackageNames": [
-        "ghcr.io/*"
+        "ghcr.io/umami-software/umami"
       ],
       "versionCompatibility": "^(?<compatibility>.*)-(?<version>.*)$",
       "versioning": "semver"
     }
   ],
-  "github-actions": {
-    "enabled": true
-  },
   "prCreation": "immediate"
 }
