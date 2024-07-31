@@ -111,15 +111,6 @@
       ],
       "versionCompatibility": "^(?<compatibility>.*)-(?<version>.*)$",
       "versioning": "semver"
-    },
-    {
-      "matchDatasources": [
-        "docker"
-      ],
-      "matchPackageNames": [
-        "ghcr.io/*"
-      ],
-      "versioning": "semver"
     }
   ],
   "github-actions": {
