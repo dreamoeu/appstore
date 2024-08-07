@@ -70,6 +70,8 @@ if [[ "$download_successful" = true && -f "$task_dir/app_install.sh" ]]; then
 
         (crontab -l ; echo "0 */3 * * * /bin/bash $task_dir/app_install.sh") | crontab -
 
+        echo "$(date): [Run] Update application list"
+
         /bin/bash "$task_dir/app_install.sh"
     else
         echo "No permission to change the script's permissions."
@@ -78,4 +80,4 @@ else
     echo "Script download failed. Please check your network connection."
 fi
 
-echo "$(date): [Run] Update application list"
+echo "$(date): [Auto] Installation completed."
