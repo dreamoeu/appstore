@@ -27,6 +27,23 @@ if [ -z "$BASE_DIR" ]; then
     exit 1
 fi
 
+if [ ! -w "$BASE_DIR" ]; then
+    echo "Error: No write permission to the 1panel install directory."
+    echo "Please run as a superuser."
+    exit 1
+fi
+
+TARGET_DIR="${BASE_DIR}/1panel/resource/apps/local/appstore-localApps"
+if [ ! -d "$TARGET_DIR" ]; then
+    mkdir -p "$TARGET_DIR"
+fi
+
+if [ ! -w "$TARGET_DIR" ]; then
+    echo "Error: No write permission to the target directory."
+    echo "Please run as a superuser."
+    exit 1
+fi
+
 echo "$(date): Step 1 - Cloning repository..."
 repos=(
     'https://github.com/QYG2297248353/appstore-1panel'
@@ -50,6 +67,19 @@ ENVS_DIR="$BASE_DIR/1panel/resource/apps/local/appstore-localApps/envs"
 DEST_ENVS_DIR="/etc/1panel/envs"
 
 echo "$(date): Step 2 - Checking for updated apps..."
+
+if [ ! -w "$LOCAL_DIR" ]; then
+    echo "Error: No write permission to $LOCAL_DIR."
+    echo "Please run as a superuser."
+    exit 1
+fi
+
+if [ ! -w "$DEST_ENVS_DIR" ]; then
+    echo "Error: No write permission to $DEST_ENVS_DIR."
+    echo "Please run as a superuser."
+    exit 1
+fi
+
 for app_directory in "${APPS_DIR:?}"/*; do
     app_name=$(basename "$app_directory")
 

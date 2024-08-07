@@ -130,6 +130,10 @@
 > 当您已安装其他第三方库时并且存在应用冲突，安装过程中会主动删除冲突的第三方库应用，如果您不同意，请不要执行脚本。
 >
 > 我们建议您在安装之前备份您的数据，或手动安装。
+>
+> 如果您不使用 `curl` 命令，可以使用 `wget` 命令代替。
+>
+> 将 `curl -sSL` 替换为 `wget -qO-` 即可。
 
 ### 自动化安装
 
@@ -137,13 +141,13 @@
 
 每三小时自动更新一次应用列表。
 
-```shell
+```sh
 curl -sSL https://install.lifebus.top/auto_install.sh | bash
 ```
 
 > 卸载自动化脚本 (不会卸载应用)
 
-```shell
+```sh
 curl -sSL https://install.lifebus.top/auto_uninstall.sh | bash
 ```
 
@@ -159,7 +163,7 @@ curl -sSL https://install.lifebus.top/auto_uninstall.sh | bash
 
 更新时机由自己把握，手动执行命令。
 
-```shell
+```sh
 curl -sSL https://install.lifebus.top/app_install.sh | bash
 ```
 
@@ -167,7 +171,7 @@ curl -sSL https://install.lifebus.top/app_install.sh | bash
 
 将内容写入Shell计划任务中，设定定期执行。
 
-```shell
+```sh
 #!/bin/bash
 
 # 此处可以定义代理方案
@@ -223,6 +227,8 @@ curl -sSL https://install.lifebus.top/pre_app_uninstall.sh | bash
 
 可能您的库中遗留了一些无用的应用，您可以通过此脚本进行清理。该脚本不影响 `自动化脚本` 的应用更新。
 
+**此脚本必须`root`用户执行**
+
 ```sh
 curl -sSL https://install.lifebus.top/local_app_uninstall.sh | bash
 ```
@@ -231,6 +237,17 @@ curl -sSL https://install.lifebus.top/local_app_uninstall.sh | bash
 
 ## 常见问题
 
++ 安装脚本提示
+    + 没有权限
+        + 请使用 `root` 用户执行脚本
+    + `curl: command not found`
+        + 请安装 `curl` 命令
+        + `apt install curl -y`
+        + `yum install curl -y`
+    + 由于安装脚本的网络问题导致安装失败
+        + 请检查网络状况
+        + 请尝试重新执行安装脚本
+        + 请尝试使用 `wget` 命令代替 `curl` 命令
 + 升级失败
     + 检查网络状况与磁盘空间
     + 配置镜像地址
