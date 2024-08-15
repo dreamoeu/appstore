@@ -51,6 +51,10 @@ repos=(
     'https://gitea.com/QYG2297248353/appstore-1panel'
 )
 
+if [ -d "${BASE_DIR:?}/1panel/resource/apps/local/appstore-localApps" ]; then
+    rm -rf "${BASE_DIR:?}/1panel/resource/apps/local/appstore-localApps"
+fi
+
 for repo in "${repos[@]}"; do
     echo "$(date): Step 1 - Cloning repository: $repo"
     git clone --depth 1 -b released "$repo" "${BASE_DIR:?}/1panel/resource/apps/local/appstore-localApps" && break
@@ -72,6 +76,10 @@ if [ ! -w "$LOCAL_DIR" ]; then
     echo "Error: No write permission to $LOCAL_DIR."
     echo "Please run as a superuser."
     exit 1
+fi
+
+if [ ! -d "$DEST_ENVS_DIR" ]; then
+    mkdir -p "$DEST_ENVS_DIR"
 fi
 
 if [ ! -w "$DEST_ENVS_DIR" ]; then
