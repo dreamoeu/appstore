@@ -6,7 +6,7 @@ old_version=$2
 
 # 定义关联数组，将应用名称与其对应的 keys 关联起来
 declare -A app_keys
-app_keys=(["immich"]="immich immich-server immich-machine-learning" ["stream-rec"]="stream-rec-backend stream-rec-frontend")
+app_keys=(["immich"]="immich-server immich-machine-learning" ["stream-rec"]="stream-rec-backend stream-rec-frontend")
 
 echo "Processing app: $app_name, old version: $old_version"
 
