@@ -78,6 +78,15 @@
         "emby/embyserver"
       ],
       "allowedVersions": "/^4\\.8\\.\\d+\\.\\d+$/"
+    },
+    {
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchPackagePatterns": [
+        "^photoprism/photoprism$"
+      ],
+      "versioning": "regex:^\\d{6}$"
     }
   ],
   "prCreation": "immediate"
