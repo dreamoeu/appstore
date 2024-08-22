@@ -83,10 +83,10 @@
       "matchDatasources": [
         "docker"
       ],
-      "matchPackagePatterns": [
-        "^photoprism/photoprism$"
+      "matchPackageNames": [
+        "photoprism/photoprism"
       ],
-      "versioning": "regex:^\\d{6}$"
+      "versioning": "loose"
     }
   ],
   "prCreation": "immediate"
