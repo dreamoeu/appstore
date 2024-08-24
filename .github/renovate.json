@@ -80,13 +80,8 @@
       "allowedVersions": "/^4\\.8\\.\\d+\\.\\d+$/"
     },
     {
-      "matchDatasources": [
-        "docker"
-      ],
-      "matchPackageNames": [
-        "photoprism/photoprism"
-      ],
-      "versioning": "loose"
+      "matchPackageNames": ["photoprism/photoprism"],
+      "versioning": "regex:^\\d{6}$"
     }
   ],
   "prCreation": "immediate"
