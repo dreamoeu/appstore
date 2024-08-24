@@ -84,9 +84,10 @@
       "versioning": "regex:^(?<major>\\d{2})(?<minor>\\d{2})(?<patch>\\d{2})$"
     },
     {
-      "matchDatasources": ["docker"],
-      "matchPackageNames": ["ghcr.io/umami-software/umami"],
-      "versioning": "semver"
+      "fileMatch": ["^docker-compose.yml$"],
+      "matchStrings": ["image:\\s?ghcr\\.io/umami-software/umami:.+"],
+      "datasourceTemplate": "docker",
+      "extractVersionTemplate": "^${DATABASE_TYPE}-v(?<version>[0-9]+\\.[0-9]+\\.[0-9]+)$"
     }
   ],
   "prCreation": "immediate"
