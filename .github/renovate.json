@@ -82,14 +82,6 @@
     {
       "matchPackageNames": ["photoprism/photoprism"],
       "versioning": "regex:^(?<major>\\d{2})(?<minor>\\d{2})(?<patch>\\d{2})$"
-    },
-    {
-      "fileMatch": ["^docker-compose.yml$"],
-      "matchStrings": [
-        "image:\\s?ghcr\\.io/umami-software/umami:[^\\s]+"
-      ],
-      "datasourceTemplate": "docker",
-      "versioningTemplate": "docker"
     }
   ],
   "prCreation": "immediate"
