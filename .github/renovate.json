@@ -81,7 +81,7 @@
     },
     {
       "matchPackageNames": ["photoprism/photoprism"],
-      "versioning": "regex:^(\\d{6})$"
+      "versioning": "regex:^(\\d{2})(\\d{2})(\\d{2})$"
     }
   ],
   "prCreation": "immediate"
