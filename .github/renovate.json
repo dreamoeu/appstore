@@ -102,30 +102,6 @@
         "ghcr.io/umami-software/*"
       ],
       "versioning": "docker"
-    },
-    {
-      "matchDatasources": [
-        "docker"
-      ],
-      "matchPackageNames": [
-        "ghcr.io/umami-software/umami"
-      ],
-      "matchVersions": [
-        "^postgresql-v"
-      ],
-      "versioning": "docker"
-    },
-    {
-      "matchDatasources": [
-        "docker"
-      ],
-      "matchPackageNames": [
-        "ghcr.io/umami-software/umami"
-      ],
-      "matchVersions": [
-        "^mysql-v"
-      ],
-      "versioning": "docker"
     }
   ],
   "prCreation": "immediate"
