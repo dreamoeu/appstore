@@ -16,6 +16,14 @@
   "rebaseWhen": "never",
   "packageRules": [
     {
+      "matchDatasources": [
+        "docker"
+      ],
+      "registryUrls": [
+        "https://ghcr.io"
+      ]
+    },
+    {
       "matchPackageNames": [
         "actions/checkout",
         "renovatebot/github-action"
