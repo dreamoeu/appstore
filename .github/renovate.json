@@ -144,6 +144,14 @@
       ],
       "versionCompatibility": "^(?<compatibility>.*)-(?<version>.*)$",
       "versioning": "semver"
+    },
+    {
+      "matchDatasources": [
+        "docker"
+      ],
+      "registryUrls": [
+        "https://ghcr.io"
+      ]
     }
   ],
   "prCreation": "immediate"
