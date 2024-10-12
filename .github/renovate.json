@@ -150,8 +150,7 @@
         "docker"
       ],
       "registryUrls": [
-        "https://registry.hub.docker.com",
-        "https://ghcr.io"
+        "https://registry.hub.docker.com"
       ]
     }
   ],
