@@ -10,6 +10,9 @@
   "gitIgnoredAuthors": [
     "githubaction@githubaction.com"
   ],
+  "ignorePaths": [
+    "apps/tangsengdaodao/1.5/docker-compose.yml"
+  ],
   "rebaseWhen": "never",
   "packageRules": [
     {
