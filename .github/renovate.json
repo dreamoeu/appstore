@@ -24,6 +24,14 @@
       ]
     },
     {
+      "matchDatasources": [
+        "docker"
+      ],
+      "registryUrls": [
+        "https://index.docker.io/v1/"
+      ]
+    },
+    {
       "matchPackageNames": [
         "actions/checkout",
         "renovatebot/github-action"
