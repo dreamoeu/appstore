@@ -22,6 +22,12 @@
       "automerge": true
     },
     {
+      "matchUpdateTypes": [
+        "patch"
+      ],
+      "automerge": true
+    },
+    {
       "matchFileNames": [
         "apps/postgresql/pg*/*.yml"
       ],
@@ -128,6 +134,16 @@
         "photoprism/photoprism"
       ],
       "versioning": "regex:^(?<major>\\d{2})(?<minor>\\d{2})(?<patch>\\d{2})$"
+    },
+    {
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchPackageNames": [
+        "umamisoftware/umami"
+      ],
+      "versionCompatibility": "^(?<compatibility>.*)-(?<version>.*)$",
+      "versioning": "semver"
     }
   ],
   "prCreation": "immediate"
