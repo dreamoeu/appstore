@@ -113,7 +113,7 @@
   "regexManagers": [
     {
       "fileMatch": [
-        "^Dockerfile$"
+        "^docker-compose\\.yml$"
       ],
       "matchStrings": [
         "minio/minio:(?<version>RELEASE\\.[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}-[0-9]{2}-[0-9]{2}Z)"
@@ -122,6 +122,6 @@
       "versioningTemplate": "loose",
       "extractVersionTemplate": "^(?<version>.*)$"
     }
-  ]
+  ],
   "prCreation": "immediate"
 }
