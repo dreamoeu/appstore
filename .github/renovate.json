@@ -141,6 +141,13 @@
       ],
       "versionCompatibility": "^(?<compatibility>.*)-(?<version>.*)$",
       "versioning": "semver"
+    },
+    {
+      "matchPackageNames": [
+        "minio/minio"
+      ],
+      "versionCompatibility": "^(?<release>RELEASE\\.(?<year>\\d{4})\\-(?<month>\\d{2})\\-(?<day>\\d{2})T[\\d:]+Z)$",
+      "versioning": "regex:^(?<year>\\d{4})\\-(?<month>\\d{2})\\-(?<day>\\d{2})$"
     }
   ],
   "prCreation": "immediate"
