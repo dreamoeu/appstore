@@ -72,6 +72,12 @@
     },
     {
       "matchFileNames": [
+        "apps/qbittorrent/5.*.*/*.yml"
+      ],
+      "allowedVersions": "/^5.*.*/"
+    },
+    {
+      "matchFileNames": [
         "apps/transmission/4.*.*/*.yml"
       ],
       "allowedVersions": "/^4.*.*/"
