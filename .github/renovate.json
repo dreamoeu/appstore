@@ -146,8 +146,8 @@
       "matchPackageNames": [
         "minio/minio"
       ],
-      "versionCompatibility": "^(?<release>RELEASE\\.(?<year>\\d{4})\\-(?<month>\\d{2})\\-(?<day>\\d{2})T[\\d:]+Z)$",
-      "versioning": "regex:^(?<year>\\d{4})\\-(?<month>\\d{2})\\-(?<day>\\d{2})$"
+      "versioning": "regex:^(?<major>\\d{4})(?<minor>\\d{2})(?<patch>\\d{2})$",
+      "versionCompatibility": "^(?<release>RELEASE\\.(?<year>\\d{4})\\-(?<month>\\d{2})\\-(?<day>\\d{2})T[\\d:]+Z)$"
     }
   ],
   "prCreation": "immediate"
