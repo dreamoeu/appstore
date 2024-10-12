@@ -16,27 +16,22 @@
   "rebaseWhen": "never",
   "packageRules": [
     {
-      "matchDatasources": [
-        "docker"
-      ],
-      "registryUrls": [
-        "https://ghcr.io"
-      ]
-    },
-    {
-      "matchDatasources": [
-        "docker"
-      ],
-      "registryUrls": [
-        "https://index.docker.io/v1/"
-      ]
-    },
-    {
-      "matchPackageNames": [
-        "actions/checkout",
-        "renovatebot/github-action"
+      "packageNames": [
+        "docker-compose"
       ],
       "automerge": true
+    },
+    {
+      "matchFileNames": [
+        "apps/postgresql/pg*/*.yml"
+      ],
+      "allowedVersions": "/^pg12*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/postgresql/pg*/*.yml"
+      ],
+      "allowedVersions": "/^pg13*/"
     },
     {
       "matchFileNames": [
@@ -58,15 +53,27 @@
     },
     {
       "matchFileNames": [
-        "apps/redis/6.2.*/*.yml"
+        "apps/postgresql/pg*/*.yml"
       ],
-      "allowedVersions": "/^6.2.*/"
+      "allowedVersions": "/^pg17*/"
     },
     {
       "matchFileNames": [
-        "apps/redis/7.2.*/*.yml"
+        "apps/redis/6.*/*.yml"
       ],
-      "allowedVersions": "/^7.2.*/"
+      "allowedVersions": "/^6.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/redis/7.*/*.yml"
+      ],
+      "allowedVersions": "/^7.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/mysql/5.6.*/*.yml"
+      ],
+      "allowedVersions": "/^5.6.*/"
     },
     {
       "matchFileNames": [
@@ -76,9 +83,15 @@
     },
     {
       "matchFileNames": [
-        "apps/mysql/8.*/*.yml"
+        "apps/mysql/8.0.*/*.yml"
       ],
-      "allowedVersions": "/^8.*/"
+      "allowedVersions": "/^8.0.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/mysql/8.4.*/*.yml"
+      ],
+      "allowedVersions": "/^8.4.*/"
     },
     {
       "matchFileNames": [
@@ -115,20 +128,6 @@
         "photoprism/photoprism"
       ],
       "versioning": "regex:^(?<major>\\d{2})(?<minor>\\d{2})(?<patch>\\d{2})$"
-    }
-  ],
-  "regexManagers": [
-    {
-      "fileMatch": [
-        "^docker-compose\\.yml$"
-      ],
-      "matchStrings": [
-        "minio/minio:(?<currentValue>RELEASE\\.[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}-[0-9]{2}-[0-9]{2}Z)"
-      ],
-      "datasourceTemplate": "docker",
-      "versioningTemplate": "loose",
-      "depNameTemplate": "minio/minio",
-      "currentValueTemplate": "{{{currentValue}}}"
     }
   ],
   "prCreation": "immediate"
