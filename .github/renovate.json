@@ -3,8 +3,6 @@
   "extends": [
     "config:base"
   ],
-  "automerge": true,
-  "automergeType": "pr",
   "enabledManagers": [
     "docker-compose",
     "github-actions"
@@ -17,16 +15,6 @@
   ],
   "rebaseWhen": "never",
   "packageRules": [
-    {
-      "matchPackageNames": [
-        "renovatebot/github-action"
-      ],
-      "matchUpdateTypes": [
-        "patch",
-        "minor"
-      ],
-      "automerge": true
-    },
     {
       "matchFileNames": [
         "apps/postgresql/pg*/*.yml"
