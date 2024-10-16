@@ -16,14 +16,22 @@
   "rebaseWhen": "never",
   "packageRules": [
     {
-      "packageNames": [
-        "docker-compose"
+      "matchPackageNames": [
+        "github-actions"
+      ],
+      "matchUpdateTypes": [
+        "patch",
+        "minor"
       ],
       "automerge": true
     },
     {
+      "matchPackageNames": [
+        "renovatebot/github-action"
+      ],
       "matchUpdateTypes": [
-        "patch"
+        "patch",
+        "minor"
       ],
       "automerge": true
     },
@@ -150,7 +158,7 @@
     },
     {
       "packagePatterns": [
-        "^rsshub"
+        "^diygod/rsshub"
       ],
       "versioning": "regex:(?<major>\\d{4})-(?<minor>\\d{2})-(?<patch>\\d{2})"
     }
