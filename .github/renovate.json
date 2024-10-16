@@ -3,6 +3,8 @@
   "extends": [
     "config:base"
   ],
+  "automerge": true,
+  "automergeType": "pr",
   "enabledManagers": [
     "docker-compose",
     "github-actions"
@@ -15,16 +17,6 @@
   ],
   "rebaseWhen": "never",
   "packageRules": [
-    {
-      "matchPackageNames": [
-        "github-actions"
-      ],
-      "matchUpdateTypes": [
-        "patch",
-        "minor"
-      ],
-      "automerge": true
-    },
     {
       "matchPackageNames": [
         "renovatebot/github-action"
