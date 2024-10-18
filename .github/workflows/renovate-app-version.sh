@@ -28,13 +28,13 @@ process_image() {
         echo "Trimmed version: $trimmed_version"
 
         # Remove any suffixes (like -ffmpeg) for versioning purposes
-        cleaned_version=$(echo "$trimmed_version" | grep -oE '[0-9]+(\.[0-9]+){0,4}')
+        cleaned_version=$(echo "$trimmed_version" | grep -oE '^[0-9]+(\.[0-9]+){0,3}$')
 
         echo "Cleaned version: $cleaned_version"
 
         # Handle special versions with dates and other formats
         if [[ -z "$cleaned_version" ]]; then
-            cleaned_version=$(echo "$trimmed_version" | grep -oE '[0-9]{4}-[0-9]{2}-[0-9]{2}')
+            cleaned_version=$(echo "$trimmed_version" | grep -oE '^[0-9]{4}-[0-9]{2}-[0-9]{2}$')
         fi
 
         echo "Final version: $cleaned_version"
