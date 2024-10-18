@@ -27,17 +27,23 @@ process_image() {
 
         echo "Trimmed version: $trimmed_version"
 
-        # Remove any suffixes (like -ffmpeg) for versioning purposes
-        cleaned_version=$(echo "$trimmed_version" | grep -oE '^[0-9]+(\.[0-9]+){0,3}$')
-
-        echo "Cleaned version: $cleaned_version"
-
-        # Handle special versions with dates and other formats
-        if [[ -z "$cleaned_version" ]]; then
-            cleaned_version=$(echo "$trimmed_version" | grep -oE '^[0-9]{4}-[0-9]{2}-[0-9]{2}$')
+        # Match date version
+        date_version=$(echo "$trimmed_version" | grep -oE '[0-9]{4}-[0-9]{2}-[0-9]{2}$')
+        if [[ -n "$date_version" ]]; then
+            cleaned_version=$date_version
+            echo "Date version: $date_version"
+            return
         fi
 
-        echo "Final version: $cleaned_version"
+        # Match number version
+        number_version=$(echo "$trimmed_version" | grep -oE '[0-9]+(\.[0-9]+){0,3}$')
+        if [[ -n "$number_version" ]]; then
+            cleaned_version=$number_version
+            echo "Number version: $number_version"
+            return
+        fi
+
+        echo "Could not determine version for image: $image"
     fi
 }
 
