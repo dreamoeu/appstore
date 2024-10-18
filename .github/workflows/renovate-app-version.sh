@@ -36,7 +36,7 @@ process_image() {
         fi
 
         # Match number version
-        number_version=$(echo "$trimmed_version" | grep -oE '[0-9]+(\.[0-9]+){0,3}$')
+        number_version=$(echo "$trimmed_version" | grep -oE '[0-9]+(\.[0-9]+){0,3}' | head -n1)
         if [[ -n "$number_version" ]]; then
             cleaned_version=$number_version
             echo "Number version: $number_version"
