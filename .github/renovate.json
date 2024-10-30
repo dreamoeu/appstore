@@ -159,6 +159,18 @@
         "apps/jellyfin/10.10.*/*.yml"
       ],
       "allowedVersions": ">=10.10"
+    },
+    {
+      "matchFileNames": [
+        "apps/uptime-kuma/1.*/*.yml"
+      ],
+      "allowedVersions": "<2.0"
+    },
+    {
+      "matchFileNames": [
+        "apps/uptime-kuma/2.*/*.yml"
+      ],
+      "allowedVersions": ">=2.0"
     }
   ],
   "prCreation": "immediate"
