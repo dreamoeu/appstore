@@ -28,7 +28,7 @@ process_image() {
         echo "Trimmed version: $trimmed_version"
 
         # Match date version
-        date_version=$(echo "$trimmed_version" | grep -oE '[0-9]{4}-[0-9]{2}-[0-9]{2}$')
+        date_version=$(echo "$trimmed_version" | grep -oE '[0-9]{4}-[0-9]{2}-[0-9]{2}')
         if [[ -n "$date_version" ]]; then
             cleaned_version=$date_version
             echo "Date version: $date_version"
