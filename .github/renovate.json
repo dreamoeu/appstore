@@ -131,6 +131,12 @@
     },
     {
       "matchPackageNames": [
+        "btpanel/baota"
+      ],
+      "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)"
+    },
+    {
+      "matchPackageNames": [
         "umamisoftware/umami"
       ],
       "versionCompatibility": "^(?<compatibility>.*)-(?<version>.*)$",
