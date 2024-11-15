@@ -8,13 +8,16 @@ old_version=$2
 declare -A app_keys
 app_keys=(["immich"]="immich-server immich-machine-learning" ["stream-rec"]="stream-rec-backend stream-rec-frontend" ["rsshub"]="rsshub")
 
+# 定义保留alpine版本的应用名称
+app_alpine_names=("postgresql")
+
 echo "Processing app: $app_name, old version: $old_version"
 
 # Find all docker-compose files under apps/$app_name (there should be only one)
 docker_compose_files=$(find apps/$app_name/$old_version -name docker-compose.yml)
 
 process_image() {
-    local image=$1
+    local image=$1 app_name=$2
 
     # Only apply changes if the format is <image>:<version>
     if [[ "$image" == *":"* ]]; then
@@ -27,10 +30,22 @@ process_image() {
 
         echo "Trimmed version: $trimmed_version"
 
+        found_alpine=false
+        for item in "${app_alpine_names[@]}"; do
+            if [[ "$item" == "$app_name" ]]; then
+                found_alpine=true
+                break
+            fi
+        done
+
         # Match date version
         date_version=$(echo "$trimmed_version" | grep -oE '[0-9]{4}-[0-9]{2}-[0-9]{2}')
         if [[ -n "$date_version" ]]; then
-            cleaned_version=$date_version
+            if [[ "$found_alpine" == true ]]; then
+              date_version="$date_version-alpine"
+            else
+              cleaned_version=$date_version
+            fi
             echo "Date version: $date_version"
             return
         fi
@@ -38,7 +53,11 @@ process_image() {
         # Match number version
         number_version=$(echo "$trimmed_version" | grep -oE '[0-9]+(\.[0-9]+){0,3}' | head -n1)
         if [[ -n "$number_version" ]]; then
-            cleaned_version=$number_version
+            if [[ "$found_alpine" == true ]]; then
+              number_version="$number_version-alpine"
+            else
+              cleaned_version=$number_version
+            fi
             echo "Number version: $number_version"
             return
         fi
@@ -65,7 +84,7 @@ do
                 echo "Found image for service $first_service: $image"
 
                 # 进行后续处理
-                process_image "$image"
+                process_image "$image" "$app_name"
             else
                 echo "Key $key not found in $docker_compose_file"
             fi
@@ -86,7 +105,7 @@ do
         echo "Found image: $image"
 
         # 进行后续处理
-        process_image "$image"
+        process_image "$image" "$app_name"
 
         # 在处理第一个服务后执行版本移动操作
         if [[ -n "$cleaned_version" ]]; then
