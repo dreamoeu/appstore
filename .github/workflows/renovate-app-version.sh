@@ -33,7 +33,10 @@ process_image() {
         found_alpine=false
         for item in "${app_alpine_names[@]}"; do
             if [[ "$item" == "$app_name" ]]; then
-                found_alpine=true
+                if [[ "$trimmed_version" == *"alpine"* ]]; then
+                    found_alpine=true
+                    echo "Found alpine version"
+                fi
                 break
             fi
         done
