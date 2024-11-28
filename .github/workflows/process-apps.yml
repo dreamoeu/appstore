@@ -45,6 +45,6 @@ jobs:
         run: |
           git fetch origin custom
           git rebase origin/custom
-          git add appstore dockge || echo "No changes to add"
+          git add .
           git diff --cached --quiet && echo "No changes to commit" || git commit -m "Processed apps directory via GitHub Actions"
           git push origin custom
