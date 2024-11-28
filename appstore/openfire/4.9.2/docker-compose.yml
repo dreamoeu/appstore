@@ -7,7 +7,7 @@ services:
     env_file:
     - ./envs/global.env
     - .env
-    image: nasqueron/openfire:4.9.0
+    image: nasqueron/openfire:4.9.2
     labels:
       createdBy: Apps
     networks:
