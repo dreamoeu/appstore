@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - appstore
+  pull_request:
+    branches:
+      - appstore
   workflow_dispatch:
 
 jobs:
