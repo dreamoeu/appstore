@@ -1,11 +1,13 @@
 ﻿additionalProperties:
   key: speedtest-tracker
-  name: SpeedTest-Tracker
+  name: SpeedTest Tracker
   tags:
-    - Tool
+    - WebSite
+    - Middleware
+    - Local
   shortDescZh: 托管互联网性能跟踪应用程序
   shortDescEn: Hosted internet performance tracking application
-  type: tool
+  type: website
   crossVersionUpdate: true
   limit: 0
   website: https://docs.speedtest-tracker.dev/
