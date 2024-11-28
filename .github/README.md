@@ -10,7 +10,7 @@
 > [!NOTE]
 > ## 2024年11月28日 公告
 >
-> 我们已支持应用商店: [Dockge](https://dockge.kuma.pet/)
+> 我们已支持应用商店: [1Panel](https://1panel.cn/), [Dockge](https://dockge.kuma.pet/)
 >
 > 即将支持应用商店: [DPanel](https://dpanel.cc/)
 >

@@ -9,7 +9,7 @@
 
 <div style="border: 1px solid #e1e1e1; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); padding: 16px; margin: 16px; background-color: #fff; width: 80%; margin-left: auto; margin-right: auto;">
   <h2 style="margin: 0 0 8px 0; font-size: 1.5em;">2024年11月28日 公告</h2>
-  <p>我们已支持应用商店: <span style="font-weight: bold; color: #d9534f;">Dockge</span></p>
+  <p>我们已支持应用商店: <span style="font-weight: bold; color: #d9534f;">1Panel</span>, <span style="font-weight: bold; color: #d9534f;">Dockge</span></p>
   <p>即将支持应用商店: <span style="font-weight: bold; color: #d9534f;">DPanel</span></p>
   <p>近期我们上架了很多新应用，如果您有任何问题，请联系我们。</p>
   <p>欢迎投稿，我们会根据您的需求，上架更多的应用。</p>
