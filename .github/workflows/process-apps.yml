@@ -44,7 +44,10 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git fetch origin custom
-          git rebase origin/custom
+
           git add .
-          git diff --cached --quiet && echo "No changes to commit" || git commit -m "Processed apps directory via GitHub Actions"
+          git diff --cached --quiet || git commit -m "Processed apps directory via GitHub Actions"
+
+          git rebase origin/custom || { echo "Rebase failed, trying to resolve"; git rebase --abort; git pull --rebase origin custom; }
+
           git push origin custom
