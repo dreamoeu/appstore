@@ -3,10 +3,10 @@ name: Process Apps and Commit Changes
 on:
   push:
     branches:
-      - appstore
+      - custom
   pull_request:
     branches:
-      - appstore
+      - custom
   workflow_dispatch:
 
 jobs:
@@ -43,8 +43,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git fetch origin appstore
-          git rebase origin/appstore
+          git fetch origin custom
+          git rebase origin/custom
           git add appstore dockge || echo "No changes to add"
           git diff --cached --quiet && echo "No changes to commit" || git commit -m "Processed apps directory via GitHub Actions"
-          git push origin appstore
+          git push origin custom
