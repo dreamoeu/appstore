@@ -7,7 +7,7 @@ services:
     env_file:
     - ./envs/global.env
     - .env
-    image: bitbus/paopao-ce:all-in-one-v0.6.0-alpha.2
+    image: bitbus/paopao-ce:all-in-one-0.6-alpha
     labels:
       createdBy: Apps
     networks:
