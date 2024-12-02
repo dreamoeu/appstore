@@ -8,7 +8,6 @@ services:
     - ./envs/global.env
     - .env
     environment:
-    - INITIAL_PASSWORD_VALUE=ADMIN_PASSWORD
     - spring.datasource.url=jdbc:mysql://${DB_HOST}:${DB_PORT}/${DB_NAME}?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&allowPublicKeyRetrieval=true&rewriteBatchedStatements=true
     - spring.datasource.username=${DB_USER}
     - spring.datasource.password=${DB_USER_PASSWORD}
@@ -25,5 +24,4 @@ services:
     - ${PANEL_APP_PORT_HTTP}:1898
     restart: always
     volumes:
-    - ${TOPIAM_CE_ROOT_PATH}/conf:/opt/topiam/conf
     - ${TOPIAM_CE_ROOT_PATH}/logs:/opt/topiam/logs
