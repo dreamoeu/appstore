@@ -54,6 +54,19 @@ process_image() {
             return
         fi
 
+        # Match date version
+        date_version=$(echo "$trimmed_version" | grep -oE '[0-9]{2}-[0-9]{2}-[0-9]{2}')
+        if [[ -n "$date_version" ]]; then
+            if [[ "$found_alpine" == true ]]; then
+              cleaned_version="$date_version-alpine"
+              echo "Mini Date alpine version: $date_version"
+            else
+              cleaned_version=$date_version
+              echo "Mini Date version: $date_version"
+            fi
+            return
+        fi
+
         # Match number version
         number_version=$(echo "$trimmed_version" | grep -oE '[0-9]+(\.[0-9]+){0,3}' | head -n1)
         if [[ -n "$number_version" ]]; then
