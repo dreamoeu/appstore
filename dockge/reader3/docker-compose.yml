@@ -15,7 +15,7 @@ services:
     - READER_APP_SECURE=true
     - READER_APP_SHELFUPDATEINTEVAL=10
     - READER_APP_REMOTEBOOKSOURCEUPDATEINTERVAL=720
-    image: hectorqin/reader:3.2.10
+    image: hectorqin/reader:3.2.11
     labels:
       createdBy: Apps
     networks:
