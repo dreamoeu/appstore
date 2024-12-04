@@ -69,7 +69,7 @@ jobs:
       - name: Commit and push to DPanel repository
         working-directory: target-repo
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUBTOKEN }}
         run: |
           git config --global user.name "${{ github.actor }}"
           git config --global user.email "${{ github.actor }}@users.noreply.github.com"
@@ -77,4 +77,4 @@ jobs:
           git add .
           git diff --cached --quiet || git commit -m "Synced apps from source repository via GitHub Actions"
       
-          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/QYG2297248353/appstore-dpanle.git master
+          git push https://x-access-token:${{ secrets.GITHUBTOKEN }}@github.com/QYG2297248353/appstore-dpanle.git master
