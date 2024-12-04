@@ -8,6 +8,18 @@
 ---
 
 > [!NOTE]
+> ## 2024年12月04日 公告
+>
+> 我们已支持应用商店: [1Panel](https://1panel.cn/), [DPanel](https://dpanel.cc/), [Dockge](https://dockge.kuma.pet/)
+>
+> 即将支持应用商店: [CasaOS](https://casaos.io/)
+>
+> 欢迎投稿，我们会根据您的需求，上架更多的应用。
+>
+> 🥰 [新疆萌森软件开发工作室](https://blog.lifebus.top/) 祝您生活愉快！
+
+
+> [!NOTE]
 > ## 2024年11月28日 公告
 >
 > 我们已支持应用商店: [1Panel](https://1panel.cn/), [Dockge](https://dockge.kuma.pet/)
@@ -246,6 +258,50 @@ curl -sSL https://install.lifebus.top/pre_app_uninstall.sh | bash
 ```sh
 curl -sSL https://install.lifebus.top/local_app_uninstall.sh | bash
 ```
+
+## DPanel 导入应用商店
+
+> 温馨提示：
+>
+> 目前 `DPanel` 商店中的应用由当前仓库构建，适配性可能存在问题，如果您在使用过程中遇到问题，请查看应用的官方文档或社区，或者联系我们。
+
+### 分发仓库
+
+#### Release By Github
+
+```url
+https://github.com/QYG2297248353/appstore-dpanel
+```
+
+#### Release By Gitee
+
+```url
+https://gitee.com/qyg2297248353/appstore-dpanel
+```
+
+#### Release By Gitea
+
+```url
+https://gitea.com/qyg2297248353/appstore-dpanel
+```
+
+```url
+https://git.lifebus.top/Ms-Studio/appstore-dpanel
+```
+
+#### Release By GitCode
+
+```url
+https://gitcode.com/qyg2297248353/appstore-dpanel
+```
+
+### 添加教程
+
+请前往 `系统` >> `应用商店` >> `添加第三方应用商店` >> 输入仓库地址 >> 点击 `添加`。
+
+![添加应用商店](https://file.lifebus.top/imgs/dpanel-appstore-add.png)
+
+添加完成后，您可以在 `Compose` >> `应用商店` 中看到新的应用列表。
 
 ## Dockge 导入应用商店
 

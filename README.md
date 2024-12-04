@@ -6,6 +6,15 @@
 本仓库中的所有应用均来自官方推荐应用，我们会定期更新应用，如果您有任何问题，请联系我们。
 
 ---
+<div style="border: 1px solid #e1e1e1; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); padding: 16px; margin: 16px; background-color: #fff; width: 80%; margin-left: auto; margin-right: auto;">
+  <h2 style="margin: 0 0 8px 0; font-size: 1.5em;">2024年12月04日 公告</h2>
+  <p>我们已支持应用商店: <span style="font-weight: bold; color: #d9534f;">1Panel</span>, <span style="font-weight: bold; color: #d9534f;">DPanel</span>, <span style="font-weight: bold; color: #d9534f;">Dockge</span></p>
+  <p>即将支持应用商店: <span style="font-weight: bold; color: #d9534f;">CasaOS</span></p>
+  <p>近期我们上架了很多新应用，如果您有任何问题，请联系我们。</p>
+  <p>欢迎投稿，我们会根据您的需求，上架更多的应用。</p>
+  <p>🥰 <a href="https://blog.lifebus.top/" target="_blank" >新疆萌森软件开发工作室</a> 祝您生活愉快！</p>
+</div>
+
 
 <div style="border: 1px solid #e1e1e1; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); padding: 16px; margin: 16px; background-color: #fff; width: 80%; margin-left: auto; margin-right: auto;">
   <h2 style="margin: 0 0 8px 0; font-size: 1.5em;">2024年11月28日 公告</h2>
@@ -244,6 +253,50 @@ curl -sSL https://install.lifebus.top/pre_app_uninstall.sh | bash
 ```sh
 curl -sSL https://install.lifebus.top/local_app_uninstall.sh | bash
 ```
+
+## DPanel 导入应用商店
+
+> 温馨提示：
+>
+> 目前 `DPanel` 商店中的应用由当前仓库构建，适配性可能存在问题，如果您在使用过程中遇到问题，请查看应用的官方文档或社区，或者联系我们。
+
+### 分发仓库
+
+#### Release By Github
+
+```url
+https://github.com/QYG2297248353/appstore-dpanel
+```
+
+#### Release By Gitee
+
+```url
+https://gitee.com/qyg2297248353/appstore-dpanel
+```
+
+#### Release By Gitea
+
+```url
+https://gitea.com/qyg2297248353/appstore-dpanel
+```
+
+```url
+https://git.lifebus.top/Ms-Studio/appstore-dpanel
+```
+
+#### Release By GitCode
+
+```url
+https://gitcode.com/qyg2297248353/appstore-dpanel
+```
+
+### 添加教程
+
+请前往 `系统` >> `应用商店` >> `添加第三方应用商店` >> 输入仓库地址 >> 点击 `添加`。
+
+![添加应用商店](https://file.lifebus.top/imgs/dpanel-appstore-add.png)
+
+添加完成后，您可以在 `Compose` >> `应用商店` 中看到新的应用列表。
 
 ## Dockge 导入应用商店
 
