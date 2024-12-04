@@ -52,12 +52,10 @@ jobs:
 
           git push origin custom
 
-      # 克隆目标仓库
       - name: Clone DPanel repository
         run: |
-          git clone https://github.com/QYG2297248353/appstore-dpanle.git target-repo
+          git clone https://github.com/QYG2297248353/appstore-dpanel.git target-repo
 
-      # 将 appstore 内容复制到目标仓库
       - name: Copy appstore to DPanel repository
         run: |
           if [ -d "target-repo/apps" ]; then
@@ -77,4 +75,4 @@ jobs:
           git add .
           git diff --cached --quiet || git commit -m "Synced apps from source repository via GitHub Actions"
       
-          git push https://x-access-token:${{ secrets.GITHUBTOKEN }}@github.com/QYG2297248353/appstore-dpanle.git master
+          git push https://x-access-token:${{ secrets.GITHUBTOKEN }}@github.com/QYG2297248353/appstore-dpanel.git master
