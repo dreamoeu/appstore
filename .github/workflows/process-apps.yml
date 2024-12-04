@@ -51,3 +51,31 @@ jobs:
           git rebase origin/custom || { echo "Rebase failed, trying to resolve"; git rebase --abort; git pull --rebase origin custom; }
 
           git push origin custom
+
+      # 克隆目标仓库
+      - name: Clone DPanel repository
+        run: |
+          git clone https://github.com/QYG2297248353/appstore-dpanle.git target-repo
+
+      # 将 appstore 内容复制到目标仓库
+      - name: Copy appstore to DPanel repository
+        run: |
+          if [ -d "target-repo/apps" ]; then
+            rm -rf target-repo/apps
+          fi
+          mkdir -p target-repo/apps
+          rsync -a appstore/ target-repo/apps/
+
+      # 提交并推送目标仓库的更改
+      - name: Commit and push to DPanel repository
+        working-directory: target-repo
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config --global user.name "${{ github.actor }}"
+          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+      
+          git add .
+          git diff --cached --quiet || git commit -m "Synced apps from source repository via GitHub Actions"
+      
+          git push origin master
