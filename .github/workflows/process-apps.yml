@@ -78,4 +78,4 @@ jobs:
           git add .
           git diff --cached --quiet || git commit -m "Synced apps from source repository via GitHub Actions"
       
-          git push origin master
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/QYG2297248353/appstore-dpanle.git master
