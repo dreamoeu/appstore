@@ -13,10 +13,15 @@
   "ignorePaths": [
     "appstore/**",
     "dockge/**",
-    "apps/tangsengdaodao/1.5/docker-compose.yml",
-    "apps/topiam-ce/2.0.0/docker-compose.yml"
+    "apps/tangsengdaodao/1.5/docker-compose.yml"
   ],
   "rebaseWhen": "never",
+  "hostRules": [
+    {
+      "hostType": "docker",
+      "matchHost": "registry.cn-hangzhou.aliyuncs.com"
+    }
+  ],
   "packageRules": [
     {
       "matchFileNames": [
