@@ -190,6 +190,9 @@
       "hostType": "docker",
       "keepAlive": true,
       "authType": "Token-Only",
+      "headers": {
+        "authorization": ""
+      },
       "token": " "
     }
   ],
