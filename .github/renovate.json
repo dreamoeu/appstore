@@ -14,7 +14,9 @@
   "ignorePaths": [
     "appstore/**",
     "dockge/**",
-    "apps/tangsengdaodao/1.5/docker-compose.yml"
+    "**/tangsengdaodao/**",
+    "**/apifox-runner/**",
+    "**/topiam-ce/**"
   ],
   "rebaseWhen": "auto",
   "automerge": true,
