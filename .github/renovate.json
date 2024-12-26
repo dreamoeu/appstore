@@ -187,7 +187,7 @@
     {
       "hostType": "docker",
       "matchHost": "registry.cn-hangzhou.aliyuncs.com",
-      "token": ""
+      "token": " "
     }
   ],
   "prCreation": "immediate"
