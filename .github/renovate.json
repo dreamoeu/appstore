@@ -3,6 +3,9 @@
   "extends": [
     "config:recommended"
   ],
+  "allowedHeaders": [
+    "Authorization"
+  ],
   "forkProcessing": "enabled",
   "enabledManagers": [
     "docker-compose",
