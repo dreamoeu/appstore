@@ -3,9 +3,6 @@
   "extends": [
     "config:recommended"
   ],
-  "allowedHeaders": [
-    "Authorization"
-  ],
   "forkProcessing": "enabled",
   "enabledManagers": [
     "docker-compose",
@@ -15,7 +12,6 @@
     "githubaction@githubaction.com"
   ],
   "ignorePaths": [
-    "**/*.env",
     "appstore/**",
     "dockge/**",
     "apps/tangsengdaodao/1.5/docker-compose.yml"
@@ -190,13 +186,7 @@
   "hostRules": [
     {
       "matchHost": "registry.cn-hangzhou.aliyuncs.com",
-      "hostType": "docker",
-      "keepAlive": true,
-      "authType": "Token-Only",
-      "headers": {
-        "authorization": ""
-      },
-      "token": " "
+      "token": ""
     }
   ],
   "prCreation": "immediate"
