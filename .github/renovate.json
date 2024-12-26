@@ -183,12 +183,5 @@
       "allowedVersions": ">=2.0"
     }
   ],
-  "hostRules": [
-    {
-      "hostType": "docker",
-      "matchHost": "registry.cn-hangzhou.aliyuncs.com",
-      "token": " "
-    }
-  ],
   "prCreation": "immediate"
 }
