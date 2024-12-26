@@ -15,7 +15,8 @@
     "dockge/**",
     "apps/tangsengdaodao/1.5/docker-compose.yml"
   ],
-  "rebaseWhen": "never",
+  "rebaseWhen": "auto",
+  "automerge": true,
   "packageRules": [
     {
       "matchFileNames": [
