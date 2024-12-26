@@ -16,13 +16,6 @@
     "apps/tangsengdaodao/1.5/docker-compose.yml"
   ],
   "rebaseWhen": "never",
-  "hostRules": [
-    {
-      "matchHost": "https://registry.cn-hangzhou.aliyuncs.com",
-      "hostType": "docker",
-      "token": ""
-    }
-  ],
   "packageRules": [
     {
       "matchFileNames": [
