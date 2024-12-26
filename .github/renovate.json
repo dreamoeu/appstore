@@ -1,19 +1,5 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "docker": {
-    "enabled": true,
-    "registries": {
-      "ghcr.io": {
-        "url": "https://ghcr.io"
-      },
-      "hub.docker.com": {
-        "url": "https://registry.hub.docker.com"
-      },
-      "registry.cn-hangzhou.aliyuncs.com": {
-        "url": "https://registry.cn-hangzhou.aliyuncs.com"
-      }
-    }
-  },
   "extends": [
     "config:recommended"
   ],
