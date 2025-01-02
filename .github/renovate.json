@@ -18,7 +18,6 @@
     "**/apifox-runner/**",
     "**/topiam-ce/**"
   ],
-  "rebaseWhen": "auto",
   "automerge": true,
   "packageRules": [
     {
