@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - custom
-  pull_request:
-    branches:
-      - custom
   workflow_dispatch:
 
 jobs:
@@ -71,8 +68,8 @@ jobs:
         run: |
           git config --global user.name "${{ github.actor }}"
           git config --global user.email "${{ github.actor }}@users.noreply.github.com"
-      
+          
           git add .
           git diff --cached --quiet || git commit -m "Synced apps from source repository via GitHub Actions"
-      
+          
           git push https://x-access-token:${{ secrets.GITHUBTOKEN }}@github.com/QYG2297248353/appstore-dpanel.git master
