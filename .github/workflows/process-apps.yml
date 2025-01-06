@@ -3,7 +3,7 @@ name: Process Apps and Commit Changes
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '0 */3 * * *'
 jobs:
   process:
     runs-on: ubuntu-latest
