@@ -1,11 +1,9 @@
 name: Process Apps and Commit Changes
 
 on:
-  push:
-    branches:
-      - custom
   workflow_dispatch:
-
+  schedule:
+    - cron: '*/30 * * * *'
 jobs:
   process:
     runs-on: ubuntu-latest
