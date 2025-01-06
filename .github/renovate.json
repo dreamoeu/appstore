@@ -4,6 +4,7 @@
     "config:recommended"
   ],
   "forkProcessing": "enabled",
+  "rebaseWhen": "never",
   "enabledManagers": [
     "docker-compose",
     "github-actions"
