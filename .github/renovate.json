@@ -5,6 +5,7 @@
   ],
   "forkProcessing": "enabled",
   "rebaseWhen": "never",
+  "prConcurrentLimit": 20,
   "enabledManagers": [
     "docker-compose",
     "github-actions"
