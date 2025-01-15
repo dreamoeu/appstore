@@ -189,7 +189,7 @@
       "matchPackageNames": [
         "linuxserver/bookstack"
       ],
-      "allowedVersions": "^\\d+\\.\\d+\\.\\d+$"
+      "rangeStrategy": "bump"
     }
   ],
   "prCreation": "immediate"
