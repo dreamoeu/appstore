@@ -189,8 +189,7 @@
       "matchPackageNames": [
         "linuxserver/bookstack"
       ],
-      "versioning": "semver",
-      "allowedVersions": "^\\d+\\.\\d+\\.\\d{1,2}$"
+      "allowedVersions": "*.*.<=99"
     }
   ],
   "prCreation": "immediate"
