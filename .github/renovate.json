@@ -190,10 +190,7 @@
         "linuxserver/bookstack"
       ],
       "versioning": "semver",
-      "allowedVersions": "^\\d+\\.\\d+\\.\\d{1,2}$",
-      "ignoreVersions": [
-        "*.*.*20*"
-      ]
+      "allowedVersions": "^\\d+\\.\\d+\\.\\d{1,2}$"
     }
   ],
   "prCreation": "immediate"
