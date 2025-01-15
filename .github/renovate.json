@@ -189,7 +189,11 @@
       "matchPackageNames": [
         "linuxserver/bookstack"
       ],
-      "rangeStrategy": "bump"
+      "versioning": "semver",
+      "allowedVersions": "^\\d+\\.\\d+\\.\\d{1,2}$",
+      "ignoreVersions": [
+        "*.*.*20*"
+      ]
     }
   ],
   "prCreation": "immediate"
