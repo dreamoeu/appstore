@@ -186,10 +186,10 @@
       "allowedVersions": ">=2.0"
     },
     {
+      "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d{1,2})$",
       "matchPackageNames": [
         "linuxserver/bookstack"
-      ],
-      "allowedVersions": "*.*.<=99"
+      ]
     }
   ],
   "prCreation": "immediate"
