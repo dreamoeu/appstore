@@ -190,6 +190,18 @@
       "matchPackageNames": [
         "linuxserver/bookstack"
       ]
+    },
+    {
+      "matchFileNames": [
+        "apps/nacos/2.4.*/*.yml"
+      ],
+      "allowedVersions": "<2.5"
+    },
+    {
+      "matchFileNames": [
+        "apps/nacos/2.5.*/*.yml"
+      ],
+      "allowedVersions": ">=2.5"
     }
   ],
   "prCreation": "immediate"
