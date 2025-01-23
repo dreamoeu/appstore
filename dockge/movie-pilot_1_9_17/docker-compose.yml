@@ -2,7 +2,7 @@ networks:
   1panel-network:
     external: true
 services:
-  movie-pilot-v2:
+  movie-pilot:
     container_name: movie-pilot
     env_file:
     - ./envs/global.env
@@ -14,9 +14,7 @@ services:
     - PUID=0
     - PGID=0
     - UMASK=022
-    - HTTP_PROXY=${PROXY_HOST}
-    - HTTPS_PROXY=${PROXY_HOST}
-    image: jxxghp/moviepilot-v2:2.2.4
+    image: jxxghp/moviepilot:1.9.17
     labels:
       createdBy: Apps
     logging:
