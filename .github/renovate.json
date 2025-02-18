@@ -19,7 +19,7 @@
     "**/tangsengdaodao/**",
     "**/apifox-runner/**",
     "**/topiam-ce/**",
-    "**/langgenius/**"
+    "**/dify/**"
   ],
   "automerge": true,
   "packageRules": [
