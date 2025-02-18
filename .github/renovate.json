@@ -18,7 +18,8 @@
     "dockge/**",
     "**/tangsengdaodao/**",
     "**/apifox-runner/**",
-    "**/topiam-ce/**"
+    "**/topiam-ce/**",
+    "**/langgenius/**"
   ],
   "automerge": true,
   "packageRules": [
