@@ -9,7 +9,7 @@ services:
     - .env
     environment:
     - TZ=Asia/Shanghai
-    image: pihole/pihole:2024.07.0
+    image: pihole/pihole:2025.02.0
     labels:
       createdBy: Apps
     networks:
