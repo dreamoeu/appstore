@@ -19,7 +19,8 @@
     "**/tangsengdaodao/**",
     "**/apifox-runner/**",
     "**/topiam-ce/**",
-    "**/dify/**"
+    "**/dify/**",
+    "**/auto-lady/**"
   ],
   "automerge": true,
   "packageRules": [
