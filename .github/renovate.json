@@ -7,7 +7,8 @@
   "rebaseWhen": "conflicted",
   "prConcurrentLimit": 20,
   "automerge": true,
-  "automergeType": "pr",
+  "automergeType": "branch",
+  "platformAutomerge": true,
   "enabledManagers": [
     "docker-compose",
     "github-actions"
