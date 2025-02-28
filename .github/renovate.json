@@ -4,8 +4,10 @@
     "config:recommended"
   ],
   "forkProcessing": "enabled",
-  "rebaseWhen": "never",
+  "rebaseWhen": "conflicted",
   "prConcurrentLimit": 20,
+  "automerge": true,
+  "automergeType": "pr",
   "enabledManagers": [
     "docker-compose",
     "github-actions"
@@ -22,44 +24,19 @@
     "**/dify/**",
     "**/auto-lady/**"
   ],
-  "automerge": true,
   "packageRules": [
     {
       "matchUpdateTypes": [
-        "patch"
+        "patch",
+        "minor"
       ],
-      "automerge": true,
-      "automergeType": "pr"
+      "automerge": true
     },
     {
       "matchFileNames": [
         "apps/postgresql/pg*/*.yml"
       ],
-      "allowedVersions": "/^pg12*/"
-    },
-    {
-      "matchFileNames": [
-        "apps/postgresql/pg*/*.yml"
-      ],
-      "allowedVersions": "/^pg13*/"
-    },
-    {
-      "matchFileNames": [
-        "apps/postgresql/pg*/*.yml"
-      ],
-      "allowedVersions": "/^pg14*/"
-    },
-    {
-      "matchFileNames": [
-        "apps/postgresql/pg*/*.yml"
-      ],
-      "allowedVersions": "/^pg15*/"
-    },
-    {
-      "matchFileNames": [
-        "apps/postgresql/pg*/*.yml"
-      ],
-      "allowedVersions": "/^pg16*/"
+      "allowedVersions": "/^pg(12|13|14|15|16)*/"
     },
     {
       "matchFileNames": [
