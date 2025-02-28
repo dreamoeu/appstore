@@ -189,6 +189,18 @@
         "apps/nacos/2.5.*/*.yml"
       ],
       "allowedVersions": ">=2.5"
+    },
+    {
+      "matchFileNames": [
+        "apps/umami/2.16.0/*.yml"
+      ],
+      "allowedVersions": "<=2.16.0"
+    },
+    {
+      "matchFileNames": [
+        "apps/umami/2.16.1/*.yml"
+      ],
+      "allowedVersions": ">=2.16.1"
     }
   ],
   "prCreation": "immediate"
