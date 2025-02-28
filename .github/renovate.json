@@ -4,7 +4,7 @@
     "config:recommended"
   ],
   "forkProcessing": "enabled",
-  "rebaseWhen": "conflicted",
+  "rebaseWhen": "never",
   "prConcurrentLimit": 20,
   "automerge": true,
   "automergeType": "branch",
