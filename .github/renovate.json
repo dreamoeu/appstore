@@ -130,13 +130,6 @@
       "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)"
     },
     {
-      "matchPackageNames": [
-        "umamisoftware/umami"
-      ],
-      "versionCompatibility": "^(?<compatibility>.*)-(?<version>.*)$",
-      "versioning": "semver"
-    },
-    {
       "versioning": "regex:^RELEASE\\.(?<major>\\d{4})-(?<minor>\\d{2})-(?<patch>\\d{2}).*Z$",
       "matchPackageNames": [
         "/^minio/"
@@ -191,14 +184,21 @@
       "allowedVersions": ">=2.5"
     },
     {
+      "matchPackageNames": [
+        "umamisoftware/umami"
+      ],
+      "versionCompatibility": "^(?<compatibility>.*)-(?<version>.*)$",
+      "versioning": "semver"
+    },
+    {
       "matchFileNames": [
-        "apps/umami/2.16.0/*.yml"
+        "apps/umami*/2.16.0/*.yml"
       ],
       "allowedVersions": "<=2.16.0"
     },
     {
       "matchFileNames": [
-        "apps/umami/2.16.1/*.yml"
+        "apps/umami*/2.16.1/*.yml"
       ],
       "allowedVersions": ">=2.16.1"
     }
