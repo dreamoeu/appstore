@@ -101,6 +101,7 @@
 | 🟢 |       <img height="22" src="https://file.lifebus.top/apps/maccms10/logo.png" width="22"/>        |        苹果CMS V10        |                    https://www.maccms.la/                     | 基于ThinkPHP和Layui的多功能开源免费内容管理系统                                       |          |
 | 🟢 |      <img height="22" src="https://file.lifebus.top/apps/mailserver/logo.png" width="22"/>       |    Docker Mailserver    | https://docker-mailserver.github.io/docker-mailserver/latest/ | 可用于生产的全栈但简单的邮件服务器                                                    |          |
 | 🟢 |        <img height="22" src="https://file.lifebus.top/apps/mdc-ng/logo.png" width="22"/>         |         MDC-NG          |               https://github.com/mdc-ng/mdc-ng/               | 成人电影数据采集工具                                                           |          |
+| 🟢 |       <img height="22" src="https://file.lifebus.top/apps/mastodon/logo.png" width="22"/>        |     Mastodon (长毛象)      |                   https://joinmastodon.org/                   | 自由开源的去中心化的分布式微博客社交网络                                                 |          |
 | 🟢 |         <img height="22" src="https://file.lifebus.top/apps/maxkb/logo.png" width="22"/>         |          MaxKB          |                       https://maxkb.cn/                       | 基于 LLM 大语言模型的知识库问答系统                                                 |          |
 | 🟢 |       <img height="22" src="https://file.lifebus.top/apps/mediacms/logo.png" width="22"/>        |        Media CMS        |                     https://mediacms.io/                      | 现代、功能齐全的开源视频和媒体内容管理系统                                                |          |
 | 🟢 |    <img height="22" src="https://file.lifebus.top/apps/metatube-server/logo.png" width="22"/>    |        MetaTube         |            https://github.com/metatube-community/             | 为 Jellyfin/Emby/Plex 开发的超级好用的成人元数据刮削插件                               |          |
@@ -183,7 +184,6 @@
 > 以上排序不分先后，按照字母顺序排列。
 >
 > 维护状态：🟢 维护中 🔴 未维护 🟡 表示不定期维护
-
 
 ---
 
