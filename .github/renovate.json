@@ -99,16 +99,28 @@
       "allowedVersions": "/^4.*.*/"
     },
     {
-      "matchPackageNames": [
-        "emby/embyserver"
+      "matchFileNames": [
+        "apps/emby/4.8.*/*.yml"
       ],
       "allowedVersions": "/^4\\.8\\.\\d+\\.\\d+$/"
     },
     {
-      "matchPackageNames": [
-        "amilys/embyserver"
+      "matchFileNames": [
+        "apps/emby/4.9.*/*.yml"
+      ],
+      "allowedVersions": "/^4\\.9\\.\\d+\\.\\d+$/"
+    },
+    {
+      "matchFileNames": [
+        "apps/emby-amilys/4.8.*/*.yml"
       ],
       "allowedVersions": "/^4\\.8\\.\\d+\\.\\d+$/"
+    },
+    {
+      "matchFileNames": [
+        "apps/emby-amilys/4.9.*/*.yml"
+      ],
+      "allowedVersions": "/^4\\.9\\.\\d+\\.\\d+$/"
     },
     {
       "matchPackageNames": [
