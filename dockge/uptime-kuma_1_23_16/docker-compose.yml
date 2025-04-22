@@ -7,7 +7,16 @@ services:
     env_file:
     - ./envs/global.env
     - .env
-    image: louislam/uptime-kuma:2.0.0-beta.0
+    environment:
+    - PUID=0
+    - PGID=0
+    - UPTIME_KUMA_PORT=3001
+    - UPTIME_KUMA_HOST=0.0.0.0
+    - DATA_DIR=/app/data
+    - NODE_TLS_REJECT_UNAUTHORIZED=0
+    - UPTIME_KUMA_ALLOW_ALL_CHROME_EXEC=0
+    - UPTIME_KUMA_WS_ORIGIN_CHECK=cors-like
+    image: louislam/uptime-kuma:1.23.16
     labels:
       createdBy: Apps
     networks:
