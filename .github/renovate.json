@@ -23,7 +23,8 @@
     "**/apifox-runner/**",
     "**/topiam-ce/**",
     "**/dify/**",
-    "**/auto-lady/**"
+    "**/auto-lady/**",
+    "**/homarr/0.15.10/**"
   ],
   "packageRules": [
     {
