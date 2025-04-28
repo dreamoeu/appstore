@@ -2,7 +2,7 @@ networks:
   1panel-network:
     external: true
 services:
-  baota:
+  homarr:
     container_name: homarr
     env_file:
     - ./envs/global.env
