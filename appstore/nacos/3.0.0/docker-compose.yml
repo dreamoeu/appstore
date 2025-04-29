@@ -9,17 +9,17 @@ services:
     - .env
     environment:
     - MODE=standalone
+    - NACOS_CONSOLE_PORT=${PANEL_APP_PORT_HTTP:-8080}
     - NACOS_SERVER_PORT=${PANEL_APP_PORT_API:-8848}
     - NACOS_AUTH_ENABLE=true
     - SPRING_DATASOURCE_PLATFORM=mysql
     image: nacos/nacos-server:v3.0.0
     labels:
       createdBy: Apps
-    networks:
-    - 1panel-network
+    network_mode: ${NETWORK_MODE}
     ports:
-    - ${PANEL_APP_PORT_HTTP}:8080
-    - ${PANEL_APP_PORT_API}:8848
+    - ${PANEL_APP_PORT_HTTP:-8080}:${PANEL_APP_PORT_HTTP:-8080}
+    - ${PANEL_APP_PORT_API:-8848}:${PANEL_APP_PORT_API:-8080}
     - ${PANEL_APP_PORT_GRPC}:9848
     restart: always
     volumes:
