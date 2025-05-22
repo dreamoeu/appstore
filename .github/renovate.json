@@ -196,6 +196,18 @@
       "allowedVersions": ">=3.0"
     },
     {
+      "matchFileNames": [
+        "apps/immich*/1.132.*/*.yml"
+      ],
+      "allowedVersions": "<1.133"
+    },
+    {
+      "matchFileNames": [
+        "apps/immich*/1.133.*/*.yml"
+      ],
+      "allowedVersions": ">=1.133"
+    },
+    {
       "matchPackageNames": [
         "umamisoftware/umami"
       ],
