@@ -225,6 +225,15 @@
         "apps/umami*/2.16.1/*.yml"
       ],
       "allowedVersions": ">=2.16.1"
+    },
+    {
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchPackagePrefixes": [
+        "ghcr.io/immich-app/postgres"
+      ],
+      "enabled": false
     }
   ],
   "prCreation": "immediate"
