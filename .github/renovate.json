@@ -234,6 +234,18 @@
         "ghcr.io/immich-app/postgres"
       ],
       "enabled": false
+    },
+    {
+      "matchFileNames": [
+        "apps/elastic*/8.*.*/*.yml"
+      ],
+      "allowedVersions": "<9.0"
+    },
+    {
+      "matchFileNames": [
+        "apps/elastic*/9.*.*/*.yml"
+      ],
+      "allowedVersions": ">=9.0"
     }
   ],
   "prCreation": "immediate"
