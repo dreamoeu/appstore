@@ -13,10 +13,10 @@ services:
       - 1panel-network
     stop_grace_period: 1m
     dns:
-      - ${DNS1}
-      - ${DNS2}
+      - ${DNS1:-223.5.5.5}
+      - ${DNS2:-119.29.29.29}
     extra_hosts:
-      - ${DOMAIN_HOSTS1}
+      - ${DOMAIN_HOSTS1:-localhost:127.0.0.1}
     hostname: ${HOSTNAME_FQDN}
     ports:
       - ${PANEL_APP_PORT_SMTP}:25
@@ -46,7 +46,7 @@ services:
       - SSL_CERT_PATH=/tmp/dms/certs/${CERTS_PUBLIC_CRT:-public.crt}
       - SSL_KEY_PATH=/tmp/dms/certs/${CERTS_PRIVATE_KEY:-private.key}
       - SPOOF_PROTECTION=1
-      - https_proxy=${http_proxy}
+      - HTTPS_PROXY=${HTTP_PROXY:-}
     healthcheck:
       test: "ss --listening --tcp | grep -P 'LISTEN.+:smtp' || exit 1"
       timeout: 3s
