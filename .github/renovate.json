@@ -224,10 +224,10 @@
       "matchDatasources": [
         "docker"
       ],
-      "matchPackagePrefixes": [
-        "ghcr.io/immich-app/postgres"
-      ],
-      "enabled": false
+      "enabled": false,
+      "matchPackageNames": [
+        "ghcr.io/immich-app/postgres{/,}**"
+      ]
     },
     {
       "matchFileNames": [
