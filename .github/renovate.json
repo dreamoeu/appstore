@@ -24,6 +24,9 @@
     "**/topiam-ce/**",
     "**/dify/**",
     "**/auto-lady/**",
+    "**/alist/**",
+    "**/alist-aria2/**",
+    "**/alist-ffmpeg/**",
     "**/homarr/0.15.10/**"
   ],
   "packageRules": [
