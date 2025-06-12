@@ -243,6 +243,18 @@
         "apps/elastic*/9.*.*/*.yml"
       ],
       "allowedVersions": ">=9.0"
+    },
+    {
+      "matchFileNames": [
+        "apps/ani-rss/1.*.*/*.yml"
+      ],
+      "allowedVersions": "<2.0.0"
+    },
+    {
+      "matchFileNames": [
+        "apps/ani-rss/2.*.*/*.yml"
+      ],
+      "allowedVersions": ">=2.0.0"
     }
   ],
   "prCreation": "immediate"
