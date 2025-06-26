@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   auto-lady:
-    container_name: byte-muse
+    container_name: auto-lady
     env_file:
     - ./envs/global.env
     - .env
@@ -11,7 +11,7 @@ services:
     - HTTPS_PROXY=${HTTP_PROXY}
     - HTTP_PROXY=${HTTP_PROXY:-}
     - NO_PROXY=${NO_PROXY:-}
-    image: envyafish/byte-muse:1.11.8
+    image: envyafish/byte-muse:1.5.3
     labels:
       createdBy: Apps
     networks:
