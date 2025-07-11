@@ -36,12 +36,12 @@ services:
     networks:
     - 1panel-network
     ports:
-    - ${PANEL_APP_PORT_SERVER_1}:21115
+    - ${PANEL_APP_PORT_NAT}:21115
     - ${PANEL_APP_PORT_ID}:21116
     - ${PANEL_APP_PORT_ID}:21116/udp
     - ${PANEL_APP_PORT_SERVER}:21117
-    - ${PANEL_APP_PORT_SERVER_2}:21118
-    - ${PANEL_APP_PORT_SERVER_3}:21119
+    - ${PANEL_APP_PORT_API_WS}:21118
+    - ${PANEL_APP_PORT_SERVER_WS}:21119
     restart: always
     volumes:
     - ${RUSTDESK_API_ROOT_PATH}/server-data:/data
