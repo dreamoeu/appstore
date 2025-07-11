@@ -11,7 +11,7 @@ MinIO 是一种高性能、S3 兼容的对象存储。它是为大规模 AI/ML�
         <span style="font-size: 24px; margin-right: 8px;">⚠️</span>
         <div>
             <strong style="font-size: 16px;">温馨提示</strong><br>
-            <span style="font-size: 14px; color: #333;">该软件由于违背开源协议，自2025-04-22后，不在提供管理界面服务，请谨慎使用。</span>
+            <span style="font-size: 14px; color: #333;">该软件由于违背开源协议，自2025-04-22后，不在提供管理界面服务,仅保留文件浏览，请谨慎使用。</span>
         </div>
     </div>
 </div>
