@@ -23,19 +23,13 @@ services:
       - ${GLOBAL_ENV_FILE:-/etc/1panel/envs/global.env}
       - ${ENV_FILE:-/etc/1panel/envs/default.env}
     volumes:
-      - ${RUSTDESK_API_ROOT_PATH}/api-data:/app/data
-    environment:
-      - TZ=Asia/Shanghai
-      - RUSTDESK_API_LANG=zh-CN
-  rustdesk-server-s6:
-    volumes:
       - ${RUSTDESK_API_ROOT_PATH}/server-data:/data
       - ${RUSTDESK_API_ROOT_PATH}/api-data:/app/data
       - ${HBBR_RUN_FILE:-./conf/hbbr/run}:/etc/s6-overlay/s6-rc.d/hbbr/run
       - ${HBBS_RUN_FILE:-./conf/hbbs/run}:/etc/s6-overlay/s6-rc.d/hbbs/run
     environment:
       - TZ=Asia/Shanghai
-      - MUST_LOGIN=N
-      - ENCRYPTED_ONLY=1
       - RUSTDESK_API_LANG=zh-CN
       - RELAY=${RUSTDESK_SERVER_URL}
+      - ENCRYPTED_ONLY=1
+      - MUST_LOGIN=N
