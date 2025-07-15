@@ -91,7 +91,7 @@ additionalProperties:
       required: true
       type: select
       values:
-        - label: 允许注册
+        - label: 允许注册 (Redis 存储)
           value: "true"
         - label: 禁用注册
           value: "false"
