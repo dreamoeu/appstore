@@ -256,6 +256,18 @@
         "apps/ani-rss/2.*.*/*.yml"
       ],
       "allowedVersions": ">=2.0"
+    },
+    {
+      "matchFileNames": [
+        "apps/maxkb/1.*.*/*.yml"
+      ],
+      "allowedVersions": "<2.0"
+    },
+    {
+      "matchFileNames": [
+        "apps/maxkb/2.*.*/*.yml"
+      ],
+      "allowedVersions": ">=2.0"
     }
   ],
   "prCreation": "immediate"
