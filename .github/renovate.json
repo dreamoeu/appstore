@@ -278,7 +278,7 @@
       ],
       "matchCurrentVersion": "v2.21.0",
       "matchPaths": [
-        "apps/seaweedfs/3.94/docker-compose.yml"
+        "apps/seaweedfs/**/docker-compose.yml"
       ],
       "enabled": false
     }
