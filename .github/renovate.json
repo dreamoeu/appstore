@@ -277,7 +277,7 @@
         "prom/prometheus"
       ],
       "matchCurrentVersion": "v2.21.0",
-      "matchPaths": [
+      "matchFileNames": [
         "apps/seaweedfs/**/docker-compose.yml"
       ],
       "enabled": false
