@@ -24,21 +24,6 @@ services:
     restart: always
     volumes:
     - ${ARCHIVEBOX_ROOT_PATH}/data:/data
-  archivebox-scheduler:
-    command: schedule --foreground --update --every=day
-    container_name: scheduler-archivebox
-    env_file:
-    - ./envs/global.env
-    - .env
-    environment:
-    - TZ=Asia/Shanghai
-    - TIMEOUT=120
-    - SEARCH_BACKEND_ENGINE=sonic
-    - SEARCH_BACKEND_HOST_NAME=archivebox-sonic
-    - SEARCH_BACKEND_PASSWORD=${ADMIN_PASSWORD:-}
-    image: archivebox/archivebox:0.7.3
-    volumes:
-    - ${ARCHIVEBOX_ROOT_PATH}/data:/data
   archivebox-sonic:
     container_name: sonic-archivebox
     env_file:
@@ -50,5 +35,8 @@ services:
     expose:
     - 1491
     image: archivebox/sonic:latest
+    networks:
+    - 1panel-network
+    restart: always
     volumes:
     - ${ARCHIVEBOX_ROOT_PATH}/sonic:/var/lib/sonic/store
