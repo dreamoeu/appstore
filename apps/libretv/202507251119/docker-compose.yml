@@ -4,7 +4,7 @@ networks:
 
 services:
   libretv:
-    image: bestzwei/libretv:202507251119
+    image: bestzwei/libretv:202508011316
     container_name: ${CONTAINER_NAME}
     labels:
       createdBy: "Apps"
