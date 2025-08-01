@@ -9,7 +9,7 @@ services:
     - .env
     environment:
     - TZ=Asia/Shanghai
-    image: gotson/komga:1.23.0
+    image: gotson/komga:1.23.1
     labels:
       createdBy: Apps
     networks:
