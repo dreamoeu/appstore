@@ -207,7 +207,7 @@
     },
     {
       "matchFileNames": [
-        "apps/immich*/1.132.*/*.yml"
+        "apps/immich*/1.136.*/*.yml"
       ],
       "allowedVersions": "/^1.136.*/"
     },
