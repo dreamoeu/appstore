@@ -206,6 +206,12 @@
       "allowedVersions": "/^1.132.*/"
     },
     {
+      "matchFileNames": [
+        "apps/immich*/1.132.*/*.yml"
+      ],
+      "allowedVersions": "/^1.136.*/"
+    },
+    {
       "matchPackageNames": [
         "umamisoftware/umami"
       ],
