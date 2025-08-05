@@ -23,6 +23,9 @@ services:
     env_file:
       - ${GLOBAL_ENV_FILE:-/etc/1panel/envs/global.env}
       - ${ENV_FILE:-/etc/1panel/envs/default.env}
+    volumes:
+      - ${DOCKWARE_ROOT_PATH}/mysql:/var/lib/mysql
+      - ${DOCKWARE_ROOT_PATH}/html:/var/www/html
     environment:
       - TZ=Asia/Shanghai
       - XDEBUG_ENABLED=0
