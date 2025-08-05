@@ -3,25 +3,25 @@ networks:
     external: true
 
 services:
-  s-ui:
-    image: alireza7/s-ui:1.2.2
+  ghost:
+    image: ghost:6.0.0
     container_name: ${CONTAINER_NAME}
     labels:
       createdBy: "Apps"
     restart: always
     networks:
       - 1panel-network
-    tty: true
     ports:
-      - ${PANEL_APP_PORT_HTTP}:2095
-      - ${PANEL_APP_PORT_API}:2096
+      - ${PANEL_APP_PORT_HTTP}:2368
     env_file:
       - ${GLOBAL_ENV_FILE:-/etc/1panel/envs/global.env}
       - ${ENV_FILE:-/etc/1panel/envs/default.env}
     volumes:
-      - ${S_UI_ROOT_PATH}/db:/app/db
-      - ${S_UI_ROOT_PATH}/cert:/app/cert
+      - ${GHOST_ROOT_PATH}/data:/var/lib/ghost/content
     environment:
-      - TZ=Asia/Shanghai
-      - SUI_LOG_LEVEL=info
-      - SUI_DEBUG=false
+      - NODE_ENV=production
+      - server__host=0.0.0.0
+      - server__port=2368
+      - database__client=mysql
+      - mail__options__service=Email
+      - mail__options__secure=true
