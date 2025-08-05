@@ -276,6 +276,18 @@
       "allowedVersions": ">=2.0"
     },
     {
+      "matchFileNames": [
+        "apps/homarr/0.*.*/*.yml"
+      ],
+      "allowedVersions": "<1.0"
+    },
+    {
+      "matchFileNames": [
+        "apps/homarr/1.*.*/*.yml"
+      ],
+      "allowedVersions": ">=1.0"
+    },
+    {
       "matchDatasources": [
         "docker"
       ],
