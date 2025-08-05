@@ -2,23 +2,28 @@ networks:
   1panel-network:
     external: true
 services:
-  pihole:
-    container_name: pi-hole
+  dockware:
+    container_name: shopware
     env_file:
     - ./envs/global.env
     - .env
     environment:
     - TZ=Asia/Shanghai
-    image: pihole/pihole:2025.08.0
+    - XDEBUG_ENABLED=0
+    expose:
+    - 3306
+    - 9999
+    - 9998
+    - 8888
+    - 22
+    - 443
+    image: dockware/play:6.7.1.2
     labels:
       createdBy: Apps
     networks:
     - 1panel-network
     ports:
     - ${PANEL_APP_PORT_HTTP}:80
-    - ${PANEL_APP_PORT_DNS}:53
-    - ${PANEL_APP_PORT_DNS}:53/udp
     restart: always
     volumes:
-    - ${PIHOLE_ROOT_PATH}/pihole:/etc/pihole
-    - ${PIHOLE_ROOT_PATH}/dnsmasq.d:/etc/dnsmasq.d
+    - ${DOCKWARE_ROOT_PATH}/public:/var/www/html/public
