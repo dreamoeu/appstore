@@ -39,15 +39,15 @@
     },
     {
       "matchFileNames": [
-        "apps/postgresql-postgis/16.*/*.yml"
+        "apps/postgresql-postgis/16-*/*.yml"
       ],
-      "allowedVersions": "/^16.*/"
+      "allowedVersions": "/^16-*/"
     },
     {
       "matchFileNames": [
-        "apps/postgresql-postgis/17.*/*.yml"
+        "apps/postgresql-postgis/17-*/*.yml"
       ],
-      "allowedVersions": "/^17.*/"
+      "allowedVersions": "/^17-*/"
     },
     {
       "matchFileNames": [
