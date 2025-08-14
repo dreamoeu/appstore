@@ -9,7 +9,7 @@ services:
     - .env
     environment:
     - TZ=Asia/Shanghai
-    image: ghcr.io/senshinya/moontv:latest
+    image: ghcr.io/moontechlab/lunatv:2.1.0
     labels:
       createdBy: Apps
     networks:
@@ -17,5 +17,3 @@ services:
     ports:
     - ${PANEL_APP_PORT_HTTP}:3000
     restart: always
-    volumes:
-    - ${MOONTV_ROOT_PATH}/data:/data
