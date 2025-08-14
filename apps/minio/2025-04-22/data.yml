@@ -18,16 +18,8 @@ additionalProperties:
     - default: 9000
       edit: true
       envKey: PANEL_APP_PORT_API
-      labelZh: API 端口 (映射内部端口)
-      labelEn: API Port (mapped internal port)
-      required: true
-      rule: paramPort
-      type: number
-    - default: 9000
-      edit: true
-      envKey: MINIO_API_PORT
-      labelZh: API 内部端口
-      labelEn: Internal API Port
+      labelZh: API 端口
+      labelEn: API Port
       required: true
       rule: paramPort
       type: number
