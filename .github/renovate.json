@@ -117,6 +117,12 @@
     },
     {
       "matchFileNames": [
+        "apps/baota/9.*/*.yml"
+      ],
+      "allowedVersions": "/^9.*/"
+    },
+    {
+      "matchFileNames": [
         "apps/emby/4.8.*/*.yml"
       ],
       "allowedVersions": "/^4\\.8\\.\\d+\\.\\d+$/"
