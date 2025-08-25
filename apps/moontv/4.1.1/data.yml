@@ -24,6 +24,13 @@ additionalProperties:
       required: true
       rule: paramPort
       type: number
+    - default: ""
+      edit: true
+      envKey: AUTH_TOKEN
+      labelZh: Authorization Code
+      labelEn: A
+      required: true
+      type: text
     - default: "MoonTV"
       edit: true
       envKey: SITE_NAME
