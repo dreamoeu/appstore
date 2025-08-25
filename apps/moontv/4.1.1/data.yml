@@ -106,9 +106,9 @@ additionalProperties:
       type: text
     - default: "redis://127.0.0.1:6666"
       edit: true
-      envKey: REDIS_URL
-      labelZh: Redis 地址 (Redis 存储)
-      labelEn: Redis Address (Redis Storage)
+      envKey: KVROCKS_URL
+      labelZh: Kvrocks 地址 (Kvrocks 存储)
+      labelEn: Kvrocks Address (Kvrocks Storage)
       required: false
       type: text
     - default: ""
