@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   aria2-superng6:
-    image: superng6/aria2:a2b-stable-24-11-01
+    image: superng6/aria2:25-08-29
     container_name: ${CONTAINER_NAME}
     labels:
       createdBy: "Apps"
