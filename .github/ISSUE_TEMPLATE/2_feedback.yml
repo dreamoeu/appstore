@@ -27,6 +27,7 @@ body:
         - 版本更新
         - 部署失败
         - 应用下架
+        - 其他问题
       default: 0
   - type: textarea
     id: details
