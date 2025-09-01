@@ -1,0 +1,53 @@
+name: 📬问题反馈
+description:
+title: "[问题反馈]"
+labels: bug
+assignees: QYG2297248353
+body:
+  - type: markdown
+    id: base_info
+    attributes:
+      value: "## 问题描述"
+  - type: input
+    id: version
+    validations:
+      required: true
+    attributes:
+      label: "应用所在地址"
+      description: "https://github.com/QYG2297248353/appstore-1panel/tree/custom/apps/**"
+  - type: dropdown
+    id: feedback_type
+    validations:
+      required: true
+    attributes:
+      label: "问题类型"
+      multiple: false
+      options:
+        - 配置丢失
+        - 版本更新
+        - 部署失败
+        - 应用下架
+      default: 0
+  - type: textarea
+    id: details
+    attributes:
+      label: "问题描述"
+      description: "请提供详细的问题描述"
+  - type: textarea
+    id: repro-logs
+    attributes:
+      label: 日志记录
+      description: "(可选)粘贴相关日志"
+      placeholder: |
+        直接粘贴日志文件内容即可
+      render: bash
+    validations:
+      required: false
+  - type: checkboxes
+    id: authorization
+    attributes:
+      label: 条款确认
+      description: "请确认您已阅读并同意以下条款"
+      options:
+        - label: "我已确认该问题可复现，高概率会出现"
+          required: true
