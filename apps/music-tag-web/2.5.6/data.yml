@@ -1,0 +1,96 @@
+additionalProperties:
+  formFields:
+    - default: "/home/music-tag-web"
+      edit: true
+      envKey: MUSIC_TAG_WEB_ROOT_PATH
+      labelZh: 数据持久化路径
+      labelEn: Data persistence path
+      required: true
+      type: text
+    - default: 8002
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelZh: WebUI 端口
+      labelEn: WebUI port
+      required: true
+      rule: paramPort
+      type: number
+    - default: ""
+      edit: true
+      envKey: CUSTOM_MOUNT_DIRECTORY_1
+      labelEn: Custom mount directory 1
+      labelZh: 自定义挂载目录 1
+      required: false
+      type: text
+    - default: ""
+      edit: true
+      envKey: CUSTOM_MOUNT_DIRECTORY_2
+      labelEn: Custom mount directory 2
+      labelZh: 自定义挂载目录 2
+      required: false
+      type: text
+    - default: ""
+      edit: true
+      envKey: CUSTOM_MOUNT_DIRECTORY_3
+      labelEn: Custom mount directory 3
+      labelZh: 自定义挂载目录 3
+      required: false
+      type: text
+    - default: "127.0.0.1"
+      edit: true
+      envKey: MYSQL_HOST
+      labelZh: 数据库 主机
+      labelEn: Database Host
+      required: false
+      type: text
+    - default: 3306
+      edit: true
+      envKey: MYSQL_PORT
+      labelZh: 数据库 端口
+      labelEn: Database Port
+      required: false
+      rule: paramPort
+      type: number
+    - default: "music-tag-web"
+      edit: true
+      envKey: MYSQL_DB_NAME
+      labelZh: 数据库 名称
+      labelEn: Database Name
+      required: false
+      type: text
+    - default: "music-tag-web"
+      edit: true
+      envKey: MYSQL_USER
+      labelZh: 数据库 用户名
+      labelEn: Database Username
+      required: false
+      type: text
+    - default: ""
+      edit: true
+      envKey: MYSQL_PASSWORD
+      labelZh: 数据库 密码
+      labelEn: Database Password
+      required: false
+      type: password
+    - default: ""
+      edit: true
+      envKey: REDIS_HOST
+      labelZh: Redis 主机
+      labelEn: Redis Host
+      required: false
+      type: text
+    - default: 6379
+      edit: true
+      envKey: REDIS_PORT
+      labelZh: Redis 端口
+      labelEn: Redis Port
+      required: false
+      rule: paramPort
+      type: number
+    - default: ""
+      edit: true
+      envKey: REDIS_PASSWORD
+      labelZh: Redis 密码
+      labelEn: Redis Password
+      required: false
+      type: password
