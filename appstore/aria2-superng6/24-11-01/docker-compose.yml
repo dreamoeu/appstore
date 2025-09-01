@@ -27,12 +27,15 @@ services:
       createdBy: Apps
     network_mode: ${NETWORK_MODE}
     ports:
-    - ${PANEL_APP_PORT_HTTP}:8080
-    - ${PANEL_APP_PORT_RPC}:6800
-    - ${PANEL_APP_PORT_BTPORT}:32516
-    - ${PANEL_APP_PORT_BTPORT}:32516/udp
+    - ${PANEL_APP_PORT_HTTP}:${PANEL_APP_PORT_HTTP}
+    - ${PANEL_APP_PORT_RPC}:${PANEL_APP_PORT_RPC}
+    - ${PANEL_APP_PORT_BTPORT}:${PANEL_APP_PORT_BTPORT}
+    - ${PANEL_APP_PORT_BTPORT}:${PANEL_APP_PORT_BTPORT}/udp
     restart: always
     volumes:
     - ${ARIA2_ROOT_PATH}/downloads:/downloads
     - ${ARIA2_ROOT_PATH}/config:/config
+    - ${CUSTOM_MOUNT_DIRECTORY_1:-./default_mount_1}:${CUSTOM_MOUNT_DIRECTORY_1:-/default_mount_1}
+    - ${CUSTOM_MOUNT_DIRECTORY_2:-./default_mount_2}:${CUSTOM_MOUNT_DIRECTORY_2:-/default_mount_2}
+    - ${CUSTOM_MOUNT_DIRECTORY_3:-./default_mount_3}:${CUSTOM_MOUNT_DIRECTORY_3:-/default_mount_3}
     - /lib/modules:/lib/modules
