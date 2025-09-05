@@ -6,26 +6,24 @@ services:
     container_name: movie-pilot
     env_file:
     - ./envs/global.env
-    - ./envs/movie-pilot.env
     - .env
     environment:
-    - NGINX_PORT=3000
-    - PORT=3001
-    - PUID=0
-    - PGID=0
-    - UMASK=022
-    image: jxxghp/moviepilot:2.7.3
+    - NGINX_PORT=${PANEL_APP_PORT_HTTP}
+    - PORT=${PANEL_APP_PORT_API}
+    - DEBUG=false
+    - DEV=false
+    - LOG_LEVEL=INFO
+    image: jxxghp/moviepilot:2.7.9
     labels:
       createdBy: Apps
     logging:
       driver: json-file
       options:
         max-size: 5m
-    networks:
-    - 1panel-network
+    network_mode: ${NETWORK_MODE}
     ports:
-    - ${PANEL_APP_PORT_HTTP}:3000
-    - ${PANEL_APP_PORT_API}:3001
+    - ${PANEL_APP_PORT_HTTP}:${PANEL_APP_PORT_HTTP}
+    - ${PANEL_APP_PORT_API}:${PANEL_APP_PORT_API}
     restart: always
     stdin_open: true
     tty: true
