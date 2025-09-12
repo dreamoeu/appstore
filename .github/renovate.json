@@ -225,6 +225,12 @@
     },
     {
       "matchFileNames": [
+        "apps/nodepassdash/2.*.*/*.yml"
+      ],
+      "allowedVersions": "/^2.*.*/"
+    },
+    {
+      "matchFileNames": [
         "apps/immich*/1.132.*/*.yml"
       ],
       "allowedVersions": "/^1.132.*/"
