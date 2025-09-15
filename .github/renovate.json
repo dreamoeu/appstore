@@ -7,7 +7,7 @@
   "rebaseWhen": "never",
   "prConcurrentLimit": 20,
   "automerge": true,
-  "automergeType": "pr",
+  "automergeType": "branch",
   "platformAutomerge": true,
   "enabledManagers": [
     "docker-compose",
@@ -36,8 +36,8 @@
         "patch",
         "minor"
       ],
-      "automerge": true,
-      "automergeType": "branch",
+      "automerge": true,   // 显式设置 autormerge
+      "automergeType": "branch",   // 直接分支合并
       "ignoreTests": true
     },
     {
