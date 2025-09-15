@@ -36,8 +36,8 @@
         "patch",
         "minor"
       ],
-      "automerge": true,   // 显式设置 autormerge
-      "automergeType": "branch",   // 直接分支合并
+      "automerge": true,
+      "automergeType": "branch",
       "ignoreTests": true
     },
     {
