@@ -32,10 +32,13 @@
   ],
   "packageRules": [
     {
-      "matchUpdateTypes": ["patch", "minor"],
+      "matchUpdateTypes": [
+        "patch",
+        "minor"
+      ],
       "automerge": true,
       "automergeType": "branch",
-      "requiredStatusChecks": null
+      "ignoreTests": true
     },
     {
       "matchFileNames": [
