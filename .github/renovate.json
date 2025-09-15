@@ -32,6 +32,12 @@
   ],
   "packageRules": [
     {
+      "matchUpdateTypes": ["patch", "minor"],
+      "automerge": true,
+      "automergeType": "branch",
+      "requiredStatusChecks": null
+    },
+    {
       "matchFileNames": [
         "apps/postgresql/pg*/*.yml"
       ],
