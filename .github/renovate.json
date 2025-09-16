@@ -32,6 +32,7 @@
   ],
   "packageRules": [
     {
+      "matchUpdateTypes": ["patch", "minor"],
       "automerge": true,
       "automergeType": "pr",
       "platformAutomerge": true,
