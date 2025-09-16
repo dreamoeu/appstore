@@ -105,6 +105,12 @@
     },
     {
       "matchFileNames": [
+        "apps/movie-pilot/2.7.9/*.yml"
+      ],
+      "allowedVersions": "/^2.7.9/"
+    },
+    {
+      "matchFileNames": [
         "apps/qbittorrent/4.*.*/*.yml"
       ],
       "allowedVersions": "/^4.*.*/"
