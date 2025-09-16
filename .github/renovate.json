@@ -7,7 +7,7 @@
   "rebaseWhen": "never",
   "prConcurrentLimit": 20,
   "automerge": true,
-  "automergeType": "pr",
+  "automergeType": "branch",
   "platformAutomerge": true,
   "enabledManagers": [
     "docker-compose",
@@ -31,6 +31,15 @@
     "**/minio/2025-04-22/**"
   ],
   "packageRules": [
+    {
+      "matchUpdateTypes": [
+        "patch",
+        "minor"
+      ],
+      "automerge": true,
+      "automergeType": "branch",
+      "ignoreTests": true
+    },
     {
       "matchFileNames": [
         "apps/postgresql/pg*/*.yml"
