@@ -59,32 +59,65 @@ jobs:
 
           def parse_version_update(pr_body: str) -> Optional[str]:
               """解析PR正文，确定更新类型"""
-              # 匹配版本更新行
-              pattern = r'^\s*([^\s]+)\s+([^\s]+)\s+([^\s]+)\s*->\s*([^\s]+)'
+              # 匹配Markdown表格格式
+              # 示例格式:
+              # | Package | Update | Change |
+              # |---------|--------|--------|
+              # | [uusec/openresty-manager](...) | patch | `2.3.4` -> `2.3.5` |
+              
+              # 查找表格行
               lines = pr_body.split('\n')
+              in_table = False
               
               for line in lines:
-                  match = re.search(pattern, line)
-                  if match:
-                      package, update_type, old_version, new_version = match.groups()
+                  # 检测表格开始
+                  if re.search(r'^\s*\|.*Package.*Update.*Change.*\|\s*$', line, re.IGNORECASE):
+                      in_table = True
+                      continue
                       
-                      # 确定更新类型
-                      if update_type.lower() == 'major':
-                          return 'major'
-                      elif update_type.lower() in ['minor', 'patch']:
-                          return update_type.lower()
+                  # 跳过表格分隔线
+                  if in_table and re.search(r'^\s*\|[-:|]+\|\s*$', line):
+                      continue
                       
-                      # 如果没有明确类型，通过版本号分析
-                      old_parts = old_version.split('.')
-                      new_parts = new_version.split('.')
+                  # 处理表格数据行
+                  if in_table and line.strip().startswith('|'):
+                      # 提取单元格内容
+                      cells = [cell.strip() for cell in line.split('|') if cell.strip()]
                       
-                      if len(old_parts) > 0 and len(new_parts) > 0:
-                          if old_parts[0] != new_parts[0]:
+                      if len(cells) >= 3:
+                          update_type = cells[1].lower()  # 第二列是更新类型
+                          
+                          # 检查更新类型
+                          if update_type == 'major':
                               return 'major'
-                          elif len(old_parts) > 1 and len(new_parts) > 1 and old_parts[1] != new_parts[1]:
-                              return 'minor'
-                          else:
-                              return 'patch'
+                          elif update_type in ['minor', 'patch']:
+                              return update_type
+                          
+                          # 如果没有明确类型，尝试从版本变化中推断
+                          change_cell = cells[2]  # 第三列是版本变化
+                          
+                          # 提取版本号
+                          version_pattern = r'(\d+\.\d+\.\d+|\d+\.\d+|\d+)'
+                          versions = re.findall(version_pattern, change_cell)
+                          
+                          if len(versions) >= 2:
+                              old_version = versions[0]
+                              new_version = versions[1]
+                              
+                              # 分割版本号
+                              old_parts = old_version.split('.')
+                              new_parts = new_version.split('.')
+                              
+                              if len(old_parts) > 0 and len(new_parts) > 0:
+                                  if old_parts[0] != new_parts[0]:
+                                      return 'major'
+                                  elif len(old_parts) > 1 and len(new_parts) > 1 and old_parts[1] != new_parts[1]:
+                                      return 'minor'
+                                  else:
+                                      return 'patch'
+                  elif in_table and not line.strip().startswith('|'):
+                      # 表格结束
+                      break
               
               return None
 
