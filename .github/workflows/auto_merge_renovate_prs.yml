@@ -3,7 +3,7 @@ name: Merge Renovate PRs
 on:
   workflow_dispatch:
   schedule:
-    - cron: "*/10 * * * *" # 每10分钟跑一次
+    - cron: "*/10 * * * *"
 
 permissions:
   contents: read
@@ -23,11 +23,15 @@ jobs:
       - name: List open Renovate PRs
         id: list
         run: |
-          prs=$(gh pr list --repo "$GITHUB_REPOSITORY" --state open \
+          # 获取 renovate / mend-renovate PR numbers
+          mapfile -t prs < <(gh pr list --repo "$GITHUB_REPOSITORY" --state open \
             --json number,author \
             --jq '.[] | select(.author.login | test("renovate|mend-renovate"; "i")) | .number')
-          prs_json=$(printf '%s\n' "$prs" | jq -R . | jq -s .)
+          
+          # 输出到 GitHub Actions 输出
+          prs_json=$(printf '%s\n' "${prs[@]}" | jq -R . | jq -s .)
           echo "prs=$prs_json" >> $GITHUB_OUTPUT
+          echo "Found PRs: ${prs[*]}"
 
       - name: Poll and merge Renovate PRs
         if: steps.list.outputs.prs != '[]'
@@ -59,11 +63,11 @@ jobs:
                 break
               fi
 
-              echo "Checks not green. Waiting 10 minutes before next attempt..."
+              echo "Checks not green. Waiting 10 minutes..."
               sleep 600
             done
 
             if [[ "$merged" == false ]]; then
-              echo "⚠️ PR #$pr could not be merged after 3 attempts. Moving on."
+              echo "⚠️ PR #$pr could not be merged after 3 attempts."
             fi
           done
