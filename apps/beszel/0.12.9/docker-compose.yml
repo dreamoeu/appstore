@@ -4,7 +4,7 @@ networks:
 
 services:
   beszel:
-    image: henrygd/beszel:0.12.8
+    image: henrygd/beszel:0.12.9
     container_name: ${CONTAINER_NAME}
     labels:
       createdBy: "Apps"
