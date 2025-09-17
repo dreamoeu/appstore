@@ -1,0 +1,39 @@
+name: Auto merge Renovate PRs
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+jobs:
+  automerge:
+    runs-on: ubuntu-latest
+    if: github.actor == 'renovate[bot]' || github.actor == 'mend-renovate[bot]'
+    steps:
+      - name: Extract update type from PR body
+        id: check
+        run: |
+          body="${{ github.event.pull_request.body }}"
+          echo "PR Body: $body"
+
+          update_type=$(echo "$body" | grep -Eo '\|\s+[a-zA-Z0-9/_-]+\s+\|\s+(major|minor|patch)\s+\|' | head -n1 | awk -F'|' '{print $3}' | xargs)
+          echo "Detected update_type=$update_type"
+
+          echo "update_type=$update_type" >> $GITHUB_OUTPUT
+
+      - name: Wait for all checks
+        uses: lewagon/wait-on-check-action@v1.3.4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          wait-interval: 15
+          running-workflow-name: "Auto merge Renovate PRs"
+
+      - name: Merge PR if patch/minor
+        if: steps.check.outputs.update_type == 'patch' || steps.check.outputs.update_type == 'minor'
+        run: |
+          gh pr merge ${{ github.event.pull_request.number }} \
+            --merge \
+            --delete-branch \
+            --repo ${{ github.repository }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
