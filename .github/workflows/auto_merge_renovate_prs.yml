@@ -3,7 +3,12 @@ name: Merge Renovate PRs
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 * * * *"
+    - cron: "*/10 * * * *" # 每10分钟跑一次
+
+permissions:
+  contents: read
+  pull-requests: write
+  checks: read
 
 jobs:
   merge-renovate-prs:
@@ -12,54 +17,50 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Authenticate GitHub CLI
-        run: |
-          echo "${{ github.token }}" | gh auth login --with-token
-        env:
-          GH_TOKEN: ${{ github.token }}
-
-      - name: List Renovate PRs
+      - name: List open Renovate PRs
         id: list
         run: |
           prs=$(gh pr list --repo "$GITHUB_REPOSITORY" --state open \
             --json number,author \
             --jq '.[] | select(.author.login | test("renovate"; "i")) | .number')
-          echo "Found PRs: $prs"
-          # 把 PR 列表保存成 JSON 数组，避免多行字符串解析出错
           prs_json=$(printf '%s\n' "$prs" | jq -R . | jq -s .)
           echo "prs=$prs_json" >> $GITHUB_OUTPUT
 
-      - name: Poll and merge
+      - name: Poll and merge Renovate PRs
         if: steps.list.outputs.prs != '[]'
         run: |
-          echo "PR list JSON: ${{ steps.list.outputs.prs }}"
           prs=$(echo '${{ steps.list.outputs.prs }}' | jq -r '.[]')
           for pr in $prs; do
             echo "=== Processing PR #$pr ==="
-
             sha=$(gh pr view "$pr" --repo "$GITHUB_REPOSITORY" --json headRefOid -q .headRefOid)
-            echo "PR #$pr head SHA: $sha"
+            if [[ -z "$sha" ]]; then
+              echo "Cannot get head SHA for PR #$pr. Skipping."
+              continue
+            fi
 
             merged=false
-            for attempt in $(seq 1 180); do
+            for attempt in $(seq 1 3); do
               combined=$(gh api repos/$GITHUB_REPOSITORY/commits/$sha/status --jq .state)
               inprogress=$(gh api repos/$GITHUB_REPOSITORY/commits/$sha/check-runs --jq '[.check_runs[] | select(.status!="completed")] | length')
 
               echo "Attempt $attempt: combined=$combined, inprogress=$inprogress"
 
-              # 判断条件：成功 或 无检查
-              if { [[ "$combined" == "success" ]] || [[ "$inprogress" -eq 0 && "$combined" == "pending" ]]; }; then
-                echo "Checks passed or none required. Merging PR #$pr ..."
-                gh pr merge "$pr" --repo "$GITHUB_REPOSITORY" --merge --delete-branch
-                merged=true
+              if [[ "$combined" == "success" && "$inprogress" -eq 0 ]]; then
+                echo "All checks passed for PR #$pr. Merging..."
+                if gh pr merge "$pr" --repo "$GITHUB_REPOSITORY" --merge --delete-branch; then
+                  echo "✅ PR #$pr merged successfully."
+                  merged=true
+                else
+                  echo "❌ PR #$pr merge failed."
+                fi
                 break
               fi
 
-              echo "Not ready yet, waiting 10s..."
-              sleep 10
+              echo "Checks not green. Waiting 10 minutes before next attempt..."
+              sleep 600
             done
 
-            if [ "$merged" = false ]; then
-              echo "❌ Failed to merge PR #$pr within 30min timeout"
+            if [[ "$merged" == false ]]; then
+              echo "⚠️ PR #$pr could not be merged after 3 attempts. Moving on."
             fi
           done
