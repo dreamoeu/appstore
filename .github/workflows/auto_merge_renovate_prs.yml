@@ -1,60 +1,119 @@
-name: Renovate Automerge
+name: Renovate Auto-merge (patch/minor only)
 
 on:
   workflow_dispatch:
+    inputs:
+      delay_minutes:
+        description: 'Optional delay in minutes before processing PRs (default 5)'
+        required: false
+        default: '5'
   schedule:
-    - cron: "*/10 * * * *"
+    - cron: "*/10 * * * *"   # 每 10 分钟运行一次（可按需修改）
+  pull_request:
+    types: [ready_for_review]  # 如果 Renovate 把 PR 标记为 ready_for_review，也会触发一次
+
+permissions:
+  contents: read
+  pull-requests: write
+  checks: read
+
+env:
+  REPO: ${{ github.repository }}
 
 jobs:
   automerge:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - name: Checkout (not strictly required)
+        uses: actions/checkout@v5
 
-      - name: Setup GitHub CLI
+      - name: Install GitHub CLI
         uses: cli/cli-action@v2
         with:
           version: latest
 
-      - name: Find Renovate PRs
-        id: find_prs
+      - name: Optional delay (default 5 minutes)
         run: |
-          prs=$(gh pr list \
-            --repo ${{ github.repository }} \
-            --state open \
-            --json number,title,author \
-            --jq '.[] | select(.author.login | test("renovate"; "i")) | .number')
+          # value from workflow_dispatch input; empty for schedule events -> default to 5
+          delay_input="${{ github.event.inputs.delay_minutes }}"
+          delay="${delay_input:-5}"
+          echo "Delaying for ${delay} minute(s) to let other workflows start/complete..."
+          sleep $((delay * 60))
 
-          echo "Found PRs: $prs"
-          echo "prs=$prs" >> $GITHUB_ENV
+      - name: Debug list all PRs (for logs)
+        run: |
+          echo "All open PRs (number / title / author):"
+          gh pr list --repo "$REPO" --state open --json number,title,author \
+            --jq '.[] | {number,title,author:.author.login}' || true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Process PRs
-        if: env.prs != ''
+      - name: Find Renovate PR numbers
+        id: find_prs
         run: |
+          prs=$(gh pr list --repo "$REPO" --state open --json number,title,author \
+            --jq '.[] | select(.author.login | test("renovate"; "i")) | .number' ) || true
+          echo "Found PR numbers: $prs"
+          echo "prs=$prs" >> $GITHUB_OUTPUT
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Process Renovate PRs (patch/minor -> merge when checks OK)
+        if: steps.find_prs.outputs.prs != ''
+        run: |
+          owner_repo="$REPO"
+          owner=$(echo "$owner_repo" | cut -d'/' -f1)
+          repo=$(echo "$owner_repo" | cut -d'/' -f2)
+
+          prs="${{ steps.find_prs.outputs.prs }}"
+          # Ensure newline/space separated handling
           for pr in $prs; do
-            echo "Checking PR #$pr ..."
-            body=$(gh pr view "$pr" \
-              --repo ${{ github.repository }} \
-              --json body \
-              --jq .body)
+            echo "=== Processing PR #$pr ==="
 
-            # 提取更新类型 (patch/minor/major)
-            update_type=$(echo "$body" | grep -oP '\|\s*(patch|minor|major)\s*\|' | head -n1 | tr -d '|[:space:]')
+            # Get PR body
+            body=$(gh pr view "$pr" --repo "$owner_repo" --json body --jq .body)
+            echo "PR #$pr body snippet:"
+            echo "$body" | sed -n '1,20p' || true
 
-            echo "PR #$pr update type: $update_type"
+            # Parse update type from the Markdown table: the 'Update' column is usually the 3rd field
+            update_type=$(echo "$body" | awk -F'|' '/\|/ { gsub(/ /,"",$3); if ($3 ~ /(major|minor|patch)/) {print $3; exit} }')
+            update_type=${update_type:-unknown}
+            echo "PR #$pr detected update_type='$update_type'"
 
-            if [[ "$update_type" == "patch" || "$update_type" == "minor" ]]; then
-              echo "Merging PR #$pr ..."
-              gh pr merge "$pr" \
-                --repo ${{ github.repository }} \
-                --squash \
-                --auto
+            if [[ "$update_type" != "patch" && "$update_type" != "minor" ]]; then
+              echo "Skipping PR #$pr because update_type is not patch/minor."
+              continue
+            fi
+
+            # Get head commit SHA of the PR
+            sha=$(gh pr view "$pr" --repo "$owner_repo" --json headRefOid --jq .headRefOid 2>/dev/null || true)
+            if [[ -z "$sha" ]]; then
+              # fallback to API
+              sha=$(gh api repos/$owner/$repo/pulls/$pr --jq .head.sha)
+            fi
+            echo "PR #$pr head SHA: $sha"
+
+            if [[ -z "$sha" ]]; then
+              echo "Cannot determine head SHA for PR #$pr, skipping."
+              continue
+            fi
+
+            # Check combined status for the commit (state = success / failure / pending)
+            combined_state=$(gh api repos/$owner/$repo/commits/$sha/status --jq .state)
+            echo "Combined status for $sha: $combined_state"
+
+            # Additionally ensure there are no in-progress check-runs
+            inprogress=$(gh api repos/$owner/$repo/commits/$sha/check-runs --jq '.check_runs[] | select(.status == "in_progress" or .conclusion == null) | .name' | wc -l || true)
+            echo "In-progress / pending check-runs count: $inprogress"
+
+            if [[ "$combined_state" == "success" && "$inprogress" -eq 0 ]]; then
+              echo "All checks passed for PR #$pr. Merging..."
+              gh pr merge "$pr" --repo "$owner_repo" --squash --delete-branch --confirm || {
+                echo "Merge command failed for PR #$pr. See logs."
+              }
             else
-              echo "Skipping PR #$pr (type=$update_type)"
+              echo "PR #$pr checks not all green (state=$combined_state, inprogress=$inprogress). Skipping."
             fi
           done
         env:
