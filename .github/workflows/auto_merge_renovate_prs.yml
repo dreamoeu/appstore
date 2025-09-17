@@ -1,128 +1,79 @@
-name: Renovate Auto-Merge
+name: Auto merge Renovate PRs
 
 on:
-  workflow_dispatch:
-    inputs:
-      delay_minutes:
-        description: 'Optional delay in minutes before processing PRs (default 5)'
-        required: false
-        default: '5'
   schedule:
-    - cron: "*/10 * * * *"   # 每10分钟跑一次（按需调整）
+    - cron: "*/10 * * * *" # 每 10 分钟跑一次
+  workflow_dispatch:       # 支持手动触发
   pull_request:
     types: [ready_for_review]
-
-permissions:
-  contents: read
-  pull-requests: write
-  checks: read
-
-env:
-  REPO: ${{ github.repository }}
 
 jobs:
   automerge:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout (optional)
-        uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v5
 
-      - name: Optional delay (let CI start)
-        env:
-          DELAY: ${{ github.event.inputs.delay_minutes }}
+      - name: List open PRs from Renovate
+        id: list
         run: |
-          delay="${DELAY:-5}"
-          echo "Delaying for ${delay} minute(s) to let other workflows start..."
-          sleep $(( delay * 60 ))
-
-      - name: Process Renovate PRs (patch/minor -> merge when checks OK)
+          prs=$(gh pr list \
+            --repo ${{ github.repository }} \
+            --state open \
+            --json number,title,author \
+            --jq '.[] | select(.author.login | test("renovate";"i")) | .number')
+          echo "Found PRs: $prs"
+          echo "prs=$prs" >> $GITHUB_ENV
         env:
-          REPO: ${{ env.REPO }}
-          GITHUB_TOKEN: ${{ secrets.GITHUBTOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Process each PR
+        if: env.prs != ''
         run: |
-          set -euo pipefail
-
-          owner_repo="$REPO"
-          owner="${owner_repo%%/*}"
-          repo="${owner_repo##*/}"
-
-          echo "Listing open PRs authored by renovate-like bots..."
-          # Read PR numbers into bash array (one per line)
-          mapfile -t prs < <(gh pr list --repo "$owner_repo" --state open --json number,title,author --jq '.[] | select(.author.login | test("renovate"; "i")) | .number' 2>/dev/null || true)
-
-          if [ "${#prs[@]}" -eq 0 ]; then
-            echo "No renovate PRs found. Exiting."
-            exit 0
-          fi
-
-          echo "Found ${#prs[@]} renovate PR(s): ${prs[*]}"
-
-          for pr in "${prs[@]}"; do
-            echo
+          for pr in $prs; do
             echo "=== Processing PR #$pr ==="
 
-            # Get PR body
-            body=$(gh pr view "$pr" --repo "$owner_repo" --json body --jq .body 2>/dev/null || echo "")
-            echo "PR #$pr body (first 20 lines):"
-            echo "$body" | sed -n '1,20p' || true
-
-            # Try to extract update type from the Markdown table's Update column.
-            # This regex looks for lines like: | package/name | minor | v1.2.3 -> v1.2.4 |
-            update_type=$(echo "$body" | grep -m1 -Po '\|\s*[^|]+\s*\|\s*\K(major|minor|patch)(?=\s*\|)' || true)
-            update_type=${update_type:-unknown}
+            body=$(gh pr view $pr --repo ${{ github.repository }} --json body --jq .body)
+            update_type=$(echo "$body" | grep -Eo '\|\s+[a-zA-Z0-9/_-]+\s+\|\s+(major|minor|patch)\s+\|' | head -n1 | awk -F'|' '{print $3}' | xargs)
             echo "Detected update_type='$update_type'"
 
             if [[ "$update_type" != "patch" && "$update_type" != "minor" ]]; then
-              echo "Skip PR #$pr (not patch/minor)."
+              echo "Skipping PR #$pr (not patch/minor)"
               continue
             fi
 
-            # Get head commit SHA
-            sha=$(gh pr view "$pr" --repo "$owner_repo" --json headRefOid --jq .headRefOid 2>/dev/null || true)
-            if [[ -z "$sha" ]]; then
-              sha=$(gh api repos/"$owner"/"$repo"/pulls/"$pr" --jq .head.sha 2>/dev/null || true)
-            fi
-            echo "PR #$pr head SHA: ${sha:-<unknown>}"
-            if [[ -z "$sha" ]]; then
-              echo "Cannot determine head SHA for PR #$pr; skipping."
-              continue
-            fi
+            sha=$(gh pr view $pr --repo ${{ github.repository }} --json headRefOid --jq .headRefOid)
+            echo "PR #$pr head SHA: $sha"
 
-            # Check combined status (legacy statuses)
-            combined_state=$(gh api repos/"$owner"/"$repo"/commits/"$sha"/status --jq .state 2>/dev/null || echo "unknown")
-            echo "Combined status for $sha: $combined_state"
+            # 最多等 30 分钟（30 次 * 60 秒）
+            for i in {1..30}; do
+              echo "🔎 Check attempt $i for PR #$pr ..."
 
-            # Count in-progress or non-concluded check-runs
-            inprogress_count=$(gh api repos/"$owner"/"$repo"/commits/"$sha"/check-runs --jq '.check_runs[] | select(.status == "in_progress" or .conclusion == null) | .name' 2>/dev/null | wc -l || echo 0)
-            inprogress_count=$(echo "$inprogress_count" | tr -d '[:space:]')
-            inprogress_count=${inprogress_count:-0}
-            echo "In-progress / pending check-runs: $inprogress_count"
+              # 获取 combined 状态
+              state=$(gh api repos/${{ github.repository }}/commits/$sha/status --jq .state)
+              echo "Combined status = $state"
 
-            # If combined status already success and no in-progress -> merge now
-            if [[ "$combined_state" == "success" && "$inprogress_count" -eq 0 ]]; then
-              echo "Checks already green for PR #$pr; attempting immediate merge..."
-              if gh pr merge "$pr" --repo "$owner_repo" --squash --delete-branch --yes; then
-                echo "PR #$pr merged successfully."
+              # 获取详细 check-runs
+              echo "---- Check runs for $sha ----"
+              gh api repos/${{ github.repository }}/commits/$sha/check-runs \
+                --jq '.check_runs[] | {name: .name, status: .status, conclusion: .conclusion}' || true
+              echo "--------------------------------"
+
+              if [[ "$state" == "success" ]]; then
+                echo "✅ All checks passed for PR #$pr. Merging..."
+                gh pr merge $pr \
+                  --squash \
+                  --delete-branch \
+                  --repo ${{ github.repository }}
+                break
+              elif [[ "$state" == "failure" ]]; then
+                echo "❌ Checks failed for PR #$pr. Skipping."
+                break
               else
-                echo "Immediate merge command failed for PR #$pr; attempting to enable auto-merge..."
-                gh pr merge "$pr" --repo "$owner_repo" --squash --auto --delete-branch || echo "Enable auto-merge failed for PR #$pr."
+                echo "⏳ Still pending checks for PR #$pr. Waiting 60s..."
+                sleep 60
               fi
-            else
-              # Not all checks green: enable platform auto-merge so GitHub will merge when checks pass
-              echo "Not all checks green for PR #$pr (state=$combined_state, inprogress=$inprogress_count)."
-              echo "Attempting to enable platform auto-merge for PR #$pr (GitHub will merge when required checks pass)."
-              if gh pr merge "$pr" --repo "$owner_repo" --squash --auto --delete-branch; then
-                echo "Auto-merge enabled for PR #$pr."
-              else
-                echo "Failed to enable auto-merge for PR #$pr. Possible reasons: branch protection requires reviews or token lacks permission."
-                # Optional: print protection info for debugging
-                protection=$(gh api repos/"$owner"/"$repo"/branches/"$(gh pr view "$pr" --repo "$owner_repo" --json headRefName --jq .headRefName)" --jq '.protection' 2>/dev/null || echo "")
-                echo "Branch protection info: $protection"
-              fi
-            fi
-
-            # small delay to avoid rate limits
-            sleep 1
+            done
           done
-
-          echo "All done."
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
