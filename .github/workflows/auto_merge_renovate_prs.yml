@@ -17,12 +17,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Set GH_TOKEN for GitHub CLI
+        run: echo "GH_TOKEN=${{ secrets.GITHUB_TOKEN }}" >> $GITHUB_ENV
+
       - name: List open Renovate PRs
         id: list
         run: |
           prs=$(gh pr list --repo "$GITHUB_REPOSITORY" --state open \
             --json number,author \
-            --jq '.[] | select(.author.login | test("renovate"; "i")) | .number')
+            --jq '.[] | select(.author.login | test("renovate|mend-renovate"; "i")) | .number')
           prs_json=$(printf '%s\n' "$prs" | jq -R . | jq -s .)
           echo "prs=$prs_json" >> $GITHUB_OUTPUT
 
@@ -47,7 +50,7 @@ jobs:
 
               if [[ "$combined" == "success" && "$inprogress" -eq 0 ]]; then
                 echo "All checks passed for PR #$pr. Merging..."
-                if gh pr merge "$pr" --repo "$GITHUB_REPOSITORY" --merge --delete-branch; then
+                if gh pr merge "$pr" --repo "$GITHUB_REPOSITORY" --merge --delete-branch --yes; then
                   echo "✅ PR #$pr merged successfully."
                   merged=true
                 else
