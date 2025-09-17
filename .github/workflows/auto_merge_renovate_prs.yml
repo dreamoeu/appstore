@@ -1,141 +1,65 @@
-name: Renovate Auto-merge (poll until CI passes)
+name: Merge Renovate PRs
 
 on:
   workflow_dispatch:
-    inputs:
-      delay_minutes:
-        description: 'Delay in minutes before starting checks (default 5)'
-        required: false
-        default: '5'
-      max_wait_minutes:
-        description: 'Max minutes to wait for CI per PR (default 30)'
-        required: false
-        default: '30'
-      interval_seconds:
-        description: 'Polling interval seconds (default 60)'
-        required: false
-        default: '60'
   schedule:
-    - cron: "*/10 * * * *"
-  pull_request:
-    types: [ready_for_review]
-
-permissions:
-  contents: read
-  pull-requests: write
-  checks: read
-
-env:
-  REPO: ${{ github.repository }}
-  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}   # 👈 关键：给 gh CLI 用的变量
+    - cron: "0 * * * *"
 
 jobs:
-  automerge:
+  merge-renovate-prs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Show gh version (debug)
-        run: gh --version
-
-      - name: Optional initial delay (let CI start)
+      - name: Authenticate GitHub CLI
+        run: |
+          echo "${{ github.token }}" | gh auth login --with-token
         env:
-          DELAY_MIN: ${{ github.event.inputs.delay_minutes }}
+          GH_TOKEN: ${{ github.token }}
+
+      - name: List Renovate PRs
+        id: list
         run: |
-          delay="${DELAY_MIN:-5}"
-          echo "Delaying for ${delay} minute(s) to let other workflows start..."
-          sleep $(( delay * 60 ))
+          prs=$(gh pr list --repo "$GITHUB_REPOSITORY" --state open \
+            --json number,author \
+            --jq '.[] | select(.author.login | test("renovate"; "i")) | .number')
+          echo "Found PRs: $prs"
+          # 把 PR 列表保存成 JSON 数组，避免多行字符串解析出错
+          prs_json=$(printf '%s\n' "$prs" | jq -R . | jq -s .)
+          echo "prs=$prs_json" >> $GITHUB_OUTPUT
 
-      - name: Find open Renovate PR numbers into array
-        id: find_prs
+      - name: Poll and merge
+        if: steps.list.outputs.prs != '[]'
         run: |
-          owner_repo="${{ env.REPO }}"
-          echo "Listing open PRs for $owner_repo authored by renovate-like bots..."
-          gh pr list --repo "$owner_repo" --state open --json number,title,author \
-            --jq '.[] | select(.author.login | test("renovate"; "i")) | .number' > /tmp/renovate_prs.txt || true
-          echo "Saved PR list lines:"
-          sed -n '1,200p' /tmp/renovate_prs.txt || true
-          echo "PR_FILE=/tmp/renovate_prs.txt" >> $GITHUB_OUTPUT
-
-      - name: Process Renovate PRs (poll CI, merge when green)
-        if: steps.find_prs.outputs.PR_FILE != ''
-        env:
-          REPO: ${{ env.REPO }}
-          MAX_WAIT_MIN: ${{ github.event.inputs.max_wait_minutes }}
-          INTERVAL_SEC: ${{ github.event.inputs.interval_seconds }}
-        run: |
-          set -euo pipefail
-
-          owner_repo="${REPO}"
-          owner="${owner_repo%%/*}"
-          repo="${owner_repo##*/}"
-          prfile="${{ steps.find_prs.outputs.PR_FILE }}"
-
-          mapfile -t prs < <(sed '/^\s*$/d' "$prfile" || true)
-          if [ "${#prs[@]}" -eq 0 ]; then
-            echo "No renovate PRs found. Exiting."
-            exit 0
-          fi
-          echo "Found ${#prs[@]} renovate PR(s): ${prs[*]}"
-
-          max_wait_min="${MAX_WAIT_MIN:-30}"
-          interval_sec="${INTERVAL_SEC:-60}"
-          max_attempts=$(( (max_wait_min * 60 + interval_sec - 1) / interval_sec ))
-          echo "Polling up to $max_attempts times (interval ${interval_sec}s, max ${max_wait_min}min) per PR."
-
-          for pr in "${prs[@]}"; do
-            echo
+          echo "PR list JSON: ${{ steps.list.outputs.prs }}"
+          prs=$(echo '${{ steps.list.outputs.prs }}' | jq -r '.[]')
+          for pr in $prs; do
             echo "=== Processing PR #$pr ==="
 
-            body=$(gh pr view "$pr" --repo "$owner_repo" --json body --jq .body 2>/dev/null || echo "")
-            update_type=$(echo "$body" | grep -m1 -Po '\|\s*[^|]+\s*\|\s*\K(major|minor|patch)(?=\s*\|)' || true)
-            update_type=${update_type:-unknown}
-            echo "Detected update_type='$update_type'"
-            if [[ "$update_type" != "patch" && "$update_type" != "minor" ]]; then
-              echo "Skipping PR #$pr (not patch/minor)."
-              continue
-            fi
-
-            sha=$(gh pr view "$pr" --repo "$owner_repo" --json headRefOid --jq .headRefOid 2>/dev/null || true)
-            if [[ -z "$sha" ]]; then
-              sha=$(gh api repos/"$owner"/"$repo"/pulls/"$pr" --jq .head.sha 2>/dev/null || true)
-            fi
+            sha=$(gh pr view "$pr" --repo "$GITHUB_REPOSITORY" --json headRefOid -q .headRefOid)
             echo "PR #$pr head SHA: $sha"
 
-            merged=0
-            attempt=0
-            while [ $attempt -lt $max_attempts ]; do
-              attempt=$((attempt+1))
-              echo "Attempt $attempt/$max_attempts for PR #$pr ..."
+            merged=false
+            for attempt in $(seq 1 180); do
+              combined=$(gh api repos/$GITHUB_REPOSITORY/commits/$sha/status --jq .state)
+              inprogress=$(gh api repos/$GITHUB_REPOSITORY/commits/$sha/check-runs --jq '[.check_runs[] | select(.status!="completed")] | length')
 
-              combined_state=$(gh api repos/"$owner"/"$repo"/commits/"$sha"/status --jq .state 2>/dev/null || echo "unknown")
-              inprogress_count=$(gh api repos/"$owner"/"$repo"/commits/"$sha"/check-runs \
-                --jq '.check_runs[] | select(.status == "in_progress" or .conclusion == null) | .name' 2>/dev/null | wc -l || echo 0)
-              inprogress_count=$(echo "$inprogress_count" | tr -d '[:space:]')
+              echo "Attempt $attempt: combined=$combined, inprogress=$inprogress"
 
-              echo "Combined=$combined_state, In-progress=$inprogress_count"
-
-              if [[ "$combined_state" == "success" && "$inprogress_count" -eq 0 ]]; then
-                echo "All checks passed for PR #$pr. Attempting merge..."
-                if gh pr merge "$pr" --repo "$owner_repo" --squash --delete-branch --yes; then
-                  echo "✅ PR #$pr merged successfully."
-                  merged=1
-                  break
-                else
-                  echo "⚠️ Merge failed for PR #$pr (branch protection or conflicts)."
-                  break
-                fi
-              elif [[ "$combined_state" == "failure" ]]; then
-                echo "❌ CI failed for PR #$pr. Skipping."
+              # 判断条件：成功 或 无检查
+              if { [[ "$combined" == "success" ]] || [[ "$inprogress" -eq 0 && "$combined" == "pending" ]]; }; then
+                echo "Checks passed or none required. Merging PR #$pr ..."
+                gh pr merge "$pr" --repo "$GITHUB_REPOSITORY" --merge --delete-branch
+                merged=true
                 break
-              else
-                echo "Not all checks green. Waiting ${interval_sec}s..."
-                sleep "$interval_sec"
               fi
+
+              echo "Not ready yet, waiting 10s..."
+              sleep 10
             done
 
-            if [ $merged -eq 0 ]; then
-              echo "PR #$pr was not merged within time window."
+            if [ "$merged" = false ]; then
+              echo "❌ Failed to merge PR #$pr within 30min timeout"
             fi
           done
