@@ -7,13 +7,12 @@ on:
   schedule:
     - cron: '0 * * * *'
 
-permissions:
-  contents: write
-  pull-requests: write
-
 jobs:
   process-renovate-prs:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -22,6 +21,9 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install requests
 
       - name: Process Renovate PRs
         env:
