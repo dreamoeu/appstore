@@ -38,7 +38,7 @@ jobs:
       - name: Process Renovate PRs (patch/minor -> merge when checks OK)
         env:
           REPO: ${{ env.REPO }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUBTOKEN }}
         run: |
           set -euo pipefail
 
