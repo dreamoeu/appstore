@@ -1,69 +1,60 @@
-name: Auto merge Renovate PRs
+name: Renovate Automerge
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: "*/10 * * * *"
-  workflow_dispatch:
-  pull_request:
-    types: [ready_for_review]
 
 jobs:
   automerge:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v4
 
-      - name: Debug list all PRs
-        run: |
-          gh pr list \
-            --repo ${{ github.repository }} \
-            --state open \
-            --json number,title,author \
-            --jq '.[] | {number,title,author:.author.login}'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Setup GitHub CLI
+        uses: cli/cli-action@v2
+        with:
+          version: latest
 
-      - name: List open PRs from Renovate
+      - name: Find Renovate PRs
+        id: find_prs
         run: |
           prs=$(gh pr list \
             --repo ${{ github.repository }} \
             --state open \
-            --json number,title,body,author \
-            --jq '.[] | select(.author.login=="renovate[bot]" or .author.login=="mend-renovate[bot]") | .number')
-          
+            --json number,title,author \
+            --jq '.[] | select(.author.login | test("renovate"; "i")) | .number')
+
           echo "Found PRs: $prs"
           echo "prs=$prs" >> $GITHUB_ENV
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Process each PR
+      - name: Process PRs
         if: env.prs != ''
         run: |
           for pr in $prs; do
             echo "Checking PR #$pr ..."
-            body=$(gh pr view $pr --repo ${{ github.repository }} --json body --jq .body)
+            body=$(gh pr view "$pr" \
+              --repo ${{ github.repository }} \
+              --json body \
+              --jq .body)
 
-            update_type=$(echo "$body" | grep -Eo '\|\s+[a-zA-Z0-9/_-]+\s+\|\s+(major|minor|patch)\s+\|' | head -n1 | awk -F'|' '{print $3}' | xargs)
-            echo "PR #$pr update_type=$update_type"
+            # 提取更新类型 (patch/minor/major)
+            update_type=$(echo "$body" | grep -oP '\|\s*(patch|minor|major)\s*\|' | head -n1 | tr -d '|[:space:]')
+
+            echo "PR #$pr update type: $update_type"
 
             if [[ "$update_type" == "patch" || "$update_type" == "minor" ]]; then
-              echo "Waiting for checks on PR #$pr ..."
-              gh pr checks $pr --repo ${{ github.repository }}
-
-              # 检查状态是否全绿
-              state=$(gh pr checks $pr --repo ${{ github.repository }} --json status,state --jq '.[].status' | grep -v COMPLETED || true)
-              if [[ -z "$state" ]]; then
-                echo "Merging PR #$pr ..."
-                gh pr merge $pr \
-                  --merge \
-                  --delete-branch \
-                  --repo ${{ github.repository }}
-              else
-                echo "PR #$pr still has pending checks, skipping."
-              fi
+              echo "Merging PR #$pr ..."
+              gh pr merge "$pr" \
+                --repo ${{ github.repository }} \
+                --squash \
+                --auto
             else
-              echo "Skipping PR #$pr (not patch/minor)"
+              echo "Skipping PR #$pr (type=$update_type)"
             fi
           done
         env:
