@@ -29,7 +29,7 @@ services:
     env_file:
     - ./envs/global.env
     - .env
-    image: ghcr.io/immich-app/immich-server:v1.136.0
+    image: ghcr.io/immich-app/immich-server:v1.143.0
     labels:
       createdBy: Apps
     networks:
@@ -38,5 +38,5 @@ services:
     - ${PANEL_APP_PORT_HTTP}:2283
     restart: always
     volumes:
-    - ${IMMICH_ROOT_PATH}/data/library:/usr/src/app/upload
+    - ${IMMICH_ROOT_PATH}/data/library:/data
     - /etc/localtime:/etc/localtime
