@@ -4,7 +4,7 @@ networks:
 
 services:
   bili-fetcher-api:
-    image: qyg2297248353/bili-fetcher:v1.6.7
+    image: qyg2297248353/bili-fetcher:v1.6.8
     container_name: api-${CONTAINER_NAME}
     restart: always
     networks:
