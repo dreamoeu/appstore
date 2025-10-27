@@ -1,0 +1,567 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended"
+  ],
+  "forkProcessing": "enabled",
+  "rebaseWhen": "never",
+  "prConcurrentLimit": 30,
+  "enabledManagers": [
+    "docker-compose",
+    "github-actions"
+  ],
+  "gitIgnoredAuthors": [
+    "githubaction@githubaction.com"
+  ],
+  "ignorePaths": [
+    "app/alist/**",
+    "app/alist-aria2/**",
+    "app/alist-ffmpeg/**",
+    "app/apifox-runner/**",
+    "app/auto-lady/**",
+    "app/dify/**",
+    "app/homarr/0.15.10/**",
+    "app/minio/2025-04-22/**",
+    "apps/mysql-cluster/**",
+    "apps/postgresql-cluster/**",
+    "apps/redis-cluster/**",
+    "app/tangsengdaodao/**",
+    "app/topiam-ce/**"
+  ],
+  "packageRules": [
+    {
+      "matchUpdateTypes": [
+        "patch",
+        "minor"
+      ],
+      "matchPackageNames": [
+        "docker-compose"
+      ],
+      "automerge": true,
+      "automergeType": "pr",
+      "platformAutomerge": true,
+      "automergeStrategy": "squash",
+      "prCreation": "immediate"
+    },
+    {
+      "matchUpdateTypes": [
+        "major"
+      ],
+      "automerge": false
+    },
+    {
+      "matchFileNames": [
+        "apps/ani-rss/1.*.*/*.yml"
+      ],
+      "allowedVersions": "<2.0"
+    },
+    {
+      "matchFileNames": [
+        "apps/ani-rss/2.*.*/*.yml"
+      ],
+      "allowedVersions": ">=2.0"
+    },
+    {
+      "matchFileNames": [
+        "apps/baota/9.*/*.yml"
+      ],
+      "allowedVersions": "/^9.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/dataease/1.*/*.yml"
+      ],
+      "allowedVersions": "<=1.20"
+    },
+    {
+      "matchFileNames": [
+        "apps/dataease/2.*/*.yml"
+      ],
+      "allowedVersions": ">=2.0"
+    },
+    {
+      "matchFileNames": [
+        "apps/elastic*/8.*.*/*.yml"
+      ],
+      "allowedVersions": "<9.0"
+    },
+    {
+      "matchFileNames": [
+        "apps/elastic*/9.*.*/*.yml"
+      ],
+      "allowedVersions": ">=9.0"
+    },
+    {
+      "matchFileNames": [
+        "apps/elasticsearch/7.*/*.yml"
+      ],
+      "allowedVersions": "/^7.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/elasticsearch/8.*/*.yml"
+      ],
+      "allowedVersions": "/^8.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/emby/4.8.*/*.yml"
+      ],
+      "allowedVersions": "/^4\\.8\\.\\d+\\.\\d+$/"
+    },
+    {
+      "matchFileNames": [
+        "apps/emby/4.9.*/*.yml"
+      ],
+      "allowedVersions": "/^4\\.9\\.\\d+\\.\\d+$/"
+    },
+    {
+      "matchFileNames": [
+        "apps/emby-amilys/4.8.*/*.yml"
+      ],
+      "allowedVersions": "/^4\\.8\\.\\d+\\.\\d+$/"
+    },
+    {
+      "matchFileNames": [
+        "apps/emby-amilys/4.9.*/*.yml"
+      ],
+      "allowedVersions": "/^4\\.9\\.\\d+\\.\\d+$/"
+    },
+    {
+      "matchFileNames": [
+        "apps/homarr/0.*.*/*.yml"
+      ],
+      "allowedVersions": "<1.0"
+    },
+    {
+      "matchFileNames": [
+        "apps/homarr/1.*.*/*.yml"
+      ],
+      "allowedVersions": ">=1.0"
+    },
+    {
+      "matchFileNames": [
+        "apps/immich*/1.*.*/*.yml"
+      ],
+      "allowedVersions": "<2.0.0"
+    },
+    {
+      "matchFileNames": [
+        "apps/jellyfin/10.9.*/*.yml"
+      ],
+      "allowedVersions": "<10.10"
+    },
+    {
+      "matchFileNames": [
+        "apps/jellyfin/10.10.*/*.yml"
+      ],
+      "allowedVersions": ">=10.10"
+    },
+    {
+      "matchFileNames": [
+        "apps/jumpserver/3.*/*.yml"
+      ],
+      "allowedVersions": "/^3.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/jumpserver/4.*/*.yml"
+      ],
+      "allowedVersions": "/^4.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/mariadb/10.6.*/*.yml"
+      ],
+      "allowedVersions": "/^10.6.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/mariadb/10.11.*/*.yml"
+      ],
+      "allowedVersions": "/^10.11.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/mariadb/11.4.*/*.yml"
+      ],
+      "allowedVersions": "/^11.4.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/mariadb/11.8.*/*.yml"
+      ],
+      "allowedVersions": "/^11.8.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/maxkb/1.*/*.yml"
+      ],
+      "allowedVersions": "/^1.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/maxkb/2.*/*.yml"
+      ],
+      "allowedVersions": "/^2.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/mliev-dwz/2.*/*.yml"
+      ],
+      "allowedVersions": "/^2.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/mongodb/6.*/*.yml"
+      ],
+      "allowedVersions": "/^6.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/mongodb/7.*/*.yml"
+      ],
+      "allowedVersions": "/^7.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/mongodb/8.*/*.yml"
+      ],
+      "allowedVersions": "/^8.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/movie-pilot/2.7.3/*.yml"
+      ],
+      "allowedVersions": "/^2.7.3/"
+    },
+    {
+      "matchFileNames": [
+        "apps/movie-pilot/2.7.9/*.yml"
+      ],
+      "allowedVersions": "/^2.7.9/"
+    },
+    {
+      "matchFileNames": [
+        "apps/mssql/2017-*/*.yml"
+      ],
+      "allowedVersions": "/^2017-*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/mssql/2019-*/*.yml"
+      ],
+      "allowedVersions": "/^2019-*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/mssql/2022-*/*.yml"
+      ],
+      "allowedVersions": "/^2022-*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/mysql/5.6.*/*.yml"
+      ],
+      "allowedVersions": "/^5.6.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/mysql/5.7.*/*.yml"
+      ],
+      "allowedVersions": "/^5.7.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/mysql/8.0.*/*.yml"
+      ],
+      "allowedVersions": "/^8.0.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/mysql/8.4.*/*.yml"
+      ],
+      "allowedVersions": "/^8.4.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/nacos/2.4.*/*.yml"
+      ],
+      "allowedVersions": "<2.5"
+    },
+    {
+      "matchFileNames": [
+        "apps/nacos/2.5.*/*.yml"
+      ],
+      "allowedVersions": "<3.0"
+    },
+    {
+      "matchFileNames": [
+        "apps/nacos/3.*.*/*.yml"
+      ],
+      "allowedVersions": ">=3.0"
+    },
+    {
+      "matchFileNames": [
+        "apps/nodepassdash/2.*.*/*.yml"
+      ],
+      "allowedVersions": "/^2.*.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/odoo/18.*/*.yml"
+      ],
+      "allowedVersions": "/^18.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/odoo/19.*/*.yml"
+      ],
+      "allowedVersions": "/^19.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/onedev/12.*/*.yml"
+      ],
+      "allowedVersions": "/^12.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/onedev/13.*/*.yml"
+      ],
+      "allowedVersions": "/^13.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/php-unofficial/7.4.*/*.yml"
+      ],
+      "allowedVersions": "/^7.4.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/php-unofficial/8.1.*/*.yml"
+      ],
+      "allowedVersions": "/^8.1.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/postgresql/12.*/*.yml"
+      ],
+      "allowedVersions": "/^12.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/postgresql/13.*/*.yml"
+      ],
+      "allowedVersions": "/^13.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/postgresql/14.*/*.yml"
+      ],
+      "allowedVersions": "/^14.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/postgresql/15.*/*.yml"
+      ],
+      "allowedVersions": "/^15.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/postgresql/16.*/*.yml"
+      ],
+      "allowedVersions": "/^16.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/postgresql/17.*/*.yml"
+      ],
+      "allowedVersions": "/^17.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/postgresql/pg*/*.yml"
+      ],
+      "allowedVersions": "/^pg(12|13|14|15|16|17)*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/postgresql-postgis/16-*/*.yml"
+      ],
+      "allowedVersions": "/^16-*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/postgresql-postgis/17-*/*.yml"
+      ],
+      "allowedVersions": "/^17-*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/qbittorrent/4.*.*/*.yml"
+      ],
+      "allowedVersions": "/^4.*.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/qbittorrent/5.*.*/*.yml"
+      ],
+      "allowedVersions": "/^5.*.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/reader/2.7.*/*.yml"
+      ],
+      "allowedVersions": "/^2.7.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/redis/6.*/*.yml"
+      ],
+      "allowedVersions": "/^6.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/redis/7.*/*.yml"
+      ],
+      "allowedVersions": "/^7.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/redis/8.*/*.yml"
+      ],
+      "allowedVersions": "/^8.*/"
+    },
+    {
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchPackageNames": [
+        "prom/prometheus"
+      ],
+      "matchCurrentVersion": "v2.21.0",
+      "matchFileNames": [
+        "apps/seaweedfs/**/docker-compose.yml"
+      ],
+      "enabled": false
+    },
+    {
+      "matchFileNames": [
+        "apps/tomcat/8.*/*.yml"
+      ],
+      "allowedVersions": "/^8.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/tomcat/9.*/*.yml"
+      ],
+      "allowedVersions": "/^9.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/tomcat/10.*/*.yml"
+      ],
+      "allowedVersions": "/^10.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/transmission/4.*.*/*.yml"
+      ],
+      "allowedVersions": "/^4.*.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/umami*/2.16.0/*.yml"
+      ],
+      "allowedVersions": "<=2.16.0"
+    },
+    {
+      "matchFileNames": [
+        "apps/umami*/2.16.1/*.yml"
+      ],
+      "allowedVersions": ">=2.16.1"
+    },
+    {
+      "matchFileNames": [
+        "apps/uptime-kuma/1.*/*.yml"
+      ],
+      "allowedVersions": "<2.0"
+    },
+    {
+      "matchFileNames": [
+        "apps/uptime-kuma/2.*/*.yml"
+      ],
+      "allowedVersions": ">=2.0"
+    },
+    {
+      "matchFileNames": [
+        "apps/zitadel/2.*/*.yml"
+      ],
+      "allowedVersions": "/^2.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/zitadel/3.*/*.yml"
+      ],
+      "allowedVersions": "/^3.*/"
+    },
+    {
+      "matchPackageNames": [
+        "btpanel/baota"
+      ],
+      "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)"
+    },
+    {
+      "versioning": "regex:^(?<major>\\d{4})-(?<minor>\\d{2})-(?<patch>\\d{2})$",
+      "matchPackageNames": [
+        "/^diygod/rsshub/"
+      ]
+    },
+    {
+      "matchDatasources": [
+        "docker"
+      ],
+      "enabled": false,
+      "matchPackageNames": [
+        "ghcr.io/immich-app/postgres{/,}**"
+      ]
+    },
+    {
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchPackageNames": [
+        "ghcr.io/umami-software/umami"
+      ],
+      "versionCompatibility": "^(?<compatibility>.*)-(?<version>.*)$",
+      "versioning": "semver"
+    },
+    {
+      "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d{1,2})$",
+      "matchPackageNames": [
+        "linuxserver/bookstack"
+      ]
+    },
+    {
+      "versioning": "regex:^RELEASE\\.(?<major>\\d{4})-(?<minor>\\d{2})-(?<patch>\\d{2}).*Z$",
+      "matchPackageNames": [
+        "/^minio/"
+      ]
+    },
+    {
+      "matchPackageNames": [
+        "photoprism/photoprism"
+      ],
+      "versioning": "regex:^(?<major>\\d{2})(?<minor>\\d{2})(?<patch>\\d{2})$"
+    },
+    {
+      "matchPackageNames": [
+        "umamisoftware/umami"
+      ],
+      "versionCompatibility": "^(?<compatibility>.*)-(?<version>.*)$",
+      "versioning": "semver"
+    }
+  ],
+  "prCreation": "immediate"
+}
