@@ -22,3 +22,4 @@ services:
       - ${ECH0_ROOT_PATH}/backup:/app/backup
     environment:
       - TZ=Asia/Shanghai
+      - HTTPS_PROXY=${HTTP_PROXY}
