@@ -265,9 +265,9 @@
     },
     {
       "matchFileNames": [
-        "apps/umami*/2.16.1/*.yml"
+        "apps/umami*/2.19.0/*.yml"
       ],
-      "allowedVersions": ">=2.16.1"
+      "allowedVersions": "<3.0.0"
     },
     {
       "matchDatasources": [
