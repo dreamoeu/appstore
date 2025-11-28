@@ -338,6 +338,12 @@
         "apps/seaweedfs/**/docker-compose.yml"
       ],
       "enabled": false
+    },
+    {
+      "matchFileNames": [
+        "apps/mediacms/4.*.*/*.yml"
+      ],
+      "allowedVersions": "/^4.*.*/"
     }
   ],
   "prCreation": "immediate"
