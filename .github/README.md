@@ -15,7 +15,7 @@
 > 即将支持应用商店: [CasaOS](https://casaos.io/)
 >
 > 欢迎投稿，我们会根据您的需求，上架更多的应用。
->
+> t
 > 🥰 [新疆萌森软件开发工作室](https://blog.lifebus.top/) 祝您生活愉快！
 
 
@@ -190,6 +190,7 @@
 | 🟢 |       <img height="22" src="https://file.lifebus.top/apps/topiam-ce/logo.png" width="22"/>       |         TOPIAM          |                      https://topiam.cn/                       | IAM/IDaaS 身份管理平台                                                     |            |
 | 🟢 |        <img height="22" src="https://file.lifebus.top/apps/traccar/logo.png" width="22"/>        |       Traccar 轨迹        |                   https://www.traccar.org/                    | 现代 GPS 追踪系统                                                          |            |
 | 🟢 |     <img height="22" src="https://file.lifebus.top/apps/transmission/logo.png" width="22"/>      |      Transmission       |                  https://transmissionbt.com/                  | 快速、简单、免费的 Bittorrent 客户端                                             |            |
+| 🟢 |        <img height="22" src="https://file.lifebus.top/apps/twikoo/logo.png" width="22"/>         |         Twikoo          |                     http://twikoo.js.org/                     | 静态网站评论系统                                                             |            |
 | 🟢 |      <img height="22" src="https://file.lifebus.top/apps/uptime-kuma/logo.png" width="22"/>      |       Uptime Kuma       |                   https://uptime.kuma.pet/                    | 自托管监控工具                                                              |            |
 | 🟢 |        <img height="22" src="https://file.lifebus.top/apps/v2raya/logo.png" width="22"/>         |         v2rayA          |                      https://v2raya.org/                      | 一个易用而强大的，跨平台的 V2Ray 客户端                                              |            |
 | 🟢 |        <img height="22" src="https://file.lifebus.top/apps/vertex/logo.png" width="22"/>         |         Vertex          |             https://github.com/vertex-app/vertex/             | 追剧刷流一体化综合管理工具                                                        |            |
