@@ -8,7 +8,7 @@ services:
   postgres:
     image: postgres:16-alpine
     container_name: ${CONTAINER_NAME}-postgres
-    restart: unless-stopped
+    restart: always
     volumes:
       - ${GLEAN_ROOT_PATH}/postgres:/var/lib/postgresql/data
     networks:
@@ -30,7 +30,7 @@ services:
     image: redis:7-alpine
     container_name: ${CONTAINER_NAME}-redis
     command: redis-server --appendonly yes
-    restart: unless-stopped
+    restart: always
     volumes:
       - ${GLEAN_ROOT_PATH}/redis:/data
     networks:
@@ -65,7 +65,7 @@ services:
       ADMIN_USERNAME: ${ADMIN_USERNAME:-admin}
       ADMIN_PASSWORD: ${ADMIN_PASSWORD:-}
       ADMIN_ROLE: ${ADMIN_ROLE:-super_admin}
-    restart: unless-stopped
+    restart: always
     healthcheck:
       test: [ "CMD", "curl", "-f", "http://localhost:8000/api/health" ]
       interval: 10s
@@ -98,7 +98,7 @@ services:
     env_file:
       - ${GLOBAL_ENV_FILE:-/etc/1panel/envs/global.env}
       - ${ENV_FILE:-/etc/1panel/envs/default.env}
-    restart: unless-stopped
+    restart: always
     command: [ "uv", "run", "--no-sync", "arq", "glean_worker.main.WorkerSettings" ]
 
   web:
@@ -110,7 +110,7 @@ services:
       - "${PANEL_APP_PORT_HTTP:-80}:80"
     networks:
       - glean-network
-    restart: unless-stopped
+    restart: always
     env_file:
       - ${GLOBAL_ENV_FILE:-/etc/1panel/envs/global.env}
       - ${ENV_FILE:-/etc/1panel/envs/default.env}
@@ -124,7 +124,7 @@ services:
       - "${PANEL_APP_PORT_ADMIN:-3001}:80"
     networks:
       - glean-network
-    restart: unless-stopped
+    restart: always
     env_file:
       - ${GLOBAL_ENV_FILE:-/etc/1panel/envs/global.env}
       - ${ENV_FILE:-/etc/1panel/envs/default.env}
