@@ -4,8 +4,8 @@ additionalProperties:
   tags:
     - WebSite
     - Local
-  shortDescZh: 一个自托管的 RSS 阅读器和个人知识管理工具。
-  shortDescEn: A self-hosted RSS reader and personal knowledge management tool.
+  shortDescZh: 一个自托管的 RSS 阅读器和个人知识管理工具
+  shortDescEn: A self-hosted RSS reader and personal knowledge management tool
   type: website
   crossVersionUpdate: true
   limit: 0

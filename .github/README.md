@@ -86,6 +86,7 @@
 | 🟢 |         <img height="22" src="https://file.lifebus.top/apps/gitea/logo.png" width="22"/>         |          Gitea          |                       https://gitea.io/                       | 私有、快速、可靠的 DevOps 平台                                                  |   Gitea    |
 | 🟢 |         <img height="22" src="https://file.lifebus.top/apps/gitea/logo.png" width="22"/>         |      Gitea Runner       |                       https://gitea.io/                       | 【Runner】私有、快速、可靠的 DevOps 平台                                          |   Gitea    |
 | 🟢 |        <img height="22" src="https://file.lifebus.top/apps/glance/logo.png" width="22"/>         |         Glance          |             https://github.com/glanceapp/glance/              | 一个自托管的仪表板，将所有您的订阅源放在一个地方                                             |            |
+| 🟢 |         <img height="22" src="https://file.lifebus.top/apps/glean/logo.png" width="22"/>         |       Glean (拾灵)        |             https://github.com/LeslieLeung/glean/             | 一个自托管的 RSS 阅读器和个人知识管理工具                                              |            |
 | 🟢 |         <img height="22" src="https://file.lifebus.top/apps/halo/logo.png" width="22"/>          |          Halo           |                       https://halo.run/                       | 强大易用的开源建站工具                                                          |            |
 | 🟢 |        <img height="22" src="https://file.lifebus.top/apps/homarr/logo.png" width="22"/>         |         Homarr          |                      https://homarr.dev/                      | 一个时尚、现代化的仪表板                                                         |            |
 | 🟢 |        <img height="22" src="https://file.lifebus.top/apps/ikaros/logo.png" width="22"/>         |         ikaros          |              https://github.com/Suwmlee/ikaros/               | 打通下载软件与媒体服务，安心享受影片                                                   |   ikaros   |
@@ -137,6 +138,7 @@
 | 🟢 |        <img height="22" src="https://file.lifebus.top/apps/ollama/logo.png" width="22"/>         |         Ollama          |                      https://ollama.com/                      | 一站式大模型部署平台                                                           |            |
 | 🟢 |        <img height="22" src="https://file.lifebus.top/apps/onedev/logo.png" width="22"/>         |         OneDev          |                      https://onedev.io/                       | DevOps 平台、带有 CI/CD、看板和软件包的 Git 服务器                                   |            |
 | 🟢 |      <img height="22" src="https://file.lifebus.top/apps/open-webui/logo.png" width="22"/>       |       Open Webui        |                    https://openwebui.com/                     | 用户友好的 AI 界面                                                          |            |
+| 🟢 |       <img height="22" src="https://file.lifebus.top/apps/opengist/logo.png" width="22"/>        |        Opengist         |                     https://opengist.io/                      | 自托管的粘贴板，基于 Git，Github Gist 的开源替代品                                    |            |
 | 🟢 |   <img height="22" src="https://file.lifebus.top/apps/openresty-manager/logo.png" width="22"/>   |    Openresty Manager    |                     https://om.uusec.com/                     | 主机管理面板                                                               |            |
 | 🟢 |        <img height="22" src="https://file.lifebus.top/apps/outline/logo.png" width="22"/>        |         OutLine         |                  https://www.getoutline.com/                  | 快速、协作的团队知识库                                                          |            |
 | 🟢 |       <img height="22" src="https://file.lifebus.top/apps/overseerr/logo.png" width="22"/>       |        overseerr        |                  https://docs.overseerr.dev/                  | 管理您的媒体库请求                                                            |            |
@@ -327,11 +329,16 @@ curl -sSL https://install.lifebus.top/local_app_uninstall.sh | bash
 ```
 
 ## 1Panel v2 (自动同步)
+
 由于官方不支持自动同步本地应用，每次都需要用户手动去点击同步按钮。我们多次提交过意见，奈何没有得到官方重视。因此出了这个折中方案。
+
 ### 前置条件
+
 1. API 密钥
-请前往 `面板设置` >> `API 接口` 中生成 `接口密钥` 有效期填写 `0` 长期有效，白名单可以填写 `127.0.0.1`
+   请前往 `面板设置` >> `API 接口` 中生成 `接口密钥` 有效期填写 `0` 长期有效，白名单可以填写 `127.0.0.1`
+
 ### 创建计划任务
+
 请将 `API_KEY` `PANEL_PORT` 填写为正确的值即可
 
 ```bash
@@ -489,7 +496,6 @@ while true; do
     sleep 3
 done
 ```
-
 
 ## DPanel 导入应用商店
 

@@ -4,8 +4,8 @@ additionalProperties:
   tags:
     - WebSite
     - Local
-  shortDescZh: 自托管的粘贴板，基于 Git，Github Gist 的开源替代品。
-  shortDescEn: Self-hosted pastebin powered by Git, open-source alternative to Github Gist.
+  shortDescZh: 自托管的粘贴板，基于 Git，Github Gist 的开源替代品
+  shortDescEn: Self-hosted pastebin powered by Git, open-source alternative to Github Gist
   type: website
   crossVersionUpdate: true
   limit: 0

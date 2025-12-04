@@ -50,4 +50,4 @@ additionalProperties:
       labelZh: 数据库密码
       labelEn: Postgres password
       required: true
-      type: text
+      type: password
