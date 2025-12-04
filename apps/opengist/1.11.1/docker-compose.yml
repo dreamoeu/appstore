@@ -27,5 +27,6 @@ services:
       - TZ=Asia/Shanghai
       - OG_SQLITE_JOURNAL_MODE=WAL
       - OG_HTTP_HOST=0.0.0.0
+      - OG_HTTP_PORT=6157
       - OG_SSH_HOST=0.0.0.0
-      - OG_SSH_PORT=6157
+      - OG_SSH_PORT=2222
