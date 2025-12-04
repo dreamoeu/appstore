@@ -5,7 +5,7 @@ networks:
     driver: bridge
 
 services:
-  glean-postgres:
+  postgres:
     image: postgres:16-alpine
     container_name: ${CONTAINER_NAME}-postgres
     restart: unless-stopped
@@ -26,7 +26,7 @@ services:
       POSTGRES_USER: ${POSTGRES_USER:-glean}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-glean}
 
-  glean-redis:
+  redis:
     image: redis:7-alpine
     container_name: ${CONTAINER_NAME}-redis
     command: redis-server --appendonly yes
@@ -44,11 +44,11 @@ services:
       timeout: 5s
       retries: 5
 
-  glean-backend:
+  backend:
     depends_on:
-      glean-postgres:
+      postgres:
         condition: service_healthy
-      glean-redis:
+      redis:
         condition: service_healthy
     image: ghcr.io/leslieleung/glean-backend:0.1.4
     container_name: ${CONTAINER_NAME}
@@ -79,13 +79,13 @@ services:
       - ${ENV_FILE:-/etc/1panel/envs/default.env}
     command: [ "uv", "run", "--no-sync", "uvicorn", "glean_api.main:app", "--host", "0.0.0.0", "--port", "8000" ]
 
-  glean-worker:
+  worker:
     depends_on:
-      glean-postgres:
+      postgres:
         condition: service_healthy
-      glean-redis:
+      redis:
         condition: service_healthy
-      glean-backend:
+      backend:
         condition: service_healthy
     image: ghcr.io/leslieleung/glean-backend:0.1.4
     container_name: ${CONTAINER_NAME}-worker
@@ -101,9 +101,9 @@ services:
     restart: unless-stopped
     command: [ "uv", "run", "--no-sync", "arq", "glean_worker.main.WorkerSettings" ]
 
-  glean-web:
+  web:
     depends_on:
-      - glean-backend
+      - backend
     image: ghcr.io/leslieleung/glean-web:0.1.4
     container_name: ${CONTAINER_NAME}-web
     ports:
@@ -115,9 +115,9 @@ services:
       - ${GLOBAL_ENV_FILE:-/etc/1panel/envs/global.env}
       - ${ENV_FILE:-/etc/1panel/envs/default.env}
 
-  glean-admin:
+  admin:
     depends_on:
-      - glean-backend
+      - backend
     image: ghcr.io/leslieleung/glean-admin:0.1.4
     container_name: ${CONTAINER_NAME}-admin
     ports:
