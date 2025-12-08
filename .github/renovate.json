@@ -259,15 +259,27 @@
     },
     {
       "matchFileNames": [
-        "apps/umami*/2.16.0/*.yml"
+        "apps/umami/2.16.0/*.yml"
       ],
       "allowedVersions": "<=2.16.0"
     },
     {
       "matchFileNames": [
-        "apps/umami*/2.19.0/*.yml"
+        "apps/umami/2.20.0/*.yml"
       ],
-      "allowedVersions": "<3.0.0"
+      "allowedVersions": "<=2.20.0"
+    },
+    {
+      "matchFileNames": [
+        "apps/umami-mysql/2.16.0/*.yml"
+      ],
+      "allowedVersions": "<=2.16.0"
+    },
+    {
+      "matchFileNames": [
+        "apps/umami-mysql/2.20.0/*.yml"
+      ],
+      "allowedVersions": "<=2.20.0"
     },
     {
       "matchDatasources": [
