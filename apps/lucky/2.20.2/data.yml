@@ -1,5 +1,21 @@
 additionalProperties:
   formFields:
+    - default: "host"
+      edit: true
+      envKey: NETWORK_MODE
+      labelZh: 网络模式
+      labelEn: Network mode
+      required: true
+      type: select
+      values:
+        - label: 主机网络模式
+          value: "host"
+        - label: 桥接网络模式
+          value: "bridge"
+        - label: 无网络模式
+          value: "none"
+        - label: 1panel-network
+          value: "1panel-network"
     - default: "/home/lucky"
       edit: true
       envKey: LUCKY_ROOT_PATH
