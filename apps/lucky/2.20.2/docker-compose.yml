@@ -19,8 +19,3 @@ services:
       - ${LUCKY_ROOT_PATH}/data:/goodluck
     environment:
       - TZ=Asia/Shanghai
-    command:
-      - -c
-      - /goodluck/lucky.conf
-      - -runInDocker
-      - -rSetHttpAdminPort=${PANEL_APP_PORT_HTTP}
