@@ -5,13 +5,13 @@ services:
   lucky:
     container_name: lucky
     entrypoint:
-    - /app/conf/start.sh
+    - /goodluck/start.sh
     env_file:
     - ./envs/global.env
     - .env
     environment:
     - TZ=Asia/Shanghai
-    image: gdy666/lucky:2.23.1
+    image: gdy666/lucky:2.20.2
     labels:
       createdBy: Apps
     network_mode: ${NETWORK_MODE:-host}
@@ -19,6 +19,5 @@ services:
     - ${PANEL_APP_PORT_HTTP}:${PANEL_APP_PORT_HTTP}
     restart: always
     volumes:
-    - ./run/start.sh:/app/conf/start.sh:ro
-    - /var/run/docker.sock:/var/run/docker.sock
-    - ${LUCKY_ROOT_PATH}/data:/app/conf
+    - ./run/start.sh:/goodluck/start.sh:ro
+    - ${LUCKY_ROOT_PATH}/data:/goodluck

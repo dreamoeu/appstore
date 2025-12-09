@@ -1,7 +1,7 @@
 #!/bin/sh
 
 DEFAULT_PORT=16601
-PORT_FILE="/app/conf/port"
+PORT_FILE="/goodluck/port"
 WAIT_SECONDS=30
 
 if [ -f "$PORT_FILE" ]; then
@@ -12,7 +12,7 @@ else
     echo "No previous port found, using default port: ${DETECT_PORT}"
 fi
 
-/app/lucky -c /app/conf/lucky.conf -runInDocker &
+/app/lucky -c /goodluck/lucky.conf -runInDocker &
 MAIN_PID=$!
 
 echo "Lucky main started with PID $MAIN_PID"
