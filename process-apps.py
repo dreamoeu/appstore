@@ -48,9 +48,9 @@ if __name__ == '__main__':
                             print('env_file', env_file)
                     docker_compose['services'][service_name]['env_file'] = env_file
             container_name = service.get('container_name')
-            if container_name:
-                docker_compose['services'][service_name]['container_name'] = container_name.replace('${CONTAINER_NAME}',
-                                                                                                    app_name)
+            print('container_name', container_name)
+            # if container_name:
+                # docker_compose['services'][service_name]['container_name'] = container_name.replace('${CONTAINER_NAME}', app_name)
         with open(docker_compose_file, 'w', encoding='utf-8') as f:
             yaml.dump(docker_compose, f)
         print(f'[info] Standardized processing: {app_name} {version} {docker_compose_file} Done!')
