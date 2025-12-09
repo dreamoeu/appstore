@@ -16,5 +16,7 @@ echo "Lucky port ${PORT} is up"
 
 echo "Running: /app/lucky -rSetHttpAdminPort=${PANEL_APP_PORT_HTTP}"
 /app/lucky -rSetHttpAdminPort="${PANEL_APP_PORT_HTTP}"
+echo "Running: /app/lucky -rSetHttpsAdminPort=${PANEL_APP_PORT_HTTP}"
+/app/lucky -rSetHttpsAdminPort="${PANEL_APP_PORT_HTTP}"
 
 wait $MAIN_PID
