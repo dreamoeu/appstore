@@ -12,3 +12,5 @@ additionalProperties:
   website: https://app.com/
   github: https://app.com/
   document: https://app.com/
+  architectures:
+    - amd64
