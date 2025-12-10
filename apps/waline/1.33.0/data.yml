@@ -25,7 +25,7 @@ additionalProperties:
     - default: ""
       edit: true
       envKey: JWT_TOKEN
-      labelZh: 安全密钥
+      labelZh: JWT 令牌
       labelEn: JWT token
       required: true
       type: text
