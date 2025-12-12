@@ -357,6 +357,12 @@
         "apps/mediacms/4.*.*/*.yml"
       ],
       "allowedVersions": "/^4.*.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/lucky/2.20.*/*.yml"
+      ],
+      "allowedVersions": "<2.23.1"
     }
   ],
   "prCreation": "immediate"
