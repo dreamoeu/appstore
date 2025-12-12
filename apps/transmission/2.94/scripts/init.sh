@@ -20,9 +20,11 @@ if [ -f .env ]; then
 
     if command -v unzip >/dev/null 2>&1; then
       unzip -o themes/flood-for-transmission.zip -d "$TRANSMISSION_ROOT_PATH/themes"
+      unzip -o themes/transmission-web-control.zip -d "$TRANSMISSION_ROOT_PATH/themes"
       UNZIP_SUCCESS=$?
     elif command -v tar >/dev/null 2>&1; then
       tar -xf themes/flood-for-transmission.zip -C "$TRANSMISSION_ROOT_PATH/themes"
+      tar -xf themes/transmission-web-control.zip -C "$TRANSMISSION_ROOT_PATH/themes"
       UNZIP_SUCCESS=$?
     else
       echo "Warning: Neither 'unzip' nor 'tar' is installed. Skipping theme extraction."
