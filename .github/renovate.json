@@ -252,13 +252,6 @@
       "allowedVersions": "<2.0.0"
     },
     {
-      "matchPackageNames": [
-        "umamisoftware/umami"
-      ],
-      "versionCompatibility": "^(?<compatibility>.*)-(?<version>.*)$",
-      "versioning": "semver"
-    },
-    {
       "matchFileNames": [
         "apps/umami/2.16.0/*.yml"
       ],
