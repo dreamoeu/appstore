@@ -25,7 +25,8 @@
     "**/alist-aria2/**",
     "**/alist-ffmpeg/**",
     "**/homarr/0.15.10/**",
-    "**/minio/2025-04-22/**"
+    "**/minio/2025-04-22/**",
+    "**/transmission/2.94/**"
   ],
   "packageRules": [
         {
