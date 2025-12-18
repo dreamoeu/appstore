@@ -3,8 +3,8 @@ networks:
     external: true
 
 services:
-  pansou-web:
-    image: ghcr.io/fish2018/pansou-web:latest
+  pansou:
+    image: ghcr.io/fish2018/pansou:latest
     container_name: ${CONTAINER_NAME}
     labels:
       createdBy: "Apps"
@@ -12,20 +12,17 @@ services:
     networks:
       - 1panel-network
     ports:
-      - ${PANEL_APP_PORT_HTTP}:80
+      - ${PANEL_APP_PORT_HTTP}:8888
     env_file:
       - ${GLOBAL_ENV_FILE:-/etc/1panel/envs/global.env}
       - ${ENV_FILE:-/etc/1panel/envs/default.env}
     volumes:
-      - ${PANSOU_ROOT_PATH}/cache:/app/data/cache
-      - ${PANSOU_ROOT_PATH}/logs:/app/data/logs
+      - ${PANSOU_ROOT_PATH}/cache:/app/cache
     environment:
       - TZ=Asia/Shanghai
-      - PANSOU_HOST=127.0.0.1
-      - PANSOU_PORT=8888
-      - CACHE_PATH=/app/data/cache
-      - LOG_PATH=/app/data/logs
+      - PORT=8888
       - CACHE_ENABLED=true
+      - CACHE_PATH=/app/cache
       - CACHE_MAX_SIZE=100
       - CACHE_TTL=60
       - ASYNC_PLUGIN_ENABLED=true
