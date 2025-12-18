@@ -17,12 +17,12 @@ services:
       - ${GLOBAL_ENV_FILE:-/etc/1panel/envs/global.env}
       - ${ENV_FILE:-/etc/1panel/envs/default.env}
     volumes:
-      - ${PANSOU_ROOT_PATH}/cache:/app/cache
+      - ${PANSOU_ROOT_PATH}/cache:/app/data/cache
     environment:
       - TZ=Asia/Shanghai
       - PORT=8888
       - CACHE_ENABLED=true
-      - CACHE_PATH=/app/cache
+      - CACHE_PATH=/app/data/cache
       - CACHE_MAX_SIZE=100
       - CACHE_TTL=60
       - ASYNC_PLUGIN_ENABLED=true
