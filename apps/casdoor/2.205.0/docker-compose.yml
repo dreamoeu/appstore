@@ -3,8 +3,8 @@ networks:
     external: true
 
 services:
-  astrbot:
-    image: soulter/astrbot:v4.10.0
+  casdoor:
+    image: casbin/casdoor:2.205.0
     container_name: ${CONTAINER_NAME}
     labels:
       createdBy: "Apps"
@@ -12,16 +12,16 @@ services:
     networks:
       - 1panel-network
     ports:
-      - ${PANEL_APP_PORT_HTTP}:6185
-      - ${PANEL_APP_PORT_QQ_WH}:6199
-      - ${PANEL_APP_PORT_QQ_API}:6196
-      - ${PANEL_APP_PORT_WECOM}:6195
-      - ${PANEL_APP_PORT_WECHAT}:11451
+      - ${PANEL_APP_PORT_HTTP}:8000
     env_file:
       - ${GLOBAL_ENV_FILE:-/etc/1panel/envs/global.env}
+      - ${APP_ENV_FILE:-/etc/1panel/envs/casdoor/casdoor.env}
       - ${ENV_FILE:-/etc/1panel/envs/default.env}
     volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - ${ASTRBOT_ROOT_PATH}/data:/AstrBot/data
+      - ${CASDOOR_ROOT_PATH}/files:/files
     environment:
-      - TZ=Asia/Shanghai
+      - driverName=${DB_TYPE}
+      - dbName=${DB_NAME}
+      - verificationCodeTimeout=10
+      - appname=casdoor
+      - authState=casdoor
