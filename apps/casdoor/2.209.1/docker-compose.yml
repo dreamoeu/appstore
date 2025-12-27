@@ -4,7 +4,7 @@ networks:
 
 services:
   casdoor:
-    image: casbin/casdoor:2.208.0
+    image: casbin/casdoor:2.209.1
     container_name: ${CONTAINER_NAME}
     labels:
       createdBy: "Apps"
