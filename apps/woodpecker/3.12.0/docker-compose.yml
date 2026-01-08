@@ -35,6 +35,7 @@ services:
     depends_on:
       - woodpecker-server
     image: woodpeckerci/woodpecker-agent:v3.12.0
+    container_name: agent-${CONTAINER_NAME}
     command: agent
     restart: always
     networks:
