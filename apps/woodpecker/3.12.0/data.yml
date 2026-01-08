@@ -122,7 +122,7 @@ additionalProperties:
           value: "true"
         - label: 禁用
           value: "false"
-    - default: "https://gitea.com"
+    - default: ""
       edit: true
       envKey: WOODPECKER_GITEA_URL
       labelZh: Gitea 地址
@@ -155,7 +155,7 @@ additionalProperties:
           value: "true"
         - label: 禁用
           value: "false"
-    - default: "https://v13.next.forgejo.org"
+    - default: ""
       edit: true
       envKey: WOODPECKER_FORGEJO_URL
       labelZh: Forgejo 地址
@@ -188,7 +188,7 @@ additionalProperties:
           value: "true"
         - label: 禁用
           value: "false"
-    - default: "https://gitlab.com"
+    - default: ""
       edit: true
       envKey: WOODPECKER_GITLAB_URL
       labelZh: GitLab 地址
