@@ -13,4 +13,11 @@ additionalProperties:
   github: https://github.com/woodpecker-ci/woodpecker/
   document: https://woodpecker-ci.org/
   architectures:
+    - 386
     - amd64
+    - arm64
+    - ppc64le
+    - riscv64
+    - s390x
+    - arm/v6
+    - arm/v7
