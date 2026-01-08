@@ -71,13 +71,6 @@ additionalProperties:
       type: text
     - default: ""
       edit: true
-      envKey: WOODPECKER_HOSTNAME
-      labelZh: 操作系统主机名
-      labelEn: Operating system host name
-      required: false
-      type: text
-    - default: ""
-      edit: true
       envKey: HTTP_PROXY
       labelZh: HTTP 代理
       labelEn: HTTP proxy
