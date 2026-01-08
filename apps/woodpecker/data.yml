@@ -3,6 +3,7 @@ additionalProperties:
   name: Woodpecker (啄木鸟)
   tags:
     - WebSite
+    - DevOps
     - Local
   shortDescZh: 啄木鸟是一个简单而强大的CI/CD引擎，具有很强的可扩展性
   shortDescEn: Woodpecker is a simple, yet powerful CI/CD engine with great extensibility
