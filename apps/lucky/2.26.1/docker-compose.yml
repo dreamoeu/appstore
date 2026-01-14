@@ -4,7 +4,7 @@ networks:
 
 services:
   lucky:
-    image: gdy666/lucky:2.25.2
+    image: gdy666/lucky:2.26.1
     container_name: ${CONTAINER_NAME}
     labels:
       createdBy: "Apps"
