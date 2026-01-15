@@ -21,7 +21,7 @@ additionalProperties:
       labelEn: Secret
       required: true
       type: text
-    - default: 2
+    - default: 4
       edit: true
       envKey: WOODPECKER_MAX_WORKFLOWS
       labelZh: 最大任务数
