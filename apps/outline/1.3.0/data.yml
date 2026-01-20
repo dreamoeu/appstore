@@ -136,3 +136,17 @@ additionalProperties:
           value: "true"
         - label: 禁止
           value: "false"
+    - default: ""
+      edit: true
+      envKey: HTTP_PROXY
+      labelZh: HTTP 代理
+      labelEn: HTTP Proxy
+      required: false
+      type: text
+    - default: "localhost,127.0.0.1,::1,192.168.0.0/16,10.0.0.0/8,*.local"
+      edit: true
+      envKey: NO_PROXY
+      labelZh: 忽略代理
+      labelEn: No Proxy
+      required: false
+      type: text
