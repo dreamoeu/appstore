@@ -356,6 +356,12 @@
         "apps/lucky/2.20.*/*.yml"
       ],
       "allowedVersions": "<2.23.1"
+    },
+    {
+      "matchFileNames": [
+        "apps/outline/1.2.*/*.yml"
+      ],
+      "allowedVersions": "<1.3.0"
     }
   ],
   "prCreation": "immediate"
