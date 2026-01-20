@@ -272,15 +272,3 @@ additionalProperties:
       labelEn: GitHub App Private Key (GitHub Integration)
       required: false
       type: password
-    - default: "false"
-      edit: true
-      envKey: FORCE_HTTPS
-      labelZh: 强制使用 HTTPS
-      labelEn: Force HTTPS
-      required: true
-      type: select
-      values:
-        - label: 启用
-          value: "true"
-        - label: 禁止
-          value: "false"
