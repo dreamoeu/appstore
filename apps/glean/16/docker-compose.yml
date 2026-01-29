@@ -50,7 +50,7 @@ services:
         condition: service_healthy
       redis:
         condition: service_healthy
-    image: ghcr.io/leslieleung/glean-backend:0.2.4
+    image: ghcr.io/leslieleung/glean-backend:0.2.5
     container_name: ${CONTAINER_NAME}
     labels:
       createdBy: "Apps"
@@ -87,7 +87,7 @@ services:
         condition: service_healthy
       backend:
         condition: service_healthy
-    image: ghcr.io/leslieleung/glean-backend:0.2.4
+    image: ghcr.io/leslieleung/glean-backend:0.2.5
     container_name: ${CONTAINER_NAME}-worker
     environment:
       DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER:-glean}:${POSTGRES_PASSWORD:-glean}@postgres:5432/${POSTGRES_DB:-glean}
