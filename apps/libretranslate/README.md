@@ -13,6 +13,10 @@ Argos Translate 库作为翻译引擎。
 - 完全开源
 - 离线翻译
 
+## 加载语言
+
+[Supported Languages](https://docs.libretranslate.com/guides/supported_languages/#_top)
+
 ---
 
 ![Ms Studio](https://file.lifebus.top/imgs/ms_blank_001.png)
