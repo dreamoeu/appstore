@@ -15,7 +15,7 @@ additionalProperties:
       required: true
       rule: paramPort
       type: number
-    - default: "en,zh,jp,ko"
+    - default: "en,zh,ja,ko"
       edit: true
       envKey: LT_LOAD_ONLY
       labelZh: 加载语言
