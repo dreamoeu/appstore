@@ -4,7 +4,7 @@ networks:
 
 services:
   libretranslate:
-    image: libretranslate/libretranslate:v1.9.3
+    image: libretranslate/libretranslate:v1.9.4
     container_name: ${CONTAINER_NAME}
     labels:
       createdBy: "Apps"
