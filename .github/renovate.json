@@ -306,7 +306,13 @@
       "matchFileNames": [
         "apps/ani-rss/2.*.*/*.yml"
       ],
-      "allowedVersions": ">=2.0"
+      "allowedVersions": "<4.0"
+    },
+    {
+      "matchFileNames": [
+        "apps/ani-rss/3.*.*/*.yml"
+      ],
+      "allowedVersions": "<4.0"
     },
     {
       "matchFileNames": [
