@@ -368,6 +368,12 @@
         "apps/outline/1.2.*/*.yml"
       ],
       "allowedVersions": "<1.3.0"
+    },
+    {
+      "matchFileNames": [
+        "apps/lucky/2.*.*/*.yml"
+      ],
+      "allowedVersions": "<3.0"
     }
   ],
   "prCreation": "immediate"
