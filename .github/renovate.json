@@ -373,7 +373,7 @@
       "matchFileNames": [
         "apps/lucky/2.*.*/*.yml"
       ],
-      "allowedVersions": "<3.0"
+      "allowedVersions": "<3.0.0"
     }
   ],
   "prCreation": "immediate"
