@@ -10,6 +10,8 @@ services:
     labels:
       createdBy: "Apps"
     restart: always
+    networks:
+      - 1panel-network
     init: true
     command:
       [
