@@ -52,7 +52,7 @@ services:
       - openclaw
     image: ghcr.io/openclaw/openclaw:2026.3.7
     container_name: ${CONTAINER_NAME}-cli
-    network_mode: "service:openclaw-gateway"
+    network_mode: "service:openclaw"
     cap_drop:
       - NET_RAW
       - NET_ADMIN
