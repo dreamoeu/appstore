@@ -46,28 +46,3 @@ services:
       timeout: 5s
       retries: 5
       start_period: 20s
-
-  openclaw-cli:
-    depends_on:
-      - openclaw
-    image: ghcr.io/openclaw/openclaw:2026.3.7
-    container_name: ${CONTAINER_NAME}-cli
-    network_mode: "service:openclaw"
-    cap_drop:
-      - NET_RAW
-      - NET_ADMIN
-    security_opt:
-      - no-new-privileges:true
-    user: node:node
-    stdin_open: true
-    tty: true
-    init: true
-    entrypoint: [ "node", "dist/index.js" ]
-    volumes:
-      - ${OPENCLAW_ROOT_PATH}/data/config:/home/node/.openclaw
-      - ${OPENCLAW_ROOT_PATH}/data/workspace:/home/node/.openclaw/workspace
-    environment:
-      - TZ=Asia/Shanghai
-      - HOME=/home/node
-      - TERM=xterm-256color
-      - BROWSER=echo
