@@ -22,3 +22,4 @@ services:
     environment:
       - TZ=Asia/Shanghai
       - DB_PATH=/emby-data/playback_reporting.db
+      - playback_data_mode=sqlite

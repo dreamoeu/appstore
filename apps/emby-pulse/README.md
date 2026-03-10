@@ -2,7 +2,7 @@
 
 Emby 服务器的高级伴侣：数据洞察、全能管理与下载自动化助手
 
-![Emby Pulse](https://file.lifebus.top/imgs/app_name_cover.png)
+![Emby Pulse](https://file.lifebus.top/imgs/emby-pulse_cover.png)
 
 ![](https://img.shields.io/badge/%E6%96%B0%E7%96%86%E8%90%8C%E6%A3%AE%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%B7%A5%E4%BD%9C%E5%AE%A4-%E6%8F%90%E4%BE%9B%E6%8A%80%E6%9C%AF%E6%94%AF%E6%8C%81-blue)
 
