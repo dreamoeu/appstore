@@ -4,7 +4,7 @@ networks:
 
 services:
   emby-pulse:
-    image: zeyu8023/emby-stats:1.2.0.610
+    image: zeyu8023/emby-stats:1.2.0.613
     container_name: ${CONTAINER_NAME}
     labels:
       createdBy: "Apps"
