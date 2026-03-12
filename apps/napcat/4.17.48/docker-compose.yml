@@ -3,8 +3,8 @@ networks:
     external: true
 
 services:
-  emby-pulse:
-    image: zeyu8023/emby-stats:1.2.0.630
+  napcat:
+    image: mlikiowa/napcat-docker:v4.17.48
     container_name: ${CONTAINER_NAME}
     labels:
       createdBy: "Apps"
@@ -12,14 +12,16 @@ services:
     networks:
       - 1panel-network
     ports:
-      - ${PANEL_APP_PORT_HTTP}:10307
+      - ${PANEL_APP_PORT_HTTP}:6099
+      - ${PANEL_APP_PORT_ONEBOT_HTTP}:3000
+      - ${PANEL_APP_PORT_ONEBOT_WS}:3001
     env_file:
       - ${GLOBAL_ENV_FILE:-/etc/1panel/envs/global.env}
       - ${ENV_FILE:-/etc/1panel/envs/default.env}
     volumes:
-      - ${EMBY_PULSE_ROOT_PATH}/config:/app/config
-      - ${EMBY_PULSE_ROOT_PATH}/data:/emby-data
+      - ${NAPCAT_ROOT_PATH}/data:/app/.config/QQ
+      - ${NAPCAT_ROOT_PATH}/napcat:/app/napcat/config
     environment:
       - TZ=Asia/Shanghai
-      - DB_PATH=/emby-data/playback_reporting.db
-      - playback_data_mode=sqlite
+      - NAPCAT_UID=${NAPCAT_UID:-0}
+      - NAPCAT_GID=${NAPCAT_GID:-0}
