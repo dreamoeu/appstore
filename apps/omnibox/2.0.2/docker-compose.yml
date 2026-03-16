@@ -4,7 +4,7 @@ networks:
 
 services:
   omnibox:
-    image: lampon/omnibox:v2.0.2
+    image: lampon/omnibox:2.0.3
     container_name: ${CONTAINER_NAME}
     labels:
       createdBy: "Apps"
