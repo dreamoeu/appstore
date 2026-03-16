@@ -26,7 +26,8 @@
     "**/alist-ffmpeg/**",
     "**/homarr/0.15.10/**",
     "**/minio/2025-04-22/**",
-    "**/transmission/2.94/**"
+    "**/transmission/2.94/**",
+    "**/rustfs/1.0.0-alpha.86/**"
   ],
   "packageRules": [
         {
