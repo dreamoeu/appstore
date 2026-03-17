@@ -28,7 +28,6 @@ services:
       - QUEUE_HOST=${REDIS_HOST:-}
       - QUEUE_PORT=${REDIS_PORT:-}
       - QUEUE_PASSWORD=${REDIS_PASSWORD:-}
-      - QUEUE_DB=${REDIS_DB:-}
     healthcheck:
       test: [ "CMD", "wget", "-qO-", "http://127.0.0.1:8080/health" ]
       interval: 10s
@@ -46,9 +45,6 @@ services:
       - dujiao-net
     ports:
       - ${PANEL_APP_PORT_ADMIN}:80
-    env_file:
-      - ${GLOBAL_ENV_FILE:-/etc/1panel/envs/global.env}
-      - ${ENV_FILE:-/etc/1panel/envs/default.env}
     environment:
       - TZ=Asia/Shanghai
 
@@ -63,8 +59,5 @@ services:
       - dujiao-net
     ports:
       - ${PANEL_APP_PORT_HTTP}:80
-    env_file:
-      - ${GLOBAL_ENV_FILE:-/etc/1panel/envs/global.env}
-      - ${ENV_FILE:-/etc/1panel/envs/default.env}
     environment:
       - TZ=Asia/Shanghai
