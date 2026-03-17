@@ -38,7 +38,7 @@ services:
     depends_on:
       dujiaonext-api:
         condition: service_healthy
-    image: dujiaonext/admin:v0.1.1
+    image: dujiaonext/admin:v0.1.2
     container_name: admin-${CONTAINER_NAME}
     restart: always
     networks:
@@ -52,7 +52,7 @@ services:
     depends_on:
       dujiaonext-api:
         condition: service_healthy
-    image: dujiaonext/user:v0.1.1
+    image: dujiaonext/user:v0.1.2
     container_name: user-${CONTAINER_NAME}
     restart: always
     networks:
