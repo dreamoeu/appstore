@@ -9,6 +9,8 @@ services:
     - .env
     environment:
     - TZ=Asia/Shanghai
+    - SERVER_PORT=7023
+    - DATABASE_TYPE=sqlite
     image: lampon/omnibox:v2.0.4
     labels:
       createdBy: Apps
