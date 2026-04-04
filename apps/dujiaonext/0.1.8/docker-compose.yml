@@ -6,7 +6,7 @@ networks:
 
 services:
   dujiaonext-api:
-    image: dujiaonext/api:v1.0.0
+    image: dujiaonext/api:v0.1.8
     container_name: ${CONTAINER_NAME}
     labels:
       createdBy: "Apps"
@@ -38,7 +38,7 @@ services:
     depends_on:
       dujiaonext-api:
         condition: service_healthy
-    image: dujiaonext/admin:v0.1.8
+    image: dujiaonext/admin:v1.0.0
     container_name: admin-${CONTAINER_NAME}
     restart: always
     networks:
@@ -52,7 +52,7 @@ services:
     depends_on:
       dujiaonext-api:
         condition: service_healthy
-    image: dujiaonext/user:v0.1.7
+    image: dujiaonext/user:v1.0.0
     container_name: user-${CONTAINER_NAME}
     restart: always
     networks:
