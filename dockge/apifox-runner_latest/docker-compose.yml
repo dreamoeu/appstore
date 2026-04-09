@@ -2,20 +2,20 @@ networks:
   1panel-network:
     external: true
 services:
-  omnibox:
-    container_name: omnibox
+  apifox-runner:
+    container_name: apifox-runner
     env_file:
     - ./envs/global.env
     - .env
     environment:
     - TZ=Asia/Shanghai
-    image: lampon/omnibox:v1.4.4
+    image: registry.cn-hangzhou.aliyuncs.com/apifox/self-hosted-general-runner
     labels:
       createdBy: Apps
     networks:
     - 1panel-network
     ports:
-    - ${PANEL_APP_PORT_HTTP}:7023
+    - ${PANEL_APP_PORT_HTTP}:4524
     restart: always
     volumes:
-    - ${OMNIBOX_ROOT_PATH}/data:/app/data
+    - ${APIFOX_RUNNER_ROOT_PATH}/runner:/opt/runner
