@@ -3,13 +3,13 @@ networks:
     external: true
 services:
   apifox-runner:
-    container_name: apifox-runner
+    container_name: apifox-runner-team
     env_file:
     - ./envs/global.env
     - .env
     environment:
     - TZ=Asia/Shanghai
-    image: registry.cn-hangzhou.aliyuncs.com/apifox/self-hosted-general-runner:slim
+    image: registry.cn-hangzhou.aliyuncs.com/apifox/self-hosted-general-runner
     labels:
       createdBy: Apps
     networks:
