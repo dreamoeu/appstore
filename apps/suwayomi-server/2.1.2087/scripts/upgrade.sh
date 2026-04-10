@@ -10,6 +10,13 @@ if [ -f .env ]; then
   echo "ENV_FILE=${CURRENT_DIR}/.env" >> .env
   echo "GLOBAL_ENV_FILE=${CURRENT_DIR}/envs/global.env" >> .env
 
+  DATA_DIR="$SUWAYOMI_SERVER_ROOT_PATH/data"
+
+  mkdir -p "$DATA_DIR"
+
+  chown -R 1000:1000 $DATA_DIR
+  chmod -R 755 $DATA_DIR
+
   echo "Check Finish."
 
 else
