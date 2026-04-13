@@ -3,8 +3,8 @@ networks:
     external: true
 
 services:
-  omnibox:
-    image: lampon/omnibox:v2.0.10
+  omnibox-lite:
+    image: lampon/omnibox:v2.1.0-lite
     container_name: ${CONTAINER_NAME}
     labels:
       createdBy: "Apps"
