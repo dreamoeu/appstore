@@ -30,8 +30,11 @@
     "**/rustfs/1.0.0-alpha.86/**"
   ],
   "packageRules": [
-        {
-      "matchUpdateTypes": ["patch", "minor"],
+    {
+      "matchUpdateTypes": [
+        "patch",
+        "minor"
+      ],
       "automerge": true,
       "automergeType": "pr",
       "platformAutomerge": true,
@@ -39,7 +42,9 @@
       "prCreation": "immediate"
     },
     {
-      "matchUpdateTypes": ["major"],
+      "matchUpdateTypes": [
+        "major"
+      ],
       "automerge": false
     },
     {
