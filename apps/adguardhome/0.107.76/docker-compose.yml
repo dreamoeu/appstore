@@ -4,7 +4,7 @@ networks:
 
 services:
   adguardhome:
-    image: adguard/adguardhome:v0.107.75
+    image: adguard/adguardhome:v0.107.76
     container_name: ${CONTAINER_NAME}
     labels:
       createdBy: "Apps"
