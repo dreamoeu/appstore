@@ -4,7 +4,7 @@ networks:
 
 services:
   woodpecker-server:
-    image: woodpeckerci/woodpecker-server:v3.14.1
+    image: woodpeckerci/woodpecker-server:v3.15.0
     container_name: ${CONTAINER_NAME}
     labels:
       createdBy: "Apps"
