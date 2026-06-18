@@ -4,7 +4,7 @@ networks:
 
 services:
   hermes-webui:
-    image: ghcr.io/nesquena/hermes-webui:0.51.491
+    image: ghcr.io/nesquena/hermes-webui:0.51.492
     container_name: ${CONTAINER_NAME}
     labels:
       createdBy: "Apps"
