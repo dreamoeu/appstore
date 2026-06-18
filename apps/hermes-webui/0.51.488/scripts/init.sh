@@ -15,7 +15,7 @@ if [ -f .env ]; then
   mkdir -p "$HERMES_WEBUI_DIR"
   chown -R ${UID}:${GID} ${HERMES_WEBUI_DIR}
   
-  WORKSPACE_DIR="$HERMES_WEBUI_DIR/workspace"
+  WORKSPACE_DIR="$HERMES_WEBUI_ROOT_PATH/workspace"
   mkdir -p "$WORKSPACE_DIR"
   chown -R ${UID}:${GID} ${WORKSPACE_DIR}
 
