@@ -259,6 +259,12 @@
     },
     {
       "matchFileNames": [
+        "apps/immich*/2.*.*/*.yml"
+      ],
+      "allowedVersions": "<3.0.0"
+    },
+    {
+      "matchFileNames": [
         "apps/umami/2.16.0/*.yml"
       ],
       "allowedVersions": "<=2.16.0"
