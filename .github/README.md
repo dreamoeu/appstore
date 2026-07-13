@@ -365,7 +365,8 @@ PANEL_PORT="面板访问端口"
 
 # 两个接口地址（不用动）
 API_SYNC_LOCAL="/api/v2/apps/sync/local"
-API_READ_FILE="/api/v2/files/read"
+# 如果您使用v2旧版，这里应该使用 /api/v2/files/read
+API_READ_FILE="/api/v2/files/read/task"
 
 #############################################
 # 工具函数
