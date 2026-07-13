@@ -4,7 +4,7 @@ networks:
 
 services:
   omniroute:
-    image: diegosouzapw/omniroute:3.8.47
+    image: diegosouzapw/omniroute:3.8.48
     container_name: ${CONTAINER_NAME}
     labels:
       createdBy: "Apps"
