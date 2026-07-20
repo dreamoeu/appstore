@@ -24,7 +24,6 @@ services:
       - ${MCSMANAGER_ROOT_PATH}/daemon/logs:/opt/mcsmanager/daemon/logs
     environment:
       - TZ=Asia/Shanghai
-      - MCSM_DOCKER_WORKSPACE_PATH=${MCSMANAGER_ROOT_PATH}/daemon/data/InstanceData
 
   mcsmanager-web:
     image: githubyumao/mcsmanager-web:v10.16.2
