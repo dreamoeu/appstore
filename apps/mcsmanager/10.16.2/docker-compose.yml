@@ -28,6 +28,8 @@ services:
 
   mcsmanager-web:
     image: githubyumao/mcsmanager-web:v10.16.2
+    depends_on:
+      - mcsmanager-daemon
     container_name: web-${CONTAINER_NAME}
     restart: always
     networks:
@@ -41,5 +43,6 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - ${MCSMANAGER_ROOT_PATH}/web/data:/opt/mcsmanager/web/data
       - ${MCSMANAGER_ROOT_PATH}/web/logs:/opt/mcsmanager/web/logs
+      - ${MCSMANAGER_ROOT_PATH}/daemon:/opt/mcsmanager/daemon
     environment:
       - TZ=Asia/Shanghai
