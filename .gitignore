@@ -7,3 +7,5 @@
 # VSCode
 .vscode
 scan_arch_ruamel.py
+
+.trae/
