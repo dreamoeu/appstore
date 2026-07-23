@@ -8,8 +8,6 @@ services:
   omniroute:
     depends_on:
       - omniroute-redis
-      - omniroute-bifrost
-      - omniroute-cliproxyapi
     image: diegosouzapw/omniroute:3.8.48
     container_name: ${CONTAINER_NAME}
     labels:
@@ -34,9 +32,6 @@ services:
       - API_PORT=20129
       - LIVE_WS_HOST=0.0.0.0
       - LIVE_WS_PORT=20132
-      - BIFROST_ENABLED=true
-      - BIFROST_URL=http://omniroute-bifrost:8080
-      - CLIPROXYAPI_URL=http://omniroute-cliproxyapi:8317
 
   omniroute-redis:
     image: redis:7-alpine
@@ -52,29 +47,8 @@ services:
       --loglevel warning
     environment:
       - TZ=Asia/Shanghai
-
-  omniroute-bifrost:
-    image: ghcr.io/maximhq/bifrost:1.5.21
-    container_name: ${CONTAINER_NAME}-bifrost
-    restart: always
-    networks:
-      - omniroute-network
-    volumes:
-      - ${OMNIROUTE_ROOT_PATH}/bifrost:/data
-    environment:
-      - TZ=Asia/Shanghai
-      - BIFROST_LOG_LEVEL=info
-      - PORT=8080
-
-  omniroute-cliproxyapi:
-    image: ghcr.io/router-for-me/cliproxyapi:v6.9.7
-    container_name: ${CONTAINER_NAME}-cliproxyapi
-    restart: always
-    networks:
-      - omniroute-network
-    volumes:
-      - ${OMNIROUTE_ROOT_PATH}/cliproxyapi:/root/.cli-proxy-api
-    environment:
-      - TZ=Asia/Shanghai
-      - PORT=8317
-      - HOST=0.0.0.0
+    healthcheck:
+      test: [ "CMD", "redis-cli", "ping" ]
+      interval: 10s
+      timeout: 5s
+      retries: 3
