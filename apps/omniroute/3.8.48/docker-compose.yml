@@ -1,22 +1,80 @@
 networks:
   1panel-network:
     external: true
+  omniroute-network:
+    driver: bridge
 
 services:
   omniroute:
+    depends_on:
+      - omniroute-redis
+      - omniroute-bifrost
+      - omniroute-cliproxyapi
     image: diegosouzapw/omniroute:3.8.48
     container_name: ${CONTAINER_NAME}
     labels:
       createdBy: "Apps"
     restart: always
     networks:
-      - 1panel-network
+      - omniroute-network
     ports:
       - ${PANEL_APP_PORT_HTTP}:20128
+      - ${PANEL_APP_PORT_API}:20129
+      - ${PANEL_APP_PORT_WS}:20132
     env_file:
       - ${GLOBAL_ENV_FILE:-/etc/1panel/envs/global.env}
       - ${ENV_FILE:-/etc/1panel/envs/default.env}
     volumes:
-      - ${OMNIROUTE_ROOT_PATH}/data:/app/data
+      - ${OMNIROUTE_ROOT_PATH}/omniroute:/data/omniroute
     environment:
       - TZ=Asia/Shanghai
+      - DATA_DIR=/data/omniroute
+      - REDIS_URL=redis://omniroute-redis:6379
+      - API_HOST=0.0.0.0
+      - API_PORT=20129
+      - LIVE_WS_HOST=0.0.0.0
+      - LIVE_WS_PORT=20132
+      - BIFROST_ENABLED=true
+      - BIFROST_URL=http://omniroute-bifrost:8080
+      - CLIPROXYAPI_URL=http://omniroute-cliproxyapi:8317
+
+  omniroute-redis:
+    image: redis:7-alpine
+    container_name: ${CONTAINER_NAME}-redis
+    restart: always
+    networks:
+      - omniroute-network
+    volumes:
+      - ${OMNIROUTE_ROOT_PATH}/redis:/data
+    command:
+      redis-server
+      --save 60 1
+      --loglevel warning
+    environment:
+      - TZ=Asia/Shanghai
+
+  omniroute-bifrost:
+    image: ghcr.io/maximhq/bifrost:1.5.21
+    container_name: ${CONTAINER_NAME}-bifrost
+    restart: always
+    networks:
+      - omniroute-network
+    volumes:
+      - ${OMNIROUTE_ROOT_PATH}/bifrost:/data
+    environment:
+      - TZ=Asia/Shanghai
+      - BIFROST_LOG_LEVEL=info
+      - PORT=8080
+
+  omniroute-cliproxyapi:
+    image: ghcr.io/router-for-me/cliproxyapi:v6.9.7
+    container_name: ${CONTAINER_NAME}-cliproxyapi
+    restart: always
+    networks:
+      - omniroute-network
+    volumes:
+      - ${OMNIROUTE_ROOT_PATH}/cliproxyapi:/root/.cli-proxy-api
+    environment:
+      - TZ=Asia/Shanghai
+      - PORT=8317
+      - HOST=0.0.0.0
