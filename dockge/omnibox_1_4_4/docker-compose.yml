@@ -2,16 +2,20 @@ networks:
   1panel-network:
     external: true
 services:
-  stream-rec-frontend:
-    container_name: stream-rec-frontend
+  omnibox:
+    container_name: omnibox
     env_file:
     - ./envs/global.env
     - .env
-    image: streamrec/stream-rec-front:v0.7.2
+    environment:
+    - TZ=Asia/Shanghai
+    image: lampon/omnibox:v1.4.4
     labels:
       createdBy: Apps
     networks:
     - 1panel-network
     ports:
-    - ${PANEL_APP_PORT_HTTP}:15275
+    - ${PANEL_APP_PORT_HTTP}:7023
     restart: always
+    volumes:
+    - ${OMNIBOX_ROOT_PATH}/data:/app/data
