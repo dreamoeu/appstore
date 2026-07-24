@@ -2,30 +2,30 @@ networks:
   1panel-network:
     external: true
 services:
-  transmission:
-    container_name: transmission
+  ani-rss:
+    container_name: ani-rss
     env_file:
     - ./envs/global.env
     - .env
     environment:
-    - PUID=1000
-    - PGID=1000
-    - PEERPORT= ${PANEL_APP_PORT_TORRENTING}
+    - PUID=0
+    - PGID=0
+    - UMASK=022
+    - PORT=7789
+    - CONFIG=/config
     - TZ=Asia/Shanghai
-    image: linuxserver/transmission:4.1.3
+    image: wushuo894/ani-rss:v3.0.14
     labels:
       createdBy: Apps
-    network_mode: ${NETWORK_MODE}
+    networks:
+    - 1panel-network
     ports:
-    - ${PANEL_APP_PORT_HTTP}:9091
-    - ${PANEL_APP_PORT_TORRENTING}
-    - ${PANEL_APP_PORT_TORRENTING}/udp
+    - ${PANEL_APP_PORT_HTTP}:7789
     restart: always
     volumes:
-    - ${TRANSMISSION_ROOT_PATH}/themes:/themes
-    - ${TRANSMISSION_ROOT_PATH}/config:/config
-    - ${TRANSMISSION_ROOT_PATH}/downloads:/downloads
-    - ${TRANSMISSION_ROOT_PATH}/watch:/watch
+    - ${ANI_RSS_ROOT_PATH}/config:/config
+    - ${ANI_RSS_ROOT_PATH}/downloads:/downloads
+    - ${ANI_RSS_ROOT_PATH}/Media:/Media
     - ${CUSTOM_MOUNT_DIRECTORY_1:-./default_mount_1}:${CUSTOM_MOUNT_DIRECTORY_1:-/default_mount_1}
     - ${CUSTOM_MOUNT_DIRECTORY_2:-./default_mount_2}:${CUSTOM_MOUNT_DIRECTORY_2:-/default_mount_2}
     - ${CUSTOM_MOUNT_DIRECTORY_3:-./default_mount_3}:${CUSTOM_MOUNT_DIRECTORY_3:-/default_mount_3}
